@@ -6,6 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>RealX — مطور Roblox</title>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cdefs%3E%3CradialGradient id='g' cx='50%25' cy='40%25' r='60%25'%3E%3Cstop offset='0%25' stop-color='%236b0000'/%3E%3Cstop offset='100%25' stop-color='%232a0000'/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle cx='100' cy='100' r='92' fill='url(%23g)'/%3E%3Ccircle cx='100' cy='100' r='92' fill='none' stroke='%231a0000' stroke-width='6'/%3E%3Cline x1='25' y1='165' x2='175' y2='35' stroke='%23c0a080' stroke-width='1.5' opacity='0.5'/%3E%3Cpolygon points='100,22 103,32 114,32 105,39 108,49 100,43 92,49 95,39 86,32 97,32' fill='white'/%3E%3Cpolygon points='55,45 57.5,52 65,52 59,56.5 61.5,64 55,59.5 48.5,64 51,56.5 45,52 52.5,52' fill='white'/%3E%3Cpolygon points='148,50 150.5,57 158,57 152,61.5 154.5,69 148,64.5 141.5,69 144,61.5 138,57 145.5,57' fill='white'/%3E%3Cpolygon points='42,130 44,136 50,136 45.5,139.5 47.5,146 42,142.5 36.5,146 38.5,139.5 34,136 40,136' fill='white'/%3E%3Cpolygon points='100,158 102,164.5 109,164.5 103.5,168.5 105.5,175 100,171 94.5,175 96.5,168.5 91,164.5 98,164.5' fill='white'/%3E%3Ctext x='100' y='115' font-family='Georgia' font-size='32' font-weight='bold' fill='%23e8d5b0' text-anchor='middle' letter-spacing='4'%3ERealX%3C/text%3E%3C/svg%3E"><link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Rajdhani:wght@300;400;600;700&family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Rajdhani:wght@300;400;600;700&family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
 <style>
   :root {
     --red: #ff3b3b;
@@ -1055,11 +1056,16 @@ killFeedRemote.OnClientEvent:<span class="fn">Connect</span>(<span class="kw">fu
     }
   }
 
-  // Comments
-  function getComments(key) {
-    try { return JSON.parse(localStorage.getItem('comments_' + key) || '[]'); } catch(e) { return []; }
+  // Comments — window.storage (shared across all visitors)
+  async function getComments(key) {
+    try {
+      const r = await window.storage.get('comments_' + key, true);
+      return r ? JSON.parse(r.value) : [];
+    } catch(e) { return []; }
   }
-  function saveComments(key, comments) { localStorage.setItem('comments_' + key, JSON.stringify(comments)); }
+  async function saveComments(key, comments) {
+    try { await window.storage.set('comments_' + key, JSON.stringify(comments), true); } catch(e) {}
+  }
   function timeAgo(ts) {
     const diff = Math.floor((Date.now() - ts) / 1000);
     if (diff < 60) return 'الآن';
@@ -1067,46 +1073,46 @@ killFeedRemote.OnClientEvent:<span class="fn">Connect</span>(<span class="kw">fu
     if (diff < 86400) return Math.floor(diff/3600) + ' ساعة';
     return Math.floor(diff/86400) + ' يوم';
   }
-  function renderMiniComments(key) {
+  async function renderMiniComments(key) {
     const list = document.getElementById('mini-comments-' + key);
     if (!list) return;
-    const comments = getComments(key);
+    const comments = await getComments(key);
     if (comments.length === 0) { list.innerHTML = '<div class="no-comments">لا يوجد تعليقات بعد</div>'; return; }
     list.innerHTML = comments.slice(-5).reverse().map(c =>
       `<div class="card-comment-item"><span class="cc-name">${escHtml(c.name||'زائر')}</span>${escHtml(c.text)}<span class="cc-time">${timeAgo(c.ts)}</span></div>`
     ).join('');
   }
-  function submitMiniComment(key) {
+  async function submitMiniComment(key) {
     const input = document.getElementById('mini-input-' + key);
     const text = input.value.trim();
     if (!text) return;
-    const comments = getComments(key);
+    const comments = await getComments(key);
     comments.push({ name: 'زائر', text, ts: Date.now() });
-    saveComments(key, comments);
+    await saveComments(key, comments);
     input.value = '';
     renderMiniComments(key);
     const modalKey = document.getElementById('modal').dataset.key;
     if (modalKey === key) renderModalComments(key);
     showToast('✓ تم إرسال تعليقك!');
   }
-  function renderModalComments(key) {
+  async function renderModalComments(key) {
     const list = document.getElementById('modal-comments-list');
     const countEl = document.getElementById('modal-comment-count');
-    const comments = getComments(key);
+    const comments = await getComments(key);
     countEl.textContent = comments.length;
     if (comments.length === 0) { list.innerHTML = `<div class="no-comments-msg"><span class="icon">💬</span>كن أول من يعلق!</div>`; return; }
     list.innerHTML = comments.slice().reverse().map(c =>
       `<div class="comment-item"><div class="comment-header"><span class="comment-name">👤 ${escHtml(c.name||'زائر')}</span><span class="comment-time">${timeAgo(c.ts)}</span></div><div class="comment-text">${escHtml(c.text)}</div></div>`
     ).join('');
   }
-  function submitModalComment() {
+  async function submitModalComment() {
     const key = document.getElementById('modal').dataset.key;
     const name = document.getElementById('comment-name').value.trim();
     const text = document.getElementById('comment-text').value.trim();
     if (!text) { showToast('⚠️ اكتب تعليقك أولاً!'); return; }
-    const comments = getComments(key);
+    const comments = await getComments(key);
     comments.push({ name: name||'زائر', text, ts: Date.now() });
-    saveComments(key, comments);
+    await saveComments(key, comments);
     document.getElementById('comment-text').value = '';
     renderModalComments(key);
     renderMiniComments(key);
@@ -1195,24 +1201,34 @@ killFeedRemote.OnClientEvent:<span class="fn">Connect</span>(<span class="kw">fu
     if (e.key === 'Enter' && e.ctrlKey) submitModalComment();
   });
 
-  // Visitor counter
-  (function() {
+  // Visitor counter — window.storage shared
+  (async function() {
     const el = document.getElementById('visitor-count');
-    const VISITED_KEY = 'realx_visited_v2';
-    const namespace = 'realx-site-v2';
-    const keyName = 'total-visitors';
-    function display(n) { el.textContent = Number(n).toLocaleString('ar'); localStorage.setItem('realx_cached_count', n); }
-    const cached = localStorage.getItem('realx_cached_count');
-    if (cached) el.textContent = Number(cached).toLocaleString('ar');
-    const alreadyCounted = localStorage.getItem(VISITED_KEY);
-    if (!alreadyCounted) {
-      fetch('https://api.counterapi.dev/v1/' + namespace + '/' + keyName + '/up')
-        .then(r => r.json()).then(data => { localStorage.setItem(VISITED_KEY, '1'); display(data.count ?? data.value ?? cached ?? 1); })
-        .catch(() => { let c = parseInt(localStorage.getItem('realx_cached_count') || '0') + 1; localStorage.setItem('realx_cached_count', c); localStorage.setItem(VISITED_KEY, '1'); display(c); });
-    } else {
-      fetch('https://api.counterapi.dev/v1/' + namespace + '/' + keyName)
-        .then(r => r.json()).then(data => { display(data.count ?? data.value ?? cached ?? 1); })
-        .catch(() => { if (cached) display(cached); });
+    const VISITED_KEY = 'realx_visited_v3';
+    const COUNTER_KEY = 'total-visitors';
+
+    function display(n) { if (el) el.textContent = Number(n).toLocaleString('ar'); }
+
+    try {
+      // Get current count
+      let current = 0;
+      try {
+        const r = await window.storage.get(COUNTER_KEY, true);
+        current = r ? parseInt(r.value) || 0 : 0;
+      } catch(e) { current = 0; }
+
+      display(current);
+
+      // Only count once per browser session
+      const alreadyCounted = localStorage.getItem(VISITED_KEY);
+      if (!alreadyCounted) {
+        const newCount = current + 1;
+        await window.storage.set(COUNTER_KEY, String(newCount), true);
+        localStorage.setItem(VISITED_KEY, '1');
+        display(newCount);
+      }
+    } catch(e) {
+      display(0);
     }
   })();
 </script>
