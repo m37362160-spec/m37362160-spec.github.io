@@ -232,6 +232,86 @@
     .comment-form-row { flex-direction: column; }
   }
 </style>
+
+  <!-- Firebase SDK -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+    import { getDatabase, ref, get, set, push, onValue, runTransaction } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js";
+
+    // ⚠️ استبدل هذا الكونفيغ بكونفيغ مشروعك من Firebase Console
+    const firebaseConfig = {
+      apiKey: "AIzaSyAI-UCBIkc0p55P51UJon9l5hxS4HorNGA",
+      authDomain: "realx-site.firebaseapp.com",
+      databaseURL: "https://realx-site-default-rtdb.firebaseio.com",
+      projectId: "realx-site",
+      storageBucket: "realx-site.firebasestorage.app",
+      messagingSenderId: "586603599715",
+      appId: "1:586603599715:web:27d84c268325a2eb0ce556"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db = getDatabase(app);
+
+    // Expose to global scope
+    window._fb = { db, ref, get, set, push, onValue, runTransaction };
+
+    // Init visitor counter
+    initVisitorCounter();
+
+    // Init all comment sections
+    document.querySelectorAll('[id^="mini-comments-"]').forEach(el => {
+      const key = el.id.replace('mini-comments-', '');
+      listenComments(key);
+    });
+
+    async function initVisitorCounter() {
+      const el = document.getElementById('visitor-count');
+      if (!el) return;
+      const counterRef = ref(db, 'visitors/total');
+      const visited = localStorage.getItem('realx_visited_v3');
+      if (!visited) {
+        await runTransaction(counterRef, (current) => (current || 0) + 1);
+        localStorage.setItem('realx_visited_v3', '1');
+      }
+      onValue(counterRef, (snap) => {
+        const n = snap.val() || 0;
+        el.textContent = Number(n).toLocaleString('ar');
+      });
+    }
+
+    function listenComments(key) {
+      const listEl = document.getElementById('mini-comments-' + key);
+      if (!listEl) return;
+      const commentsRef = ref(db, 'comments/' + key);
+      onValue(commentsRef, (snap) => {
+        const data = snap.val();
+        const comments = data ? Object.values(data) : [];
+        comments.sort((a, b) => b.ts - a.ts);
+        window._renderCommentsList(key, comments.slice(0, 5), 'mini');
+        // Update modal if open
+        const modal = document.getElementById('modal');
+        if (modal && modal.dataset.key === key) {
+          window._renderCommentsList(key, comments, 'modal');
+        }
+      });
+    }
+
+    // Submit comment
+    window._submitComment = async function(key, name, text) {
+      const commentsRef = ref(db, 'comments/' + key);
+      await push(commentsRef, { name: name || 'زائر', text, ts: Date.now() });
+    };
+
+    // Load comments once for modal
+    window._loadCommentsOnce = async function(key) {
+      const commentsRef = ref(db, 'comments/' + key);
+      const snap = await get(commentsRef);
+      const data = snap.val();
+      const comments = data ? Object.values(data) : [];
+      comments.sort((a, b) => b.ts - a.ts);
+      window._renderCommentsList(key, comments, 'modal');
+    };
+  </script>
 </head>
 <body>
 <div class="orb1"></div>
@@ -1056,16 +1136,30 @@ killFeedRemote.OnClientEvent:<span class="fn">Connect</span>(<span class="kw">fu
     }
   }
 
-  // Comments — window.storage (shared across all visitors)
-  async function getComments(key) {
-    try {
-      const r = await window.storage.get('comments_' + key, true);
-      return r ? JSON.parse(r.value) : [];
-    } catch(e) { return []; }
-  }
-  async function saveComments(key, comments) {
-    try { await window.storage.set('comments_' + key, JSON.stringify(comments), true); } catch(e) {}
-  }
+  // Comments — Firebase Realtime Database
+  function getComments(key) { return []; } // Replaced by Firebase listeners
+  function saveComments(key, comments) {}   // Replaced by Firebase push
+
+  // Render helper (called by Firebase module)
+  window._renderCommentsList = function(key, comments, mode) {
+    if (mode === 'mini') {
+      const list = document.getElementById('mini-comments-' + key);
+      if (!list) return;
+      if (comments.length === 0) { list.innerHTML = '<div class="no-comments">لا يوجد تعليقات بعد</div>'; return; }
+      list.innerHTML = comments.map(c =>
+        `<div class="card-comment-item"><span class="cc-name">${escHtml(c.name||'زائر')}</span>${escHtml(c.text)}<span class="cc-time">${timeAgo(c.ts)}</span></div>`
+      ).join('');
+    } else {
+      const list = document.getElementById('modal-comments-list');
+      const countEl = document.getElementById('modal-comment-count');
+      if (!list) return;
+      if (countEl) countEl.textContent = comments.length;
+      if (comments.length === 0) { list.innerHTML = `<div class="no-comments-msg"><span class="icon">💬</span>كن أول من يعلق!</div>`; return; }
+      list.innerHTML = comments.map(c =>
+        `<div class="comment-item"><div class="comment-header"><span class="comment-author">${escHtml(c.name||'زائر')}</span><span class="comment-time">${timeAgo(c.ts)}</span></div><div class="comment-body">${escHtml(c.text)}</div></div>`
+      ).join('');
+    }
+  };
   function timeAgo(ts) {
     const diff = Math.floor((Date.now() - ts) / 1000);
     if (diff < 60) return 'الآن';
@@ -1073,49 +1167,31 @@ killFeedRemote.OnClientEvent:<span class="fn">Connect</span>(<span class="kw">fu
     if (diff < 86400) return Math.floor(diff/3600) + ' ساعة';
     return Math.floor(diff/86400) + ' يوم';
   }
-  async function renderMiniComments(key) {
-    const list = document.getElementById('mini-comments-' + key);
-    if (!list) return;
-    const comments = await getComments(key);
-    if (comments.length === 0) { list.innerHTML = '<div class="no-comments">لا يوجد تعليقات بعد</div>'; return; }
-    list.innerHTML = comments.slice(-5).reverse().map(c =>
-      `<div class="card-comment-item"><span class="cc-name">${escHtml(c.name||'زائر')}</span>${escHtml(c.text)}<span class="cc-time">${timeAgo(c.ts)}</span></div>`
-    ).join('');
+  function renderMiniComments(key) {
+    // Handled by Firebase onValue listener
   }
   async function submitMiniComment(key) {
     const input = document.getElementById('mini-input-' + key);
     const text = input.value.trim();
     if (!text) return;
-    const comments = await getComments(key);
-    comments.push({ name: 'زائر', text, ts: Date.now() });
-    await saveComments(key, comments);
     input.value = '';
-    renderMiniComments(key);
-    const modalKey = document.getElementById('modal').dataset.key;
-    if (modalKey === key) renderModalComments(key);
+    if (window._submitComment) {
+      await window._submitComment(key, 'زائر', text);
+    }
     showToast('✓ تم إرسال تعليقك!');
   }
-  async function renderModalComments(key) {
-    const list = document.getElementById('modal-comments-list');
-    const countEl = document.getElementById('modal-comment-count');
-    const comments = await getComments(key);
-    countEl.textContent = comments.length;
-    if (comments.length === 0) { list.innerHTML = `<div class="no-comments-msg"><span class="icon">💬</span>كن أول من يعلق!</div>`; return; }
-    list.innerHTML = comments.slice().reverse().map(c =>
-      `<div class="comment-item"><div class="comment-header"><span class="comment-name">👤 ${escHtml(c.name||'زائر')}</span><span class="comment-time">${timeAgo(c.ts)}</span></div><div class="comment-text">${escHtml(c.text)}</div></div>`
-    ).join('');
+  function renderModalComments(key) {
+    if (window._loadCommentsOnce) window._loadCommentsOnce(key);
   }
   async function submitModalComment() {
     const key = document.getElementById('modal').dataset.key;
     const name = document.getElementById('comment-name').value.trim();
     const text = document.getElementById('comment-text').value.trim();
     if (!text) { showToast('⚠️ اكتب تعليقك أولاً!'); return; }
-    const comments = await getComments(key);
-    comments.push({ name: name||'زائر', text, ts: Date.now() });
-    await saveComments(key, comments);
     document.getElementById('comment-text').value = '';
-    renderModalComments(key);
-    renderMiniComments(key);
+    if (window._submitComment) {
+      await window._submitComment(key, name || 'زائر', text);
+    }
     showToast('✓ تم إرسال تعليقك!');
   }
   function escHtml(str) {
@@ -1201,36 +1277,7 @@ killFeedRemote.OnClientEvent:<span class="fn">Connect</span>(<span class="kw">fu
     if (e.key === 'Enter' && e.ctrlKey) submitModalComment();
   });
 
-  // Visitor counter — window.storage shared
-  (async function() {
-    const el = document.getElementById('visitor-count');
-    const VISITED_KEY = 'realx_visited_v3';
-    const COUNTER_KEY = 'total-visitors';
-
-    function display(n) { if (el) el.textContent = Number(n).toLocaleString('ar'); }
-
-    try {
-      // Get current count
-      let current = 0;
-      try {
-        const r = await window.storage.get(COUNTER_KEY, true);
-        current = r ? parseInt(r.value) || 0 : 0;
-      } catch(e) { current = 0; }
-
-      display(current);
-
-      // Only count once per browser session
-      const alreadyCounted = localStorage.getItem(VISITED_KEY);
-      if (!alreadyCounted) {
-        const newCount = current + 1;
-        await window.storage.set(COUNTER_KEY, String(newCount), true);
-        localStorage.setItem(VISITED_KEY, '1');
-        display(newCount);
-      }
-    } catch(e) {
-      display(0);
-    }
-  })();
+  // Visitor counter — handled by Firebase module above
 </script>
 </body>
 </html>
