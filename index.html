@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
@@ -627,7 +626,7 @@ killFeedRemote.OnClientEvent:<span class="fn">Connect</span>(<span class="kw">fu
       </div>
     </div>
 
-    <!-- Points System (no NEW) -->
+    <!-- Points System -->
     <div class="script-card" onclick="openModal('نظام النقاط الكامل', 'pointssystem')" style="border-color:rgba(255,200,0,0.25);">
       <div class="script-header" style="background:rgba(255,200,0,0.06);">
         <div class="script-dots"><span></span><span></span><span></span></div>
@@ -660,7 +659,7 @@ killFeedRemote.OnClientEvent:<span class="fn">Connect</span>(<span class="kw">fu
       </div>
     </div>
 
-    <!-- ✅ NEW: نظام السترييك اليومي -->
+    <!-- Daily Streak -->
     <div class="script-card" onclick="openModal('نظام السترييك اليومي', 'daystreak')" style="border-color:rgba(255,150,0,0.35);">
       <div class="script-header" style="background:rgba(255,150,0,0.07);">
         <div class="script-dots"><span></span><span></span><span></span></div>
@@ -693,6 +692,45 @@ killFeedRemote.OnClientEvent:<span class="fn">Connect</span>(<span class="kw">fu
         <div class="card-comment-form">
           <input class="card-comment-input" id="mini-input-daystreak" placeholder="اكتب ملاحظة أو خطأ..." />
           <button class="btn-comment" onclick="submitMiniComment('daystreak')">إرسال</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ✅ NEW: علم الدولة فوق الرأس -->
+    <div class="script-card" onclick="openModal('نظام علم الدولة فوق الرأس', 'flagscript')" style="border-color:rgba(100,200,255,0.35);">
+      <div class="script-header" style="background:rgba(100,200,255,0.07);">
+        <div class="script-dots"><span></span><span></span><span></span></div>
+        <div class="script-header-right">
+          <button class="btn-info" onclick="event.stopPropagation(); openGuide('flagscript')" title="شرح طريقة الاستخدام" style="background:rgba(100,200,255,0.15);border-color:rgba(100,200,255,0.6);color:#64c8ff;">!</button>
+          <span class="script-lang" style="background:rgba(100,200,255,0.12);color:#64c8ff;border:1px solid rgba(100,200,255,0.3);">Luau</span>
+        </div>
+      </div>
+      <div class="script-body">
+        <div class="script-code"><span class="cm">-- Country Flag + Name by RealX</span>
+<span class="kw">local</span> Flags = { [<span class="str">"sa"</span>] = <span class="str">"🇸🇦"</span>, [<span class="str">"us"</span>] = <span class="str">"🇺🇸"</span>, <span class="cm">--[[ 195+ دولة ]]</span> }
+Players.PlayerAdded:<span class="fn">Connect</span>(<span class="kw">function</span>(player)
+  player.CharacterAdded:<span class="fn">Connect</span>(<span class="kw">function</span>(char)
+    <span class="cm">-- علم + اسم اللاعب فوق الرأس</span>
+    <span class="cm">-- يختفي بعد 50 stud</span>
+  <span class="kw">end</span>)
+<span class="kw">end</span>)</div>
+        <div class="script-info">
+          <div>
+            <div class="script-name" style="display:flex;align-items:center;gap:6px;">
+              علم الدولة فوق الرأس
+              <span style="background:rgba(100,200,255,0.15);border:1px solid rgba(100,200,255,0.5);color:#64c8ff;font-size:0.62rem;font-weight:800;padding:2px 7px;border-radius:100px;font-family:'Space Mono',monospace;letter-spacing:0.5px;">NEW</span>
+            </div>
+            <div class="script-desc">🌍 195+ دولة • علم + اسم • يختفي بعد 50 stud</div>
+          </div>
+          <button class="btn-copy" onclick="event.stopPropagation(); copyScript('flagscript')" style="border-color:rgba(100,200,255,0.3);color:#64c8ff;background:rgba(100,200,255,0.08);">نسخ</button>
+        </div>
+      </div>
+      <div class="card-comments" onclick="event.stopPropagation()">
+        <div class="card-comments-title">💬 تعليقات وأخطاء</div>
+        <div class="card-comments-list" id="mini-comments-flagscript"></div>
+        <div class="card-comment-form">
+          <input class="card-comment-input" id="mini-input-flagscript" placeholder="اكتب ملاحظة أو خطأ..." />
+          <button class="btn-comment" onclick="submitMiniComment('flagscript')">إرسال</button>
         </div>
       </div>
     </div>
@@ -787,7 +825,6 @@ killFeedRemote.OnClientEvent:<span class="fn">Connect</span>(<span class="kw">fu
         </div>
       </div>
 
-      <!-- Round System (no NEW) -->
       <div class="model-card" style="border-color:rgba(255,80,80,0.25);">
         <div class="model-preview" style="background:linear-gradient(135deg,#1a0505,#2a0a0a);position:relative;overflow:hidden;">
           <span class="model-icon">🗺️</span>
@@ -803,11 +840,9 @@ killFeedRemote.OnClientEvent:<span class="fn">Connect</span>(<span class="kw">fu
         </div>
       </div>
 
-      <!-- Speed System (no NEW) -->
       <div class="model-card" style="border-color:rgba(255,107,53,0.35);">
         <div class="model-preview" style="background:linear-gradient(135deg,#0d0510,#1a0800);position:relative;overflow:hidden;">
           <span class="model-icon" style="filter:drop-shadow(0 0 24px rgba(255,107,53,0.8));">⚡</span>
-          <div style="position:absolute;inset:0;background:radial-gradient(circle at 50% 60%, rgba(255,107,53,0.1) 0%, transparent 70%);pointer-events:none;z-index:0;"></div>
         </div>
         <div class="model-body">
           <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;">
@@ -928,13 +963,14 @@ killFeedRemote.OnClientEvent:<span class="fn">Connect</span>(<span class="kw">fu
     leaderboard: `-- Leaderboard Points System by RealX\nlocal Players = game:GetService("Players")\nPlayers.PlayerAdded:Connect(function(player)\n    local leaderstats = Instance.new("Folder")\n    leaderstats.Name = "leaderstats"\n    leaderstats.Parent = player\n    local points = Instance.new("IntValue")\n    points.Name = "Points"\n    points.Value = 0\n    points.Parent = leaderstats\nend)`,
     sizechange_local: `-- Size Changer GUI — LocalScript by RealX\n-- ضعه في: StarterPlayerScripts\nlocal player = game.Players.LocalPlayer\n-- (full script in modal)`,
     sizechange_server: `-- Size Changer — ServerScript by RealX\n-- ضعه في: ServerScriptService\nlocal ReplicatedStorage = game:GetService("ReplicatedStorage")\nlocal event = Instance.new("RemoteEvent")\nevent.Name = "ChangeSize"\nevent.Parent = ReplicatedStorage\nevent.OnServerEvent:Connect(function(player, newSize)\n    local character = player.Character\n    if not character then return end\n    local humanoid = character:FindFirstChildOfClass("Humanoid")\n    if not humanoid then return end\n    humanoid.BodyDepthScale.Value = newSize\n    humanoid.BodyHeightScale.Value = newSize\n    humanoid.BodyWidthScale.Value = newSize\n    humanoid.HeadScale.Value = newSize\nend)`,
-    npc: `-- NPC AI by RealX\nlocal npc = script.Parent\nlocal CHASE_DISTANCE = 40\nlocal ATTACK_DISTANCE = 7\nlocal NPC_SPEED = 16\nlocal humanoid = npc:WaitForChild("Humanoid")\nlocal rootPart = npc:WaitForChild("HumanoidRootPart")\nhumanoid.WalkSpeed = NPC_SPEED\n-- (full AI script)`,
-    gravity: `-- Gravity Controller — LocalScript by RealX\nlocal DEFAULT_GRAVITY = 196.2\nlocal MIN_GRAVITY = 8\nlocal MAX_GRAVITY = 500\n-- Slider controls gravity\n-- Right = less, Left = more`,
+    npc: `-- NPC AI by RealX\nlocal npc = script.Parent\nlocal CHASE_DISTANCE = 40\nlocal ATTACK_DISTANCE = 7\nlocal NPC_SPEED = 16\nlocal humanoid = npc:WaitForChild("Humanoid")\nlocal rootPart = npc:WaitForChild("HumanoidRootPart")\nhumanoid.WalkSpeed = NPC_SPEED`,
+    gravity: `-- Gravity Controller — LocalScript by RealX\nlocal DEFAULT_GRAVITY = 196.2\nlocal MIN_GRAVITY = 8\nlocal MAX_GRAVITY = 500`,
     killfeed_feed: `-- KillFeed — LocalScript by RealX\nlocal killFeedRemote = ReplicatedStorage:WaitForChild("KillFeedEvent", 15)\nkillFeedRemote.OnClientEvent:Connect(function(killedName)\n    showKillCard(killedName)\nend)`,
-    killfeed_damage: `-- Damage Numbers GTA Style — LocalScript by RealX\nlocal function showDamage(character, damage)\n    local hrp = character:FindFirstChild("HumanoidRootPart")\n    if not hrp then return end\n    -- billboard gui with floating numbers\nend`,
+    killfeed_damage: `-- Damage Numbers GTA Style — LocalScript by RealX\nlocal function showDamage(character, damage)\n    local hrp = character:FindFirstChild("HumanoidRootPart")\n    if not hrp then return end\nend`,
     pointssystem_main: "local Players = game:GetService(\"Players\")\nlocal DataStoreService = game:GetService(\"DataStoreService\")\nlocal ReplicatedStorage = game:GetService(\"ReplicatedStorage\")\nlocal PointsStore = DataStoreService:GetDataStore(\"PlayerPointsV2\")\nlocal pointsEvent = Instance.new(\"RemoteEvent\")\npointsEvent.Name = \"ShowPointsGui\"\npointsEvent.Parent = ReplicatedStorage\nlocal congratsMessages = {\n\t[100]  = \"Congrats! You hit 100 Points!\",\n\t[200]  = \"Amazing! 200 Points reached!\",\n\t[500]  = \"Legend! 500 Points!\",\n\t[1000] = \"GOAT! 1000 Points!\",\n}\nlocal function getCongratsMessage(points)\n\treturn congratsMessages[points] or (\"Congrats! You reached \" .. points .. \" Points!\")\nend\nlocal function setupLeaderStats(player)\n\tlocal leaderstats = Instance.new(\"Folder\")\n\tleaderstats.Name = \"leaderstats\"\n\tleaderstats.Parent = player\n\tlocal points = Instance.new(\"IntValue\")\n\tpoints.Name = \"Points\"\n\tpoints.Value = 0\n\tpoints.Parent = leaderstats\n\tlocal success, saved = pcall(function()\n\t\treturn PointsStore:GetAsync(\"Player_\" .. player.UserId)\n\tend)\n\tif success and saved then\n\t\tpoints.Value = saved\n\tend\nend\nlocal function saveData(player)\n\tlocal ls = player:FindFirstChild(\"leaderstats\")\n\tif not ls then return end\n\tlocal pts = ls:FindFirstChild(\"Points\")\n\tif not pts then return end\n\tpcall(function()\n\t\tPointsStore:SetAsync(\"Player_\" .. player.UserId, pts.Value)\n\tend)\nend\nlocal function givePoints(player, amount)\n\tlocal ls = player:FindFirstChild(\"leaderstats\")\n\tif not ls then return end\n\tlocal pts = ls:FindFirstChild(\"Points\")\n\tif not pts then return end\n\tpts.Value = pts.Value + amount\n\tpointsEvent:FireClient(player, pts.Value, getCongratsMessage(pts.Value))\nend\n_G.GivePoints = givePoints\nPlayers.PlayerAdded:Connect(function(player)\n\tsetupLeaderStats(player)\n\ttask.spawn(function()\n\t\twhile player.Parent do\n\t\t\ttask.wait(1)\n\t\t\tif player.Parent then givePoints(player, 10) end\n\t\tend\n\tend)\nend)\nPlayers.PlayerRemoving:Connect(saveData)\ngame:BindToClose(function()\n\tfor _, p in ipairs(Players:GetPlayers()) do saveData(p) end\nend)",
     pointssystem_local: "local Players = game:GetService(\"Players\")\nlocal ReplicatedStorage = game:GetService(\"ReplicatedStorage\")\nlocal TweenService = game:GetService(\"TweenService\")\nlocal player = Players.LocalPlayer\nlocal playerGui = player:WaitForChild(\"PlayerGui\")\nlocal pointsEvent = ReplicatedStorage:WaitForChild(\"ShowPointsGui\")\nlocal screenGui = playerGui:WaitForChild(\"PointsNotification\")\nlocal frame = screenGui:WaitForChild(\"NotifFrame\")\nlocal pointsLabel = frame:WaitForChild(\"PointsLabel\")\nlocal messageLabel = frame:WaitForChild(\"MessageLabel\")\nlocal hideThread = nil\nlocal function showNotification(totalPoints, message)\n\tscreenGui.Enabled = true\n\tpointsLabel.Text = totalPoints .. \" Points\"\n\tmessageLabel.Text = message\n\tframe.Position = UDim2.new(1, 20, 1, -90)\n\tTweenService:Create(frame,\n\t\tTweenInfo.new(0.4, Enum.EasingStyle.Back, Enum.EasingDirection.Out),\n\t\t{Position = UDim2.new(1, -280, 1, -90)}\n\t):Play()\n\tif hideThread then task.cancel(hideThread) end\n\thideThread = task.delay(2.5, function()\n\t\tlocal tweenOut = TweenService:Create(frame,\n\t\t\tTweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.In),\n\t\t\t{Position = UDim2.new(1, 20, 1, -90)}\n\t\t)\n\t\ttweenOut:Play()\n\t\ttweenOut.Completed:Connect(function()\n\t\t\tscreenGui.Enabled = false\n\t\tend)\n\tend)\nend\npointsEvent.OnClientEvent:Connect(showNotification)",
-    daystreak: `-- Daily Streak System by RealX\nlocal DataStoreService = game:GetService("DataStoreService")\nlocal Players = game:GetService("Players")\nlocal streakStore = DataStoreService:GetDataStore("DayStreak_v2")\nlocal SECONDS_IN_DAY = 86400\n\nlocal function loadStreak(userId)\n\tlocal success, data = pcall(function()\n\t\treturn streakStore:GetAsync(userId)\n\tend)\n\tif not success or not data then\n\t\treturn 1, 0\n\tend\n\treturn data.streak or 1, data.lastLogin or 0\nend\n\nlocal function saveStreak(userId, streak, lastLogin)\n\tlocal success, err = pcall(function()\n\t\tstreakStore:UpdateAsync(userId, function()\n\t\t\treturn { streak = streak, lastLogin = lastLogin }\n\t\tend)\n\tend)\n\tif not success then\n\t\twarn("[DayStreak] Failed to save data for", userId, ":", err)\n\tend\nend\n\nlocal function calculateStreak(streak, lastLogin)\n\tlocal now = os.time()\n\tlocal diff = now - lastLogin\n\tif lastLogin == 0 then\n\t\treturn 1, now\n\telseif diff >= SECONDS_IN_DAY and diff < SECONDS_IN_DAY * 2 then\n\t\treturn streak + 1, now\n\telseif diff >= SECONDS_IN_DAY * 2 then\n\t\treturn 1, now\n\telse\n\t\treturn streak, lastLogin\n\tend\nend\n\nlocal function setupLeaderstats(player, streak)\n\tlocal leaderstats = Instance.new("Folder")\n\tleaderstats.Name = "leaderstats"\n\tleaderstats.Parent = player\n\tlocal streakValue = Instance.new("IntValue")\n\tstreakValue.Name = "Daily Streak"\n\tstreakValue.Value = streak\n\tstreakValue.Parent = leaderstats\n\treturn streakValue\nend\n\nlocal function setupBillboard(player, streak)\n\tlocal character = player.Character or player.CharacterAdded:Wait()\n\tlocal head = character:WaitForChild("Head", 10)\n\tif not head then return end\n\tlocal playerGui = player:WaitForChild("PlayerGui", 10)\n\tif not playerGui then return end\n\tlocal old = playerGui:FindFirstChild("StreakBillboard")\n\tif old then old:Destroy() end\n\tlocal attachment = Instance.new("Attachment")\n\tattachment.Position = Vector3.new(0, 2.5, 0)\n\tattachment.Parent = head\n\tlocal billboard = Instance.new("BillboardGui")\n\tbillboard.Name = "StreakBillboard"\n\tbillboard.Size = UDim2.new(1.5, 0, 1.5, 0)\n\tbillboard.AlwaysOnTop = false\n\tbillboard.MaxDistance = 30\n\tbillboard.Adornee = attachment\n\tbillboard.Parent = playerGui\n\tlocal fireLabel = Instance.new("TextLabel")\n\tfireLabel.Size = UDim2.new(1, 0, 1, 0)\n\tfireLabel.BackgroundTransparency = 1\n\tfireLabel.TextScaled = true\n\tfireLabel.Font = Enum.Font.SourceSansBold\n\tfireLabel.Text = "🔥"\n\tfireLabel.Parent = billboard\n\tlocal numLabel = Instance.new("TextLabel")\n\tnumLabel.Size = UDim2.new(0.5, 0, 0.5, 0)\n\tnumLabel.Position = UDim2.new(0.25, 0, 0.2, 0)\n\tnumLabel.BackgroundTransparency = 1\n\tnumLabel.TextScaled = true\n\tnumLabel.Font = Enum.Font.GothamBold\n\tnumLabel.TextColor3 = Color3.fromRGB(255, 255, 255)\n\tnumLabel.TextStrokeTransparency = 0\n\tnumLabel.Text = tostring(streak)\n\tnumLabel.ZIndex = 2\n\tnumLabel.Parent = billboard\nend\n\nPlayers.PlayerAdded:Connect(function(player)\n\tlocal streak, lastLogin = loadStreak(player.UserId)\n\tlocal newStreak, newLastLogin = calculateStreak(streak, lastLogin)\n\tsaveStreak(player.UserId, newStreak, newLastLogin)\n\tlocal streakValue = setupLeaderstats(player, newStreak)\n\tlocal function onCharacterAdded()\n\t\tsetupBillboard(player, newStreak)\n\tend\n\tplayer.CharacterAdded:Connect(onCharacterAdded)\n\tif player.Character then\n\t\tonCharacterAdded()\n\tend\nend)`
+    daystreak: `-- Daily Streak System by RealX\nlocal DataStoreService = game:GetService("DataStoreService")\nlocal Players = game:GetService("Players")\nlocal streakStore = DataStoreService:GetDataStore("DayStreak_v2")\nlocal SECONDS_IN_DAY = 86400\n\nlocal function loadStreak(userId)\n\tlocal success, data = pcall(function()\n\t\treturn streakStore:GetAsync(userId)\n\tend)\n\tif not success or not data then return 1, 0 end\n\treturn data.streak or 1, data.lastLogin or 0\nend`,
+    flagscript: `local Players = game:GetService("Players")\nlocal LocalizationService = game:GetService("LocalizationService")\nlocal RunService = game:GetService("RunService")\nlocal IS_STUDIO = RunService:IsStudio()\n\nlocal Flags = {\n\t["us"] = "🇺🇸", ["ca"] = "🇨🇦", ["mx"] = "🇲🇽",\n\t["gt"] = "🇬🇹", ["bz"] = "🇧🇿", ["hn"] = "🇭🇳", ["sv"] = "🇸🇻",\n\t["ni"] = "🇳🇮", ["cr"] = "🇨🇷", ["pa"] = "🇵🇦",\n\t["cu"] = "🇨🇺", ["jm"] = "🇯🇲", ["ht"] = "🇭🇹", ["do"] = "🇩🇴",\n\t["pr"] = "🇵🇷", ["tt"] = "🇹🇹", ["bb"] = "🇧🇧", ["lc"] = "🇱🇨",\n\t["vc"] = "🇻🇨", ["gd"] = "🇬🇩", ["ag"] = "🇦🇬", ["dm"] = "🇩🇲",\n\t["kn"] = "🇰🇳", ["bs"] = "🇧🇸",\n\t["br"] = "🇧🇷", ["ar"] = "🇦🇷", ["cl"] = "🇨🇱", ["co"] = "🇨🇴",\n\t["pe"] = "🇵🇪", ["ve"] = "🇻🇪", ["ec"] = "🇪🇨", ["bo"] = "🇧🇴",\n\t["py"] = "🇵🇾", ["uy"] = "🇺🇾", ["gy"] = "🇬🇾", ["sr"] = "🇸🇷",\n\t["gb"] = "🇬🇧", ["ie"] = "🇮🇪", ["fr"] = "🇫🇷", ["de"] = "🇩🇪",\n\t["at"] = "🇦🇹", ["ch"] = "🇨🇭", ["be"] = "🇧🇪", ["nl"] = "🇳🇱",\n\t["lu"] = "🇱🇺", ["mc"] = "🇲🇨", ["li"] = "🇱🇮", ["it"] = "🇮🇹",\n\t["es"] = "🇪🇸", ["pt"] = "🇵🇹", ["gr"] = "🇬🇷", ["mt"] = "🇲🇹",\n\t["cy"] = "🇨🇾", ["sm"] = "🇸🇲", ["va"] = "🇻🇦", ["ad"] = "🇦🇩",\n\t["dk"] = "🇩🇰", ["se"] = "🇸🇪", ["no"] = "🇳🇴", ["fi"] = "🇫🇮",\n\t["is"] = "🇮🇸", ["ee"] = "🇪🇪", ["lv"] = "🇱🇻", ["lt"] = "🇱🇹",\n\t["pl"] = "🇵🇱", ["cz"] = "🇨🇿", ["sk"] = "🇸🇰", ["hu"] = "🇭🇺",\n\t["ro"] = "🇷🇴", ["bg"] = "🇧🇬", ["si"] = "🇸🇮", ["hr"] = "🇭🇷",\n\t["rs"] = "🇷🇸", ["ba"] = "🇧🇦", ["me"] = "🇲🇪", ["mk"] = "🇲🇰",\n\t["al"] = "🇦🇱", ["xk"] = "🇽🇰", ["ru"] = "🇷🇺", ["ua"] = "🇺🇦",\n\t["by"] = "🇧🇾", ["md"] = "🇲🇩",\n\t["sa"] = "🇸🇦", ["ae"] = "🇦🇪", ["qa"] = "🇶🇦", ["kw"] = "🇰🇼",\n\t["bh"] = "🇧🇭", ["om"] = "🇴🇲", ["ye"] = "🇾🇪", ["iq"] = "🇮🇶",\n\t["ir"] = "🇮🇷", ["sy"] = "🇸🇾", ["lb"] = "🇱🇧", ["jo"] = "🇯🇴",\n\t["il"] = "🇮🇱", ["ps"] = "🇵🇸", ["tr"] = "🇹🇷",\n\t["in"] = "🇮🇳", ["pk"] = "🇵🇰", ["bd"] = "🇧🇩", ["lk"] = "🇱🇰",\n\t["np"] = "🇳🇵", ["bt"] = "🇧🇹", ["mv"] = "🇲🇻", ["af"] = "🇦🇫",\n\t["jp"] = "🇯🇵", ["kr"] = "🇰🇷", ["cn"] = "🇨🇳", ["hk"] = "🇭🇰",\n\t["tw"] = "🇹🇼", ["mn"] = "🇲🇳", ["kp"] = "🇰🇵",\n\t["sg"] = "🇸🇬", ["th"] = "🇹🇭", ["ph"] = "🇵🇭", ["id"] = "🇮🇩",\n\t["my"] = "🇲🇾", ["vn"] = "🇻🇳", ["mm"] = "🇲🇲", ["kh"] = "🇰🇭",\n\t["la"] = "🇱🇦", ["bn"] = "🇧🇳", ["tl"] = "🇹🇱",\n\t["am"] = "🇦🇲", ["az"] = "🇦🇿", ["ge"] = "🇬🇪",\n\t["kz"] = "🇰🇿", ["uz"] = "🇺🇿", ["tm"] = "🇹🇲",\n\t["kg"] = "🇰🇬", ["tj"] = "🇹🇯",\n\t["eg"] = "🇪🇬", ["ly"] = "🇱🇾", ["tn"] = "🇹🇳", ["dz"] = "🇩🇿",\n\t["ma"] = "🇲🇦", ["sd"] = "🇸🇩", ["mr"] = "🇲🇷",\n\t["ng"] = "🇳🇬", ["za"] = "🇿🇦", ["ke"] = "🇰🇪", ["et"] = "🇪🇹",\n\t["gh"] = "🇬🇭", ["tz"] = "🇹🇿", ["ug"] = "🇺🇬", ["ao"] = "🇦🇴",\n\t["mz"] = "🇲🇿", ["zm"] = "🇿🇲", ["zw"] = "🇿🇼", ["bw"] = "🇧🇼",\n\t["na"] = "🇳🇦", ["ls"] = "🇱🇸", ["sz"] = "🇸🇿", ["mg"] = "🇲🇬",\n\t["rw"] = "🇷🇼", ["bi"] = "🇧🇮", ["ss"] = "🇸🇸", ["cd"] = "🇨🇩",\n\t["cg"] = "🇨🇬", ["cm"] = "🇨🇲", ["cf"] = "🇨🇫", ["td"] = "🇹🇩",\n\t["ne"] = "🇳🇪", ["ml"] = "🇲🇱", ["bf"] = "🇧🇫", ["sn"] = "🇸🇳",\n\t["gm"] = "🇬🇲", ["gn"] = "🇬🇳", ["gw"] = "🇬🇼", ["sl"] = "🇸🇱",\n\t["lr"] = "🇱🇷", ["ci"] = "🇨🇮", ["tg"] = "🇹🇬", ["bj"] = "🇧🇯",\n\t["ga"] = "🇬🇦", ["gq"] = "🇬🇶", ["st"] = "🇸🇹", ["cv"] = "🇨🇻",\n\t["dj"] = "🇩🇯", ["er"] = "🇪🇷", ["so"] = "🇸🇴", ["km"] = "🇰🇲",\n\t["sc"] = "🇸🇨", ["mu"] = "🇲🇺", ["mw"] = "🇲🇼",\n\t["au"] = "🇦🇺", ["nz"] = "🇳🇿", ["fj"] = "🇫🇯", ["pg"] = "🇵🇬",\n\t["sb"] = "🇸🇧", ["vu"] = "🇻🇺", ["ws"] = "🇼🇸", ["to"] = "🇹🇴",\n}\n\nlocal function addFlag(player, character)\n\tlocal success, result = pcall(function()\n\t\tlocal countryShort\n\t\tif IS_STUDIO then\n\t\t\tcountryShort = "sa"\n\t\telse\n\t\t\tlocal locale = LocalizationService:GetCountryRegionForPlayerAsync(player)\n\t\t\tcountryShort = locale:split("-")[1]:lower()\n\t\tend\n\t\tlocal flag = Flags[countryShort] or "🏳️"\n\t\tlocal head = character:WaitForChild("Head", 10)\n\t\tif not head then return end\n\t\tlocal old = character:FindFirstChild("FlagDisplay")\n\t\tif old then old:Destroy() end\n\t\tlocal billboard = Instance.new("BillboardGui")\n\t\tbillboard.Name = "FlagDisplay"\n\t\tbillboard.Size = UDim2.new(0, 160, 0, 70)\n\t\tbillboard.StudsOffset = Vector3.new(0, 3.2, 0)\n\t\tbillboard.Adornee = head\n\t\tbillboard.AlwaysOnTop = false\n\t\tbillboard.MaxDistance = 50\n\t\tbillboard.Parent = character\n\t\tlocal mainFrame = Instance.new("Frame")\n\t\tmainFrame.Size = UDim2.new(1, 0, 1, 0)\n\t\tmainFrame.BackgroundTransparency = 1\n\t\tmainFrame.Parent = billboard\n\t\tlocal flagLabel = Instance.new("TextLabel")\n\t\tflagLabel.Size = UDim2.new(0.3, 0, 1, 0)\n\t\tflagLabel.Position = UDim2.new(0, 0, 0, 0)\n\t\tflagLabel.BackgroundTransparency = 1\n\t\tflagLabel.TextScaled = true\n\t\tflagLabel.Font = Enum.Font.SourceSansBold\n\t\tflagLabel.Text = flag\n\t\tflagLabel.Parent = mainFrame\n\t\tlocal divider = Instance.new("Frame")\n\t\tdivider.Size = UDim2.new(0, 2, 0.6, 0)\n\t\tdivider.Position = UDim2.new(0.33, 0, 0.2, 0)\n\t\tdivider.BackgroundColor3 = Color3.fromRGB(255, 255, 255)\n\t\tdivider.BackgroundTransparency = 0.5\n\t\tdivider.BorderSizePixel = 0\n\t\tdivider.Parent = mainFrame\n\t\tlocal nameLabel = Instance.new("TextLabel")\n\t\tnameLabel.Size = UDim2.new(0.63, 0, 1, 0)\n\t\tnameLabel.Position = UDim2.new(0.36, 0, 0, 0)\n\t\tnameLabel.BackgroundTransparency = 1\n\t\tnameLabel.TextScaled = true\n\t\tnameLabel.Font = Enum.Font.GothamBold\n\t\tnameLabel.Text = player.DisplayName\n\t\tnameLabel.TextColor3 = Color3.fromRGB(255, 255, 255)\n\t\tnameLabel.TextStrokeTransparency = 0.4\n\t\tnameLabel.TextStrokeColor3 = Color3.fromRGB(0, 0, 0)\n\t\tnameLabel.Parent = mainFrame\n\tend)\n\tif not success then\n\t\twarn("FlagScript Error: " .. tostring(result))\n\tend\nend\n\nPlayers.PlayerAdded:Connect(function(player)\n\tplayer.CharacterAdded:Connect(function(character)\n\t\taddFlag(player, character)\n\tend)\nend)\n\nfor _, player in ipairs(Players:GetPlayers()) do\n\tif player.Character then\n\t\taddFlag(player, player.Character)\n\tend\nend`
   };
 
   let currentTab = 'local';
@@ -945,213 +981,201 @@ killFeedRemote.OnClientEvent:<span class="fn">Connect</span>(<span class="kw">fu
     let code;
     if (key === 'sizechange') {
       code = tab === 'local' ? scripts.sizechange_local : scripts.sizechange_server;
-      document.getElementById('tab-local').innerHTML = '📱 LocalScript (GUI)';
-      document.getElementById('tab-server').innerHTML = '🖥️ ServerScript';
     } else if (key === 'killfeed') {
       code = tab === 'local' ? scripts.killfeed_feed : scripts.killfeed_damage;
-      document.getElementById('tab-local').innerHTML = '☠️ KillFeed';
-      document.getElementById('tab-server').innerHTML = '💢 أرقام الضرر';
     } else if (key === 'pointssystem') {
       code = tab === 'local' ? scripts.pointssystem_local : scripts.pointssystem_main;
-      document.getElementById('tab-local').innerHTML = '📱 LocalScript (GUI)';
-      document.getElementById('tab-server').innerHTML = '🖥️ MainScript (Server)';
     }
     document.getElementById('modal-code').textContent = code;
     document.getElementById('tab-local').classList.toggle('active', tab === 'local');
     document.getElementById('tab-server').classList.toggle('active', tab === 'server');
   }
 
-  // ======= GUIDES =======
   const guides = {};
 
   guides.speed = {
     icon: '⚡', title: 'نظام السرعة الزائدة', subtitle: 'Script داخل Part في Workspace',
     sections: [
-      { head: '📦 أين تحط السكربت؟', content: `<div class="guide-steps"><div class="guide-step"><div class="step-num">1</div><div class="step-content"><div class="step-title">أنشئ Part في Workspace</div><div class="step-desc">اضغط Model → Part</div></div></div><div class="guide-step"><div class="step-num">2</div><div class="step-content"><div class="step-title">أضف Script داخل الـ Part</div><div class="step-desc">كليك يمين على الـ Part ← Insert Object ← Script</div><span class="step-code">Workspace → Part → Script ✅</span></div></div></div>` },
+      { head: '📦 أين تحط السكربت؟', content: `<div class="guide-steps"><div class="guide-step"><div class="step-num">1</div><div class="step-content"><div class="step-title">أنشئ Part في Workspace</div></div></div><div class="guide-step"><div class="step-num">2</div><div class="step-content"><div class="step-title">أضف Script داخل الـ Part</div><span class="step-code">Workspace → Part → Script ✅</span></div></div></div>` },
       { head: '🏷️ نوع السكربت', content: `<div class="guide-tags"><span class="guide-tag type-server">Server Script</span><span class="guide-tag type-free">مجاني</span></div>` }
     ]
   };
-
   guides.daynight = {
     icon: '🌙', title: 'دورة الليل والنهار', subtitle: 'Script في ServerScriptService',
     sections: [
-      { head: '📦 أين تحط السكربت؟', content: `<div class="guide-steps"><div class="guide-step"><div class="step-num">1</div><div class="step-content"><div class="step-title">روح ServerScriptService</div><div class="step-desc">Explorer → ServerScriptService → Insert Object → Script</div><span class="step-code">ServerScriptService → Script ✅</span></div></div></div>` },
+      { head: '📦 أين تحط السكربت؟', content: `<div class="guide-steps"><div class="guide-step"><div class="step-num">1</div><div class="step-content"><div class="step-title">ServerScriptService → Script</div><span class="step-code">ServerScriptService → Script ✅</span></div></div></div>` },
       { head: '🏷️ نوع السكربت', content: `<div class="guide-tags"><span class="guide-tag type-server">Server Script</span><span class="guide-tag type-free">مجاني</span></div>` }
     ]
   };
-
   guides.kill = {
     icon: '💀', title: 'طابوق القتل', subtitle: 'Script داخل Part في Workspace',
     sections: [
-      { head: '📦 أين تحط السكربت؟', content: `<div class="guide-steps"><div class="guide-step"><div class="step-num">1</div><div class="step-content"><div class="step-title">أنشئ Part وأضف Script داخله</div><div class="step-desc">كليك يمين → Insert Object → Script</div><span class="step-code">Workspace → KillBrick → Script ✅</span></div></div></div>` },
+      { head: '📦 أين تحط السكربت؟', content: `<div class="guide-steps"><div class="guide-step"><div class="step-num">1</div><div class="step-content"><div class="step-title">أنشئ Part وأضف Script داخله</div><span class="step-code">Workspace → KillBrick → Script ✅</span></div></div></div>` },
       { head: '🏷️ نوع السكربت', content: `<div class="guide-tags"><span class="guide-tag type-server">Server Script</span><span class="guide-tag type-free">مجاني</span></div>` }
     ]
   };
-
   guides.leaderboard = {
     icon: '🏆', title: 'نظام النقاط', subtitle: 'Script في ServerScriptService',
     sections: [
-      { head: '📦 أين تحط السكربت؟', content: `<div class="guide-steps"><div class="guide-step"><div class="step-num">1</div><div class="step-content"><div class="step-title">روح ServerScriptService → أضف Script</div><div class="step-desc">كليك يمين ← Insert Object ← Script</div><span class="step-code">ServerScriptService → LeaderboardScript ✅</span></div></div></div>` },
+      { head: '📦 أين تحط السكربت؟', content: `<div class="guide-steps"><div class="guide-step"><div class="step-num">1</div><div class="step-content"><div class="step-title">ServerScriptService → Script</div><span class="step-code">ServerScriptService → LeaderboardScript ✅</span></div></div></div>` },
       { head: '🏷️ نوع السكربت', content: `<div class="guide-tags"><span class="guide-tag type-server">Server Script</span><span class="guide-tag type-free">مجاني</span></div>` }
     ]
   };
-
   guides.npc = {
     icon: '🤖', title: 'NPC — ذكاء اصطناعي', subtitle: 'Script داخل Model في Workspace',
     sections: [
-      { head: '📦 أين تحط السكربت؟', content: `<div class="guide-steps"><div class="guide-step"><div class="step-num">1</div><div class="step-content"><div class="step-title">أنشئ NPC Model في Workspace</div><div class="step-desc">يحتاج: HumanoidRootPart, Humanoid, Head</div></div></div><div class="guide-step"><div class="step-num">2</div><div class="step-content"><div class="step-title">أضف Script داخل الـ Model</div><span class="step-code">Workspace → NPC_Model → Script ✅</span></div></div></div>` },
-      { head: '🏷️ نوع السكربت', content: `<div class="guide-tags"><span class="guide-tag type-server">Server Script</span><span class="guide-tag type-module">R15</span><span class="guide-tag type-free">مجاني</span></div>` }
+      { head: '📦 أين تحط السكربت؟', content: `<div class="guide-steps"><div class="guide-step"><div class="step-num">1</div><div class="step-content"><div class="step-title">Workspace → NPC_Model → Script</div><span class="step-code">Workspace → NPC_Model → Script ✅</span></div></div></div>` },
+      { head: '🏷️ نوع السكربت', content: `<div class="guide-tags"><span class="guide-tag type-server">Server Script</span><span class="guide-tag type-free">مجاني</span></div>` }
     ]
   };
-
   guides.sizechange = {
     icon: '📏', title: 'مغير الحجم', subtitle: 'LocalScript + ServerScript',
     sections: [
-      { head: '📦 الملفات المطلوبة', content: `<div class="guide-tip info"><span class="guide-tip-icon">ℹ️</span>هذا السكربت مكوّن من <b>سكربتين</b> — لازم تحط الاثنين</div>` },
-      { head: '🖥️ ServerScript في ServerScriptService', content: `<div class="guide-steps"><div class="guide-step"><div class="step-num">1</div><div class="step-content"><div class="step-title">روح ServerScriptService</div><div class="step-desc">Insert Object → Script ← الصق ServerScript</div><span class="step-code">ServerScriptService → Script ✅</span></div></div></div>` },
-      { head: '📱 LocalScript في StarterPlayerScripts', content: `<div class="guide-steps"><div class="guide-step"><div class="step-num">1</div><div class="step-content"><div class="step-title">StarterPlayer → StarterPlayerScripts → LocalScript</div><div class="step-desc">الصق كود الـ GUI</div><span class="step-code">StarterPlayerScripts → LocalScript ✅</span></div></div></div>` },
+      { head: '📦 الملفات المطلوبة', content: `<div class="guide-tip info"><span class="guide-tip-icon">ℹ️</span>هذا السكربت مكوّن من <b>سكربتين</b></div>` },
+      { head: '🖥️ ServerScript', content: `<div class="guide-steps"><div class="guide-step"><div class="step-num">1</div><div class="step-content"><span class="step-code">ServerScriptService → Script ✅</span></div></div></div>` },
+      { head: '📱 LocalScript', content: `<div class="guide-steps"><div class="guide-step"><div class="step-num">1</div><div class="step-content"><span class="step-code">StarterPlayerScripts → LocalScript ✅</span></div></div></div>` },
       { head: '🏷️ نوع السكربت', content: `<div class="guide-tags"><span class="guide-tag type-local">LocalScript</span><span class="guide-tag type-server">ServerScript</span><span class="guide-tag type-free">مجاني</span></div>` }
     ]
   };
-
   guides.gravity = {
     icon: '🌍', title: 'Gravity Controller', subtitle: 'LocalScript في StarterPlayerScripts',
     sections: [
-      { head: '📦 أين تحط السكربت؟', content: `<div class="guide-steps"><div class="guide-step"><div class="step-num">1</div><div class="step-content"><div class="step-title">StarterPlayer → StarterPlayerScripts → LocalScript</div><span class="step-code">StarterPlayerScripts → LocalScript ✅</span></div></div></div>` },
-      { head: '🎮 كيف يشتغل؟', content: `<div class="guide-steps"><div class="guide-step"><div class="step-num">←</div><div class="step-content"><div class="step-title">يمين = جاذبية أقل</div></div></div><div class="guide-step"><div class="step-num">→</div><div class="step-content"><div class="step-title">يسار = جاذبية أكثر</div></div></div></div>` },
+      { head: '📦 أين تحط السكربت؟', content: `<div class="guide-steps"><div class="guide-step"><div class="step-num">1</div><div class="step-content"><span class="step-code">StarterPlayerScripts → LocalScript ✅</span></div></div></div>` },
       { head: '🏷️ نوع السكربت', content: `<div class="guide-tags"><span class="guide-tag type-local">LocalScript</span><span class="guide-tag type-free">مجاني</span></div>` }
     ]
   };
-
   guides.killfeed = {
     icon: '☠', title: 'KillFeed + أرقام الضرر', subtitle: 'LocalScript في StarterCharacterScripts',
     sections: [
-      { head: '📦 كيف تحطه؟', content: `<div class="guide-steps"><div class="guide-step"><div class="step-num">1</div><div class="step-content"><div class="step-title">أنشئ RemoteEvent في ReplicatedStorage</div><span class="step-code">KillFeedEvent</span></div></div><div class="guide-step"><div class="step-num">2</div><div class="step-content"><div class="step-title">LocalScript في StarterCharacterScripts</div><span class="step-code">StarterCharacterScripts → LocalScript ✅</span></div></div></div>` },
+      { head: '📦 كيف تحطه؟', content: `<div class="guide-steps"><div class="guide-step"><div class="step-num">1</div><div class="step-content"><div class="step-title">RemoteEvent في ReplicatedStorage</div><span class="step-code">KillFeedEvent</span></div></div><div class="guide-step"><div class="step-num">2</div><div class="step-content"><span class="step-code">StarterCharacterScripts → LocalScript ✅</span></div></div></div>` },
       { head: '🏷️ نوع السكربت', content: `<div class="guide-tags"><span class="guide-tag type-local">LocalScript</span><span class="guide-tag type-free">مجاني</span></div>` }
     ]
   };
-
   guides.pointssystem = {
-    icon: '🏆',
-    title: 'نظام النقاط الكامل',
-    subtitle: 'MainScript + LocalScript — DataStore + LeaderStats + GUI إشعار',
+    icon: '🏆', title: 'نظام النقاط الكامل', subtitle: 'MainScript + LocalScript',
     sections: [
-      { head: '📦 وش يسوي هذا النظام؟', content: `<div class="guide-steps"><div class="guide-step"><div class="step-num">📊</div><div class="step-content"><div class="step-title">LeaderBoard تلقائي</div><div class="step-desc">يضيف لوحة النقاط جانب الشاشة لكل لاعب تلقائياً عند الدخول</div></div></div><div class="guide-step"><div class="step-num">💾</div><div class="step-content"><div class="step-title">DataStore — حفظ النقاط</div><div class="step-desc">نقاط اللاعب تُحفظ تلقائياً وتُحمَّل عند رجوعه للعبة</div></div></div><div class="guide-step"><div class="step-num">🔔</div><div class="step-content"><div class="step-title">إشعار GUI أسفل اليمين</div><div class="step-desc">كل مرة يحصل اللاعب على نقاط يطلع إشعار</div></div></div></div>` },
-      { head: '🖥️ MainScript — في ServerScriptService', content: `<div class="guide-steps"><div class="guide-step"><div class="step-num">1</div><div class="step-content"><div class="step-title">ServerScriptService → Script جديد</div><span class="step-code">ServerScriptService → MainScript ✅</span></div></div><div class="guide-step"><div class="step-num">2</div><div class="step-content"><div class="step-title">فعّل API Services</div><div class="step-desc">Game Settings → Security → Enable Studio Access to API Services ✅</div></div></div></div>` },
-      { head: '📱 LocalScript — في StarterPlayerScripts', content: `<div class="guide-steps"><div class="guide-step"><div class="step-num">1</div><div class="step-content"><div class="step-title">StarterPlayerScripts → LocalScript جديد</div><span class="step-code">StarterPlayerScripts → LocalScript ✅</span></div></div></div>` },
-      { head: '⚙️ إعطاء نقاط من سكربت ثاني', content: `<div class="guide-steps"><div class="guide-step"><div class="step-num">💡</div><div class="step-content"><div class="step-title">استخدم _G.GivePoints من أي Script</div><span class="step-code">_G.GivePoints(player, 50)</span></div></div></div>` },
-      { head: '🏷️ تفاصيل', content: `<div class="guide-tags"><span class="guide-tag type-server">ServerScript</span><span class="guide-tag type-local">LocalScript</span><span class="guide-tag type-module">DataStore</span><span class="guide-tag type-free">مجاني 100%</span></div>` }
+      { head: '🖥️ MainScript', content: `<div class="guide-steps"><div class="guide-step"><div class="step-num">1</div><div class="step-content"><span class="step-code">ServerScriptService → MainScript ✅</span></div></div></div>` },
+      { head: '📱 LocalScript', content: `<div class="guide-steps"><div class="guide-step"><div class="step-num">1</div><div class="step-content"><span class="step-code">StarterPlayerScripts → LocalScript ✅</span></div></div></div>` },
+      { head: '⚙️ إعطاء نقاط', content: `<div class="guide-steps"><div class="guide-step"><div class="step-num">💡</div><div class="step-content"><span class="step-code">_G.GivePoints(player, 50)</span></div></div></div>` },
+      { head: '🏷️', content: `<div class="guide-tags"><span class="guide-tag type-server">ServerScript</span><span class="guide-tag type-local">LocalScript</span><span class="guide-tag type-module">DataStore</span><span class="guide-tag type-free">مجاني</span></div>` }
+    ]
+  };
+  guides.daystreak = {
+    icon: '🔥', title: 'نظام السترييك اليومي', subtitle: 'Script في ServerScriptService',
+    sections: [
+      { head: '📦 وش يسوي؟', content: `<div class="guide-steps"><div class="guide-step"><div class="step-num">🔥</div><div class="step-content"><div class="step-title">Billboard فوق الرأس</div></div></div><div class="guide-step"><div class="step-num">💾</div><div class="step-content"><div class="step-title">DataStore — حفظ السترييك</div></div></div><div class="guide-step"><div class="step-num">📊</div><div class="step-content"><div class="step-title">LeaderStats تلقائي</div></div></div></div>` },
+      { head: '📍 أين تحطه؟', content: `<div class="guide-steps"><div class="guide-step"><div class="step-num">1</div><div class="step-content"><span class="step-code">ServerScriptService → Script ✅</span></div></div></div>` },
+      { head: '💡 ملاحظات', content: `<div class="guide-tip warn"><span class="guide-tip-icon">⚠️</span>فعّل <b>Enable Studio Access to API Services</b></div>` },
+      { head: '🏷️', content: `<div class="guide-tags"><span class="guide-tag type-server">Server Script</span><span class="guide-tag type-module">DataStore</span><span class="guide-tag type-free">مجاني</span></div>` }
     ]
   };
 
-  // ✅ NEW: DayStreak Guide
-  guides.daystreak = {
-    icon: '🔥',
-    title: 'نظام السترييك اليومي',
-    subtitle: 'Script في ServerScriptService — DataStore + LeaderStats + Billboard',
+  // ✅ NEW: Flag Script Guide
+  guides.flagscript = {
+    icon: '🌍',
+    title: 'علم الدولة فوق الرأس',
+    subtitle: 'Script في ServerScriptService — 195+ دولة تلقائياً',
     sections: [
       {
         head: '📦 وش يسوي هذا السكربت؟',
         content: `<div class="guide-steps">
-          <div class="guide-step"><div class="step-num">🔥</div><div class="step-content"><div class="step-title">Billboard فوق الرأس</div><div class="step-desc">يعرض ايموجي 🔥 مع رقم السترييك فوقه مباشرة، مرئي لكل اللاعبين القريبين (30 studs)</div></div></div>
-          <div class="guide-step"><div class="step-num">💾</div><div class="step-content"><div class="step-title">DataStore — حفظ السترييك</div><div class="step-desc">يحفظ السترييك ووقت آخر دخول تلقائياً — ما يضيع عند الخروج</div></div></div>
-          <div class="guide-step"><div class="step-num">📊</div><div class="step-content"><div class="step-title">LeaderStats</div><div class="step-desc">يضيف "Daily Streak" في لوحة اللاعبين جانب الشاشة</div></div></div>
-          <div class="guide-step"><div class="step-num">📅</div><div class="step-content"><div class="step-title">منطق السترييك التلقائي</div><div class="step-desc">دخل بعد 24-48 ساعة ← سترييك +1 | دخل بعد أكثر من 48 ساعة ← يرجع لـ 1 | دخل نفس اليوم ← ما يتغير</div></div></div>
+          <div class="guide-step"><div class="step-num">🚩</div><div class="step-content"><div class="step-title">علم الدولة فوق رأس اللاعب</div><div class="step-desc">يكشف بلد اللاعب تلقائياً ويحط علمه فوق رأسه</div></div></div>
+          <div class="guide-step"><div class="step-num">👤</div><div class="step-content"><div class="step-title">اسم اللاعب بجانب العلم</div><div class="step-desc">DisplayName بخط Gotham Bold مع خط فاصل أبيض</div></div></div>
+          <div class="guide-step"><div class="step-num">📏</div><div class="step-content"><div class="step-title">يختفي بعد 50 stud</div><div class="step-desc">MaxDistance = 50 — ما يضغط على الأداء</div></div></div>
+          <div class="guide-step"><div class="step-num">🌍</div><div class="step-content"><div class="step-title">195+ دولة مدعومة</div><div class="step-desc">كل دول العالم موجودة — إذا ما عرف البلد يطلع 🏳️</div></div></div>
         </div>`
       },
       {
         head: '📍 أين تحط السكربت؟',
         content: `<div class="guide-steps">
-          <div class="guide-step"><div class="step-num">1</div><div class="step-content"><div class="step-title">روح ServerScriptService في Explorer</div><div class="step-desc">كليك يمين ← Insert Object ← Script</div></div></div>
-          <div class="guide-step"><div class="step-num">2</div><div class="step-content"><div class="step-title">الصق السكربت كامل</div><div class="step-desc">انسخه من زر النسخ وألصقه في الـ Script الجديد</div><span class="step-code">ServerScriptService → DayStreakScript ✅</span></div></div>
-          <div class="guide-step"><div class="step-num">3</div><div class="step-content"><div class="step-title">فعّل DataStore</div><div class="step-desc">Game Settings → Security → Enable Studio Access to API Services ✅</div></div></div>
+          <div class="guide-step"><div class="step-num">1</div><div class="step-content"><div class="step-title">روح ServerScriptService</div><div class="step-desc">Explorer → ServerScriptService → كليك يمين → Insert Object → Script</div></div></div>
+          <div class="guide-step"><div class="step-num">2</div><div class="step-content"><div class="step-title">الصق السكربت كامل واحفظ</div><span class="step-code">ServerScriptService → FlagScript ✅</span></div></div>
+        </div>`
+      },
+      {
+        head: '🧪 اختبار في Studio',
+        content: `<div class="guide-steps">
+          <div class="guide-step"><div class="step-num">⚠️</div><div class="step-content"><div class="step-title">في Studio دايمًا يطلع علم SA</div><div class="step-desc">هذا طبيعي — السكربت يستخدم "sa" كـ fallback في Studio تلقائياً</div></div></div>
+          <div class="guide-step"><div class="step-num">✅</div><div class="step-content"><div class="step-title">العلم الصحيح يطلع بعد النشر</div><div class="step-desc">Publish اللعبة وجرّبها من Roblox مباشرة</div></div></div>
+          <div class="guide-step"><div class="step-num">💡</div><div class="step-content"><div class="step-title">لتغيير دولة الاختبار في Studio</div><span class="step-code">countryShort = "us"  -- غيّرها لأي كود</span></div></div>
         </div>`
       },
       {
         head: '⚙️ إعدادات قابلة للتغيير',
         content: `<div class="guide-steps">
-          <div class="guide-step"><div class="step-num">⏱</div><div class="step-content"><div class="step-title">SECONDS_IN_DAY = 86400</div><div class="step-desc">الوقت المطلوب بين الدخولين — 86400 = 24 ساعة</div><span class="step-code">local SECONDS_IN_DAY = 86400</span></div></div>
-          <div class="guide-step"><div class="step-num">📏</div><div class="step-content"><div class="step-title">MaxDistance = 30</div><div class="step-desc">المسافة اللي يظهر فيها البيلبورد للاعبين الثانيين</div></div></div>
+          <div class="guide-step"><div class="step-num">📏</div><div class="step-content"><div class="step-title">MaxDistance = 50</div><div class="step-desc">المسافة اللي يظهر فيها العلم — غيّره حسب لعبتك</div><span class="step-code">billboard.MaxDistance = 50</span></div></div>
+          <div class="guide-step"><div class="step-num">📐</div><div class="step-content"><div class="step-title">حجم الـ Billboard</div><span class="step-code">billboard.Size = UDim2.new(0, 160, 0, 70)</span></div></div>
+          <div class="guide-step"><div class="step-num">↕️</div><div class="step-content"><div class="step-title">ارتفاع العلم فوق الرأس</div><span class="step-code">billboard.StudsOffset = Vector3.new(0, 3.2, 0)</span></div></div>
         </div>`
       },
       {
         head: '💡 ملاحظات مهمة',
-        content: `<div class="guide-tip warn"><span class="guide-tip-icon">⚠️</span>لازم تفعّل <b>Enable Studio Access to API Services</b> عشان DataStore يشتغل في Studio</div><br>
-        <div class="guide-tip success" style="margin-top:8px;"><span class="guide-tip-icon">✅</span>البيلبورد يتحدث تلقائياً عند كل respawn للاعب</div><br>
-        <div class="guide-tip info" style="margin-top:8px;"><span class="guide-tip-icon">ℹ️</span>السكربت server-only — ما يحتاج LocalScript</div>`
+        content: `<div class="guide-tip success"><span class="guide-tip-icon">✅</span>يشتغل مع اللاعبين الموجودين قبل تشغيل السكربت</div><br>
+        <div class="guide-tip info" style="margin-top:8px;"><span class="guide-tip-icon">ℹ️</span>السكربت Server-only — ما يحتاج LocalScript</div><br>
+        <div class="guide-tip warn" style="margin-top:8px;"><span class="guide-tip-icon">⚠️</span>GetCountryRegionForPlayerAsync قد تأخذ ثانية — هذا طبيعي</div>`
       },
       {
         head: '🏷️ تفاصيل',
-        content: `<div class="guide-tags"><span class="guide-tag type-server">Server Script</span><span class="guide-tag type-module">DataStore</span><span class="guide-tag type-free">مجاني 100%</span></div>`
+        content: `<div class="guide-tags"><span class="guide-tag type-server">Server Script</span><span class="guide-tag type-module">195+ دولة</span><span class="guide-tag type-free">مجاني 100%</span></div>`
       }
     ]
   };
 
-  // Model Guides
   guides.model_timer = {
-    icon: '⏱️', title: 'Simple Timer', subtitle: 'تايمر جاهز للاستخدام الفوري',
+    icon: '⏱️', title: 'Simple Timer', subtitle: 'تايمر جاهز',
     sections: [
-      { head: '🚀 كيف أستخدمه؟', content: `<div class="guide-steps"><div class="guide-step"><div class="step-num">1</div><div class="step-content"><div class="step-title">احصل عليه من Roblox</div><div class="step-desc">Toolbox → Inventory → My Models</div></div></div><div class="guide-step"><div class="step-num">2</div><div class="step-content"><div class="step-title">اسحبه في الـ Workspace</div></div></div></div>` },
-      { head: '⚙️ إعدادات مهمة', content: `<div class="guide-steps"><div class="guide-step"><div class="step-num">1</div><div class="step-content"><div class="step-title">فعّل Allow HTTP Requests</div><span class="step-code">Game Settings → Security → Allow HTTP Requests ✅</span></div></div><div class="guide-step"><div class="step-num">2</div><div class="step-content"><div class="step-title">فعّل Enable Studio Access to API Services</div><span class="step-code">Enable Studio Access to API Services ✅</span></div></div></div>` },
-      { head: '🏷️', content: `<div class="guide-tags"><span class="guide-tag type-local">GUI</span><span class="guide-tag type-server">ServerScript</span><span class="guide-tag type-free">مجاني</span></div>` }
+      { head: '🚀 كيف أستخدمه؟', content: `<div class="guide-steps"><div class="guide-step"><div class="step-num">1</div><div class="step-content"><div class="step-title">Toolbox → My Models → اسحب في Workspace</div></div></div></div>` },
+      { head: '🏷️', content: `<div class="guide-tags"><span class="guide-tag type-free">مجاني</span></div>` }
     ]
   };
-
   guides.model_hotbar = {
-    icon: '🎮', title: 'CustomHotBarGui', subtitle: 'شريط أدوات UI احترافي',
+    icon: '🎮', title: 'CustomHotBarGui', subtitle: 'شريط أدوات UI',
     sections: [
-      { head: '🚀 كيف أستخدمه؟', content: `<div class="guide-steps"><div class="guide-step"><div class="step-num">1</div><div class="step-content"><div class="step-title">احصل عليه → StarterGui</div><span class="step-code">StarterGui → CustomHotBarGui ✅</span></div></div></div>` },
+      { head: '🚀 كيف أستخدمه؟', content: `<div class="guide-steps"><div class="guide-step"><div class="step-num">1</div><div class="step-content"><span class="step-code">StarterGui → CustomHotBarGui ✅</span></div></div></div>` },
       { head: '🏷️', content: `<div class="guide-tags"><span class="guide-tag type-local">StarterGui</span><span class="guide-tag type-free">مجاني</span></div>` }
     ]
   };
-
   guides.model_trees = {
-    icon: '🌲', title: 'حزمة الأشجار', subtitle: 'أشجار 3D جاهزة',
+    icon: '🌲', title: 'حزمة الأشجار', subtitle: 'أشجار 3D',
     sections: [
-      { head: '🚀 كيف أستخدمها؟', content: `<div class="guide-steps"><div class="guide-step"><div class="step-num">1</div><div class="step-content"><div class="step-title">احصل عليها → اسحب في Workspace</div></div></div></div>` },
+      { head: '🚀 كيف أستخدمها؟', content: `<div class="guide-steps"><div class="guide-step"><div class="step-num">1</div><div class="step-content"><div class="step-title">اسحب في Workspace</div></div></div></div>` },
       { head: '🏷️', content: `<div class="guide-tags"><span class="guide-tag type-module">3D Model</span><span class="guide-tag type-free">مجاني</span></div>` }
     ]
   };
-
   guides.model_dash = {
-    icon: '💨', title: 'Dash v1', subtitle: 'داش احترافي مع دعم الجوال',
+    icon: '💨', title: 'Dash v1', subtitle: 'داش مع دعم الجوال',
     sections: [
-      { head: '🎮 كيف أستخدمه؟', content: `<div class="guide-steps"><div class="guide-step"><div class="step-num">1</div><div class="step-content"><div class="step-title">StarterCharacterScripts → LocalScript</div><span class="step-code">StarterCharacterScripts → LocalScript ✅</span></div></div></div>` },
-      { head: '⌨️ أزرار', content: `<div class="guide-steps"><div class="guide-step"><div class="step-num">⌨️</div><div class="step-content"><div class="step-title">PC — زر F</div></div></div><div class="guide-step"><div class="step-num">📱</div><div class="step-content"><div class="step-title">جوال — زر DASH</div></div></div></div>` },
+      { head: '🎮 كيف أستخدمه؟', content: `<div class="guide-steps"><div class="guide-step"><div class="step-num">1</div><div class="step-content"><span class="step-code">StarterCharacterScripts → LocalScript ✅</span></div></div></div>` },
       { head: '🏷️', content: `<div class="guide-tags"><span class="guide-tag type-local">LocalScript</span><span class="guide-tag type-free">مجاني</span></div>` }
     ]
   };
-
   guides.model_weaponwheel = {
-    icon: '⚔️', title: 'WeaponWheel', subtitle: 'عجلة أسلحة مثل GTA',
+    icon: '⚔️', title: 'WeaponWheel', subtitle: 'عجلة أسلحة GTA',
     sections: [
-      { head: '🎮 كيف أستخدمه؟', content: `<div class="guide-steps"><div class="guide-step"><div class="step-num">1</div><div class="step-content"><div class="step-title">StarterPlayerScripts → Script</div><span class="step-code">StarterPlayerScripts → Script ✅</span></div></div></div>` },
+      { head: '🎮 كيف أستخدمه؟', content: `<div class="guide-steps"><div class="guide-step"><div class="step-num">1</div><div class="step-content"><span class="step-code">StarterPlayerScripts → Script ✅</span></div></div></div>` },
       { head: '🏷️', content: `<div class="guide-tags"><span class="guide-tag type-local">ScreenGui</span><span class="guide-tag type-free">مجاني</span></div>` }
     ]
   };
-
   guides.model_playertracker = {
-    icon: '🔔', title: 'Player Tracker', subtitle: 'عداد لاعبين مع إشعارات',
+    icon: '🔔', title: 'Player Tracker', subtitle: 'عداد لاعبين',
     sections: [
-      { head: '🎮 كيف أستخدمه؟', content: `<div class="guide-steps"><div class="guide-step"><div class="step-num">1</div><div class="step-content"><div class="step-title">ServerScript في ServerScriptService</div><span class="step-code">ServerScriptService → Script ✅</span></div></div></div>` },
-      { head: '🏷️', content: `<div class="guide-tags"><span class="guide-tag type-local">ScreenGui</span><span class="guide-tag type-server">ServerScript</span><span class="guide-tag type-free">مجاني</span></div>` }
+      { head: '🎮 كيف أستخدمه؟', content: `<div class="guide-steps"><div class="guide-step"><div class="step-num">1</div><div class="step-content"><span class="step-code">ServerScriptService → Script ✅</span></div></div></div>` },
+      { head: '🏷️', content: `<div class="guide-tags"><span class="guide-tag type-free">مجاني</span></div>` }
     ]
   };
-
   guides.model_roundsystem = {
     icon: '🗺️', title: 'نظام الراوند', subtitle: 'نظام راوند كامل',
     sections: [
-      { head: '🚀 كيف أستخدمه؟', content: `<div class="guide-steps"><div class="guide-step"><div class="step-num">1</div><div class="step-content"><div class="step-title">ServerStorage → Maps → Map Models</div></div></div></div>` },
-      { head: '💡 ملاحظات', content: `<div class="guide-tip warn"><span class="guide-tip-icon">⚠️</span>اسم الأرضية لازم يكون <b>Floor</b> بالضبط</div>` },
-      { head: '🏷️', content: `<div class="guide-tags"><span class="guide-tag type-server">ServerScript</span><span class="guide-tag type-local">LocalScript</span><span class="guide-tag type-free">مجاني</span></div>` }
+      { head: '🚀 كيف أستخدمه؟', content: `<div class="guide-steps"><div class="guide-step"><div class="step-num">1</div><div class="step-content"><div class="step-title">ServerStorage → Maps</div></div></div></div>` },
+      { head: '💡', content: `<div class="guide-tip warn"><span class="guide-tip-icon">⚠️</span>اسم الأرضية لازم <b>Floor</b></div>` },
+      { head: '🏷️', content: `<div class="guide-tags"><span class="guide-tag type-server">ServerScript</span><span class="guide-tag type-free">مجاني</span></div>` }
     ]
   };
-
   guides.model_speedsystem = {
-    icon: '⚡', title: 'نظام سرعه', subtitle: 'نظام سرعة احترافي جاهز للاستخدام',
+    icon: '⚡', title: 'نظام سرعه', subtitle: 'نظام سرعة احترافي',
     sections: [
-      { head: '🚀 كيف أستخدمه؟', content: `<div class="guide-steps"><div class="guide-step"><div class="step-num">1</div><div class="step-content"><div class="step-title">احصل عليه → Workspace</div><span class="step-code">Workspace → SpeedBoostPart ✅</span></div></div></div>` },
-      { head: '🏷️', content: `<div class="guide-tags"><span class="guide-tag type-server">Server Script</span><span class="guide-tag type-free">مجاني 100%</span></div>` }
+      { head: '🚀 كيف أستخدمه؟', content: `<div class="guide-steps"><div class="guide-step"><div class="step-num">1</div><div class="step-content"><span class="step-code">Workspace → SpeedBoostPart ✅</span></div></div></div>` },
+      { head: '🏷️', content: `<div class="guide-tags"><span class="guide-tag type-server">Server Script</span><span class="guide-tag type-free">مجاني</span></div>` }
     ]
   };
 
@@ -1192,7 +1216,7 @@ killFeedRemote.OnClientEvent:<span class="fn">Connect</span>(<span class="kw">fu
       if (countEl) countEl.textContent = comments.length;
       if (comments.length === 0) { list.innerHTML = `<div class="no-comments-msg"><span class="icon">💬</span>كن أول من يعلق!</div>`; return; }
       list.innerHTML = comments.map(c =>
-        `<div class="comment-item"><div class="comment-header"><span class="comment-author">${escHtml(c.name||'زائر')}</span><span class="comment-time">${timeAgo(c.ts)}</span></div><div class="comment-body">${escHtml(c.text)}</div></div>`
+        `<div class="comment-item"><div class="comment-header"><span class="comment-name">${escHtml(c.name||'زائر')}</span><span class="comment-time">${timeAgo(c.ts)}</span></div><div class="comment-text">${escHtml(c.text)}</div></div>`
       ).join('');
     }
   };
