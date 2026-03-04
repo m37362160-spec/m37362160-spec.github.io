@@ -5,7 +5,7 @@
 <meta name="google-site-verification" content="PSGdv-0zqNH0mLmx6CsGU4LjZa0w9oP97qBDpEdKJcc" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>RealX — مطور Roblox</title>
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cdefs%3E%3CradialGradient id='g' cx='50%25' cy='40%25' r='60%25'%3E%3Cstop offset='0%25' stop-color='%236b0000'/%3E%3Cstop offset='100%25' stop-color='%232a0000'/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle cx='100' cy='100' r='92' fill='url(%23g)'/%3E%3Ccircle cx='100' cy='100' r='92' fill='none' stroke='%231a0000' stroke-width='6'/%3E%3Cline x1='25' y1='165' x2='175' y2='35' stroke='%23c0a080' stroke-width='1.5' opacity='0.5'/%3E%3Cpolygon points='100,22 103,32 114,32 105,39 108,49 100,43 92,49 95,39 86,32 97,32' fill='white'/%3E%3Cpolygon points='55,45 57.5,52 65,52 59,56.5 61.5,64 55,59.5 48.5,64 51,56.5 45,52 52.5,52' fill='white'/%3E%3Cpolygon points='148,50 150.5,57 158,57 152,61.5 154.5,69 148,64.5 141.5,69 144,61.5 138,57 145.5,57' fill='white'/%3E%3Cpolygon points='42,130 44,136 50,136 45.5,139.5 47.5,146 42,142.5 36.5,146 38.5,139.5 34,136 40,136' fill='white'/%3E%3Cpolygon points='100,158 102,164.5 109,164.5 103.5,168.5 105.5,175 100,171 94.5,175 96.5,168.5 91,164.5 98,164.5' fill='white'/%3E%3Ctext x='100' y='115' font-family='Georgia' font-size='32' font-weight='bold' fill='%23e8d5b0' text-anchor='middle' letter-spacing='4'%3ERealX%3C/text%3E%3C/svg%3E">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cdefs%3E%3CradialGradient id='g' cx='50%25' cy='40%25' r='60%25'%3E%3Cstop offset='0%25' stop-color='%236b0000'/%3E%3Cstop offset='100%25' stop-color='%232a0000'/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle cx='100' cy='100' r='92' fill='url(%23g)'/%3E%3Ccircle cx='100' cy='100' r='92' fill='none' stroke='%231a0000' stroke-width='6'/%3E%3Cline x1='25' y1='165' x2='175' y2='35' stroke='%23c0a080' stroke-width='1.5' opacity='0.5'/%3E%3Cpolygon points='100,22 103,32 114,32 105,39 108,49 100,43 92,49 95,39 86,32 97,32' fill='white'/%3E%3Ctext x='100' y='115' font-family='Georgia' font-size='32' font-weight='bold' fill='%23e8d5b0' text-anchor='middle' letter-spacing='4'%3ERealX%3C/text%3E%3C/svg%3E">
 <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Rajdhani:wght@300;400;600;700&family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -129,8 +129,6 @@
   .card-comments-title { font-size: 0.75rem; color: var(--muted); margin-bottom: 8px; font-weight: 600; }
   .card-comments-list { max-height: 80px; overflow-y: auto; margin-bottom: 10px; display: flex; flex-direction: column; gap: 5px; }
   .card-comments-list::-webkit-scrollbar { width: 3px; }
-  .card-comments-list::-webkit-scrollbar-track { background: transparent; }
-  .card-comments-list::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
   .card-comment-item { font-size: 0.75rem; color: #8a9ab5; line-height: 1.5; padding: 4px 8px; background: rgba(255,255,255,0.03); border-radius: 4px; border-right: 2px solid var(--border); }
   .card-comment-item .cc-name { color: var(--red); font-weight: 700; margin-left: 6px; }
   .card-comment-item .cc-time { color: var(--muted); font-size: 0.65rem; margin-right: 6px; }
@@ -199,7 +197,6 @@
   .modal-comments-title span { color: var(--red); font-size: 0.8rem; background: rgba(255,59,59,0.1); border-radius: 100px; padding: 2px 10px; }
   .comments-list { display: flex; flex-direction: column; gap: 12px; margin-bottom: 20px; max-height: 260px; overflow-y: auto; padding-left: 4px; }
   .comments-list::-webkit-scrollbar { width: 4px; }
-  .comments-list::-webkit-scrollbar-track { background: transparent; }
   .comments-list::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
   .comment-item { background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 10px; padding: 12px 16px; border-right: 3px solid var(--red); }
   .comment-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; }
@@ -362,7 +359,6 @@
   <h2 class="section-title reveal">سكربتات Luau المجانية</h2>
   <div class="scripts-grid reveal">
 
-    <!-- Speed -->
     <div class="script-card" onclick="openModal('نظام السرعة الزائدة', 'speed')">
       <div class="script-header">
         <div class="script-dots"><span></span><span></span><span></span></div>
@@ -397,7 +393,6 @@ part.Touched:<span class="fn">Connect</span>(<span class="kw">function</span>(hi
       </div>
     </div>
 
-    <!-- Day/Night -->
     <div class="script-card" onclick="openModal('دورة الليل والنهار', 'daynight')">
       <div class="script-header">
         <div class="script-dots"><span></span><span></span><span></span></div>
@@ -431,7 +426,6 @@ part.Touched:<span class="fn">Connect</span>(<span class="kw">function</span>(hi
       </div>
     </div>
 
-    <!-- Kill Brick -->
     <div class="script-card" onclick="openModal('طابوق القتل', 'kill')">
       <div class="script-header">
         <div class="script-dots"><span></span><span></span><span></span></div>
@@ -465,7 +459,6 @@ part.Touched:<span class="fn">Connect</span>(<span class="kw">function</span>(hi
       </div>
     </div>
 
-    <!-- Leaderboard -->
     <div class="script-card" onclick="openModal('نظام النقاط', 'leaderboard')">
       <div class="script-header">
         <div class="script-dots"><span></span><span></span><span></span></div>
@@ -499,7 +492,6 @@ Players.PlayerAdded:<span class="fn">Connect</span>(<span class="kw">function</s
       </div>
     </div>
 
-    <!-- NPC -->
     <div class="script-card" onclick="openModal('NPC — ذكاء اصطناعي للمطاردة', 'npc')">
       <div class="script-header">
         <div class="script-dots"><span></span><span></span><span></span></div>
@@ -533,7 +525,6 @@ Players.PlayerAdded:<span class="fn">Connect</span>(<span class="kw">function</s
       </div>
     </div>
 
-    <!-- Size Changer -->
     <div class="script-card" onclick="openModal('مغير الحجم — Size Changer', 'sizechange')">
       <div class="script-header">
         <div class="script-dots"><span></span><span></span><span></span></div>
@@ -546,8 +537,7 @@ Players.PlayerAdded:<span class="fn">Connect</span>(<span class="kw">function</s
         <div class="script-code"><span class="cm">-- Size Changer GUI by RealX</span>
 <span class="kw">local</span> ReplicatedStorage = game:<span class="fn">GetService</span>(<span class="str">"ReplicatedStorage"</span>)
 <span class="kw">local</span> event = ReplicatedStorage:<span class="fn">WaitForChild</span>(<span class="str">"ChangeSize"</span>)
-<span class="cm">-- سلايدر يغير حجم اللاعب</span>
-<span class="cm">-- LocalScript + ServerScript</span></div>
+<span class="cm">-- سلايدر يغير حجم اللاعب</span></div>
         <div class="script-info">
           <div><div class="script-name">مغير الحجم</div><div class="script-desc">سلايدر UI يغير حجم الشخصية بسلاسة</div></div>
           <button class="btn-copy" onclick="event.stopPropagation(); copyScript('sizechange_local')">نسخ GUI</button>
@@ -563,7 +553,6 @@ Players.PlayerAdded:<span class="fn">Connect</span>(<span class="kw">function</s
       </div>
     </div>
 
-    <!-- Gravity -->
     <div class="script-card" onclick="openModal('Gravity Controller', 'gravity')">
       <div class="script-header">
         <div class="script-dots"><span></span><span></span><span></span></div>
@@ -577,10 +566,9 @@ Players.PlayerAdded:<span class="fn">Connect</span>(<span class="kw">function</s
 <span class="kw">local</span> DEFAULT_GRAVITY = <span class="num">196.2</span>
 <span class="kw">local</span> MIN_GRAVITY = <span class="num">8</span>
 <span class="kw">local</span> MAX_GRAVITY = <span class="num">500</span>
-<span class="cm">-- slider: right=less, left=more</span>
-<span class="cm">-- Auto Scale ✅</span></div>
+<span class="cm">-- slider: right=less, left=more</span></div>
         <div class="script-info">
-          <div><div class="script-name">Gravity Controller</div><div class="script-desc">سلايدر يتحكم في الجاذبية — يمين أقل، يسار أكثر</div></div>
+          <div><div class="script-name">Gravity Controller</div><div class="script-desc">سلايدر يتحكم في الجاذبية</div></div>
           <button class="btn-copy" onclick="event.stopPropagation(); copyScript('gravity')">نسخ</button>
         </div>
       </div>
@@ -594,7 +582,6 @@ Players.PlayerAdded:<span class="fn">Connect</span>(<span class="kw">function</s
       </div>
     </div>
 
-    <!-- KillFeed -->
     <div class="script-card" onclick="openModal('KillFeed + أرقام الضرر', 'killfeed')">
       <div class="script-header">
         <div class="script-dots"><span></span><span></span><span></span></div>
@@ -609,8 +596,7 @@ Players.PlayerAdded:<span class="fn">Connect</span>(<span class="kw">function</s
   :<span class="fn">WaitForChild</span>(<span class="str">"KillFeedEvent"</span>, <span class="num">15</span>)
 killFeedRemote.OnClientEvent:<span class="fn">Connect</span>(<span class="kw">function</span>(name)
   <span class="fn">showKillCard</span>(name)
-<span class="kw">end</span>)
-<span class="cm">-- 💢 Damage Numbers في تاب ثاني</span></div>
+<span class="kw">end</span>)</div>
         <div class="script-info">
           <div><div class="script-name">KillFeed + أرقام الضرر</div><div class="script-desc">تابين — KillFeed وأرقام الضرر GTA Style</div></div>
           <button class="btn-copy" onclick="event.stopPropagation(); copyScript('killfeed_feed')">نسخ KillFeed</button>
@@ -626,12 +612,11 @@ killFeedRemote.OnClientEvent:<span class="fn">Connect</span>(<span class="kw">fu
       </div>
     </div>
 
-    <!-- Points System -->
     <div class="script-card" onclick="openModal('نظام النقاط الكامل', 'pointssystem')" style="border-color:rgba(255,200,0,0.25);">
       <div class="script-header" style="background:rgba(255,200,0,0.06);">
         <div class="script-dots"><span></span><span></span><span></span></div>
         <div class="script-header-right">
-          <button class="btn-info" onclick="event.stopPropagation(); openGuide('pointssystem')" title="شرح طريقة الاستخدام" style="background:rgba(255,200,0,0.15);border-color:rgba(255,200,0,0.6);color:#ffc107;">!</button>
+          <button class="btn-info" onclick="event.stopPropagation(); openGuide('pointssystem')" title="شرح" style="background:rgba(255,200,0,0.15);border-color:rgba(255,200,0,0.6);color:#ffc107;">!</button>
           <span class="script-lang" style="background:rgba(255,200,0,0.12);color:#ffc107;border:1px solid rgba(255,200,0,0.3);">Luau × 2</span>
         </div>
       </div>
@@ -639,8 +624,7 @@ killFeedRemote.OnClientEvent:<span class="fn">Connect</span>(<span class="kw">fu
         <div class="script-code"><span class="cm">-- Points + DataStore + GUI by RealX</span>
 <span class="kw">local</span> PointsStore = DataStoreService
   :<span class="fn">GetDataStore</span>(<span class="str">"PlayerPointsV2"</span>)
-<span class="cm">-- LeaderStats + saves data + fires GUI</span>
-<span class="cm">-- notification every time points given ✅</span></div>
+<span class="cm">-- LeaderStats + saves + fires GUI ✅</span></div>
         <div class="script-info">
           <div>
             <div class="script-name">نظام النقاط الكامل</div>
@@ -659,12 +643,11 @@ killFeedRemote.OnClientEvent:<span class="fn">Connect</span>(<span class="kw">fu
       </div>
     </div>
 
-    <!-- Daily Streak -->
     <div class="script-card" onclick="openModal('نظام السترييك اليومي', 'daystreak')" style="border-color:rgba(255,150,0,0.35);">
       <div class="script-header" style="background:rgba(255,150,0,0.07);">
         <div class="script-dots"><span></span><span></span><span></span></div>
         <div class="script-header-right">
-          <button class="btn-info" onclick="event.stopPropagation(); openGuide('daystreak')" title="شرح طريقة الاستخدام" style="background:rgba(255,150,0,0.15);border-color:rgba(255,150,0,0.6);color:#ff9500;">!</button>
+          <button class="btn-info" onclick="event.stopPropagation(); openGuide('daystreak')" style="background:rgba(255,150,0,0.15);border-color:rgba(255,150,0,0.6);color:#ff9500;">!</button>
           <span class="script-lang" style="background:rgba(255,150,0,0.12);color:#ff9500;border:1px solid rgba(255,150,0,0.3);">Luau</span>
         </div>
       </div>
@@ -672,15 +655,10 @@ killFeedRemote.OnClientEvent:<span class="fn">Connect</span>(<span class="kw">fu
         <div class="script-code"><span class="cm">-- Daily Streak System by RealX</span>
 <span class="kw">local</span> streakStore = DataStoreService
   :<span class="fn">GetDataStore</span>(<span class="str">"DayStreak_v2"</span>)
-<span class="kw">local</span> SECONDS_IN_DAY = <span class="num">86400</span>
-<span class="cm">-- 🔥 رقم فوق الايموجي مباشرة</span>
-<span class="cm">-- DataStore + LeaderStats + Billboard</span></div>
+<span class="cm">-- 🔥 Billboard + DataStore + LeaderStats</span></div>
         <div class="script-info">
           <div>
-            <div class="script-name" style="display:flex;align-items:center;gap:6px;">
-              نظام السترييك اليومي
-              <span style="background:rgba(255,150,0,0.15);border:1px solid rgba(255,150,0,0.5);color:#ff9500;font-size:0.62rem;font-weight:800;padding:2px 7px;border-radius:100px;font-family:'Space Mono',monospace;letter-spacing:0.5px;">NEW</span>
-            </div>
+            <div class="script-name" style="display:flex;align-items:center;gap:6px;">نظام السترييك اليومي <span style="background:rgba(255,150,0,0.15);border:1px solid rgba(255,150,0,0.5);color:#ff9500;font-size:0.62rem;font-weight:800;padding:2px 7px;border-radius:100px;font-family:'Space Mono',monospace;">NEW</span></div>
             <div class="script-desc">🔥 Billboard + DataStore + LeaderStats</div>
           </div>
           <button class="btn-copy" onclick="event.stopPropagation(); copyScript('daystreak')" style="border-color:rgba(255,150,0,0.3);color:#ff9500;background:rgba(255,150,0,0.08);">نسخ</button>
@@ -696,30 +674,23 @@ killFeedRemote.OnClientEvent:<span class="fn">Connect</span>(<span class="kw">fu
       </div>
     </div>
 
-    <!-- ✅ NEW: علم الدولة فوق الرأس -->
     <div class="script-card" onclick="openModal('نظام علم الدولة فوق الرأس', 'flagscript')" style="border-color:rgba(100,200,255,0.35);">
       <div class="script-header" style="background:rgba(100,200,255,0.07);">
         <div class="script-dots"><span></span><span></span><span></span></div>
         <div class="script-header-right">
-          <button class="btn-info" onclick="event.stopPropagation(); openGuide('flagscript')" title="شرح طريقة الاستخدام" style="background:rgba(100,200,255,0.15);border-color:rgba(100,200,255,0.6);color:#64c8ff;">!</button>
+          <button class="btn-info" onclick="event.stopPropagation(); openGuide('flagscript')" style="background:rgba(100,200,255,0.15);border-color:rgba(100,200,255,0.6);color:#64c8ff;">!</button>
           <span class="script-lang" style="background:rgba(100,200,255,0.12);color:#64c8ff;border:1px solid rgba(100,200,255,0.3);">Luau</span>
         </div>
       </div>
       <div class="script-body">
         <div class="script-code"><span class="cm">-- Country Flag + Name by RealX</span>
-<span class="kw">local</span> Flags = { [<span class="str">"sa"</span>] = <span class="str">"🇸🇦"</span>, [<span class="str">"us"</span>] = <span class="str">"🇺🇸"</span>, <span class="cm">--[[ 195+ دولة ]]</span> }
+<span class="kw">local</span> Flags = { [<span class="str">"sa"</span>] = <span class="str">"🇸🇦"</span>, [<span class="str">"us"</span>] = <span class="str">"🇺🇸"</span> }
 Players.PlayerAdded:<span class="fn">Connect</span>(<span class="kw">function</span>(player)
-  player.CharacterAdded:<span class="fn">Connect</span>(<span class="kw">function</span>(char)
-    <span class="cm">-- علم + اسم اللاعب فوق الرأس</span>
-    <span class="cm">-- يختفي بعد 50 stud</span>
-  <span class="kw">end</span>)
+  <span class="cm">-- علم + اسم اللاعب فوق الرأس</span>
 <span class="kw">end</span>)</div>
         <div class="script-info">
           <div>
-            <div class="script-name" style="display:flex;align-items:center;gap:6px;">
-              علم الدولة فوق الرأس
-              <span style="background:rgba(100,200,255,0.15);border:1px solid rgba(100,200,255,0.5);color:#64c8ff;font-size:0.62rem;font-weight:800;padding:2px 7px;border-radius:100px;font-family:'Space Mono',monospace;letter-spacing:0.5px;">NEW</span>
-            </div>
+            <div class="script-name" style="display:flex;align-items:center;gap:6px;">علم الدولة فوق الرأس <span style="background:rgba(100,200,255,0.15);border:1px solid rgba(100,200,255,0.5);color:#64c8ff;font-size:0.62rem;font-weight:800;padding:2px 7px;border-radius:100px;font-family:'Space Mono',monospace;">NEW</span></div>
             <div class="script-desc">🌍 195+ دولة • علم + اسم • يختفي بعد 50 stud</div>
           </div>
           <button class="btn-copy" onclick="event.stopPropagation(); copyScript('flagscript')" style="border-color:rgba(100,200,255,0.3);color:#64c8ff;background:rgba(100,200,255,0.08);">نسخ</button>
@@ -744,117 +715,14 @@ Players.PlayerAdded:<span class="fn">Connect</span>(<span class="kw">function</s
     <div class="label reveal">3D MODELS</div>
     <h2 class="section-title reveal">موديلات مجانية</h2>
     <div class="models-grid reveal">
-
-      <div class="model-card">
-        <div class="model-preview" style="background:linear-gradient(135deg,#0a0a1a,#1a0a2a)">
-          <span class="model-icon">🏆</span>
-        </div>
-        <div class="model-body">
-          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;">
-            <div class="model-name" style="margin-bottom:0;">Simple Timer</div>
-            <button class="btn-info" onclick="openGuide('model_timer')" title="شرح الموديل">!</button>
-          </div>
-          <div class="model-meta"><span>by RealX</span><span class="model-tag">MODEL</span></div>
-          <div style="font-size:0.78rem;color:var(--muted);margin-top:8px;line-height:1.6;">تايمر بسيط وسريع جاهز للاستخدام في لعبتك.</div>
-          <a href="https://create.roblox.com/store/asset/107822779957708/%D8%B4%D9%83%D8%B1%D8%A7-" target="_blank" class="btn-dl" style="text-align:center;text-decoration:none;">↓ احصل عليه من Roblox</a>
-        </div>
-      </div>
-
-      <div class="model-card">
-        <div class="model-preview" style="background:linear-gradient(135deg,#0a0a1a,#1a1a0a)">
-          <span class="model-icon">🎮</span>
-        </div>
-        <div class="model-body">
-          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;">
-            <div class="model-name" style="margin-bottom:0;">CustomHotBarGui</div>
-            <button class="btn-info" onclick="openGuide('model_hotbar')" title="شرح الموديل">!</button>
-          </div>
-          <div class="model-meta"><span>بقلم RealX</span><span class="model-tag">SCREEN GUI</span></div>
-          <div style="font-size:0.78rem;color:var(--muted);margin-top:8px;line-height:1.6;">شريط أدوات UI جاهز للاستخدام في لعبتك، سهل التعديل والتخصيص.</div>
-          <a href="https://create.roblox.com/store/asset/134092705608434/CustomHotBarGui" target="_blank" class="btn-dl" style="text-align:center;text-decoration:none;">↓ احصل عليه من Roblox</a>
-        </div>
-      </div>
-
-      <div class="model-card">
-        <div class="model-preview" style="background:linear-gradient(135deg,#0a1a0a,#0d2a0d)"><span class="model-icon">🌲</span></div>
-        <div class="model-body">
-          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;">
-            <div class="model-name" style="margin-bottom:0;">حزمة أشجار مصممة</div>
-            <button class="btn-info" onclick="openGuide('model_trees')" title="شرح الموديل">!</button>
-          </div>
-          <div class="model-meta"><span>بقلم RealX</span><span class="model-tag">NATURE</span></div>
-        </div>
-      </div>
-
-      <div class="model-card">
-        <div class="model-preview" style="background:linear-gradient(135deg,#0a0a1a,#1a0a2a)"><span class="model-icon">💨</span></div>
-        <div class="model-body">
-          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;">
-            <div class="model-name" style="margin-bottom:0;">Dash v1</div>
-            <button class="btn-info" onclick="openGuide('model_dash')" title="شرح الموديل">!</button>
-          </div>
-          <div class="model-meta"><span>بقلم RealX</span><span class="model-tag">SCRIPT</span></div>
-          <div style="font-size:0.78rem;color:var(--muted);margin-top:8px;line-height:1.6;">سكريبت داش احترافي مع دعم الجوال — اضغط <b style="color:var(--orange);">F</b> أو زر الشاشة للداش.</div>
-          <a href="https://create.roblox.com/store/asset/133996832856620/dash-v1" target="_blank" class="btn-dl" style="text-align:center;text-decoration:none;">↓ احصل عليه من Roblox</a>
-        </div>
-      </div>
-
-      <div class="model-card">
-        <div class="model-preview" style="background:linear-gradient(135deg,#1a0a0a,#2a0d0a)"><span class="model-icon">⚔️</span></div>
-        <div class="model-body">
-          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;">
-            <div class="model-name" style="margin-bottom:0;">WeaponWheel</div>
-            <button class="btn-info" onclick="openGuide('model_weaponwheel')" title="شرح الموديل">!</button>
-          </div>
-          <div class="model-meta"><span>بقلم RealX</span><span class="model-tag">SCREEN GUI</span></div>
-          <div style="font-size:0.78rem;color:var(--muted);margin-top:8px;line-height:1.6;">Weapon Wheel احترافي لتبديل الأسلحة بسهولة — مثل GTA وبدون لاق.</div>
-          <a href="https://create.roblox.com/store/asset/93002086803453/WeaponWheel" target="_blank" class="btn-dl" style="text-align:center;text-decoration:none;">↓ احصل عليه من Roblox</a>
-        </div>
-      </div>
-
-      <div class="model-card">
-        <div class="model-preview" style="background:linear-gradient(135deg,#0a1a0a,#0a2a1a)"><span class="model-icon">🔔</span></div>
-        <div class="model-body">
-          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;">
-            <div class="model-name" style="margin-bottom:0;">Player Tracker</div>
-            <button class="btn-info" onclick="openGuide('model_playertracker')" title="شرح الموديل">!</button>
-          </div>
-          <div class="model-meta"><span>بقلم RealX</span><span class="model-tag">SCREEN GUI</span></div>
-          <div style="font-size:0.78rem;color:var(--muted);margin-top:8px;line-height:1.6;">يعرض عدد اللاعبين ويبين إشعار لما لاعب يدخل أو يطلع — مع انيميشن ناعم.</div>
-          <a href="https://create.roblox.com/store/asset/100155981133930/SketchfabScene" target="_blank" class="btn-dl" style="text-align:center;text-decoration:none;">↓ احصل عليه من Roblox</a>
-        </div>
-      </div>
-
-      <div class="model-card" style="border-color:rgba(255,80,80,0.25);">
-        <div class="model-preview" style="background:linear-gradient(135deg,#1a0505,#2a0a0a);position:relative;overflow:hidden;">
-          <span class="model-icon">🗺️</span>
-        </div>
-        <div class="model-body">
-          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;">
-            <div class="model-name" style="margin-bottom:0;">نظام الراوند</div>
-            <button class="btn-info" onclick="openGuide('model_roundsystem')" title="شرح الموديل">!</button>
-          </div>
-          <div class="model-meta"><span>بقلم RealX</span><span class="model-tag" style="background:rgba(255,80,80,0.15);color:#ff6060;border-color:rgba(255,80,80,0.3);">SYSTEM</span></div>
-          <div style="font-size:0.78rem;color:var(--muted);margin-top:8px;line-height:1.6;">نظام راوند كامل — لوبي، تصويت للماب، عداد، AFK، ونقل عشوائي للاعبين.</div>
-          <a href="https://create.roblox.com/store/asset/102138379776454/%D9%86%D8%B8%D8%A7%D9%85-" target="_blank" class="btn-dl" style="text-align:center;text-decoration:none;background:linear-gradient(90deg,#ff3b3b,#c0392b);">↓ احصل عليه من Roblox</a>
-        </div>
-      </div>
-
-      <div class="model-card" style="border-color:rgba(255,107,53,0.35);">
-        <div class="model-preview" style="background:linear-gradient(135deg,#0d0510,#1a0800);position:relative;overflow:hidden;">
-          <span class="model-icon" style="filter:drop-shadow(0 0 24px rgba(255,107,53,0.8));">⚡</span>
-        </div>
-        <div class="model-body">
-          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;">
-            <div class="model-name" style="margin-bottom:0;">نظام سرعه</div>
-            <button class="btn-info" onclick="openGuide('model_speedsystem')" title="شرح الموديل" style="background:rgba(255,107,53,0.15);border-color:rgba(255,107,53,0.6);color:#ff7043;">!</button>
-          </div>
-          <div class="model-meta"><span>بقلم RealX</span><span class="model-tag" style="background:rgba(255,107,53,0.15);color:#ff7043;border-color:rgba(255,107,53,0.35);">SYSTEM</span></div>
-          <div style="font-size:0.78rem;color:var(--muted);margin-top:8px;line-height:1.6;">نظام سرعة احترافي كامل — بوستات، سرعة قابلة للتخصيص، وتأثيرات بصرية ناعمة.</div>
-          <a href="https://create.roblox.com/store/asset/123325741527492/Escape-Tsunami-For-Brainrots" target="_blank" class="btn-dl" style="text-align:center;text-decoration:none;background:linear-gradient(90deg,#ff6b35,#d0300a);color:#fff;border:none;">↓ احصل عليه من Roblox</a>
-        </div>
-      </div>
-
+      <div class="model-card"><div class="model-preview" style="background:linear-gradient(135deg,#0a0a1a,#1a0a2a)"><span class="model-icon">🏆</span></div><div class="model-body"><div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;"><div class="model-name" style="margin-bottom:0;">Simple Timer</div><button class="btn-info" onclick="openGuide('model_timer')">!</button></div><div class="model-meta"><span>by RealX</span><span class="model-tag">MODEL</span></div><div style="font-size:0.78rem;color:var(--muted);margin-top:8px;line-height:1.6;">تايمر بسيط وسريع جاهز للاستخدام في لعبتك.</div><a href="https://create.roblox.com/store/asset/107822779957708/" target="_blank" class="btn-dl" style="text-align:center;text-decoration:none;">↓ احصل عليه من Roblox</a></div></div>
+      <div class="model-card"><div class="model-preview" style="background:linear-gradient(135deg,#0a0a1a,#1a1a0a)"><span class="model-icon">🎮</span></div><div class="model-body"><div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;"><div class="model-name" style="margin-bottom:0;">CustomHotBarGui</div><button class="btn-info" onclick="openGuide('model_hotbar')">!</button></div><div class="model-meta"><span>بقلم RealX</span><span class="model-tag">SCREEN GUI</span></div><div style="font-size:0.78rem;color:var(--muted);margin-top:8px;line-height:1.6;">شريط أدوات UI جاهز للاستخدام، سهل التخصيص.</div><a href="https://create.roblox.com/store/asset/134092705608434/CustomHotBarGui" target="_blank" class="btn-dl" style="text-align:center;text-decoration:none;">↓ احصل عليه من Roblox</a></div></div>
+      <div class="model-card"><div class="model-preview" style="background:linear-gradient(135deg,#0a1a0a,#0d2a0d)"><span class="model-icon">🌲</span></div><div class="model-body"><div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;"><div class="model-name" style="margin-bottom:0;">حزمة أشجار مصممة</div><button class="btn-info" onclick="openGuide('model_trees')">!</button></div><div class="model-meta"><span>بقلم RealX</span><span class="model-tag">NATURE</span></div></div></div>
+      <div class="model-card"><div class="model-preview" style="background:linear-gradient(135deg,#0a0a1a,#1a0a2a)"><span class="model-icon">💨</span></div><div class="model-body"><div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;"><div class="model-name" style="margin-bottom:0;">Dash v1</div><button class="btn-info" onclick="openGuide('model_dash')">!</button></div><div class="model-meta"><span>بقلم RealX</span><span class="model-tag">SCRIPT</span></div><div style="font-size:0.78rem;color:var(--muted);margin-top:8px;line-height:1.6;">سكريبت داش احترافي مع دعم الجوال.</div><a href="https://create.roblox.com/store/asset/133996832856620/dash-v1" target="_blank" class="btn-dl" style="text-align:center;text-decoration:none;">↓ احصل عليه من Roblox</a></div></div>
+      <div class="model-card"><div class="model-preview" style="background:linear-gradient(135deg,#1a0a0a,#2a0d0a)"><span class="model-icon">⚔️</span></div><div class="model-body"><div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;"><div class="model-name" style="margin-bottom:0;">WeaponWheel</div><button class="btn-info" onclick="openGuide('model_weaponwheel')">!</button></div><div class="model-meta"><span>بقلم RealX</span><span class="model-tag">SCREEN GUI</span></div><div style="font-size:0.78rem;color:var(--muted);margin-top:8px;line-height:1.6;">Weapon Wheel احترافي لتبديل الأسلحة — مثل GTA.</div><a href="https://create.roblox.com/store/asset/93002086803453/WeaponWheel" target="_blank" class="btn-dl" style="text-align:center;text-decoration:none;">↓ احصل عليه من Roblox</a></div></div>
+      <div class="model-card"><div class="model-preview" style="background:linear-gradient(135deg,#0a1a0a,#0a2a1a)"><span class="model-icon">🔔</span></div><div class="model-body"><div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;"><div class="model-name" style="margin-bottom:0;">Player Tracker</div><button class="btn-info" onclick="openGuide('model_playertracker')">!</button></div><div class="model-meta"><span>بقلم RealX</span><span class="model-tag">SCREEN GUI</span></div><div style="font-size:0.78rem;color:var(--muted);margin-top:8px;line-height:1.6;">يعرض عدد اللاعبين مع إشعار دخول وخروج.</div><a href="https://create.roblox.com/store/asset/100155981133930/" target="_blank" class="btn-dl" style="text-align:center;text-decoration:none;">↓ احصل عليه من Roblox</a></div></div>
+      <div class="model-card" style="border-color:rgba(255,80,80,0.25);"><div class="model-preview" style="background:linear-gradient(135deg,#1a0505,#2a0a0a)"><span class="model-icon">🗺️</span></div><div class="model-body"><div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;"><div class="model-name" style="margin-bottom:0;">نظام الراوند</div><button class="btn-info" onclick="openGuide('model_roundsystem')">!</button></div><div class="model-meta"><span>بقلم RealX</span><span class="model-tag" style="background:rgba(255,80,80,0.15);color:#ff6060;">SYSTEM</span></div><div style="font-size:0.78rem;color:var(--muted);margin-top:8px;line-height:1.6;">نظام راوند كامل — لوبي، تصويت، عداد، AFK.</div><a href="https://create.roblox.com/store/asset/102138379776454/" target="_blank" class="btn-dl" style="text-align:center;text-decoration:none;background:linear-gradient(90deg,#ff3b3b,#c0392b);color:#fff;border:none;">↓ احصل عليه من Roblox</a></div></div>
+      <div class="model-card" style="border-color:rgba(255,107,53,0.35);"><div class="model-preview" style="background:linear-gradient(135deg,#0d0510,#1a0800)"><span class="model-icon" style="filter:drop-shadow(0 0 24px rgba(255,107,53,0.8));">⚡</span></div><div class="model-body"><div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;"><div class="model-name" style="margin-bottom:0;">نظام سرعه</div><button class="btn-info" onclick="openGuide('model_speedsystem')" style="background:rgba(255,107,53,0.15);border-color:rgba(255,107,53,0.6);color:#ff7043;">!</button></div><div class="model-meta"><span>بقلم RealX</span><span class="model-tag" style="background:rgba(255,107,53,0.15);color:#ff7043;">SYSTEM</span></div><div style="font-size:0.78rem;color:var(--muted);margin-top:8px;line-height:1.6;">نظام سرعة احترافي كامل مع تأثيرات بصرية.</div><a href="https://create.roblox.com/store/asset/123325741527492/" target="_blank" class="btn-dl" style="text-align:center;text-decoration:none;background:linear-gradient(90deg,#ff6b35,#d0300a);color:#fff;border:none;">↓ احصل عليه من Roblox</a></div></div>
     </div>
   </div>
 </div>
@@ -877,7 +745,7 @@ Players.PlayerAdded:<span class="fn">Connect</span>(<span class="kw">function</s
       <div class="label">ABOUT ME</div>
       <h3>أهلاً، أنا RealX.</h3>
       <p>مطور Roblox عنده شغف بالسكربتة والموديلات ثلاثية الأبعاد. أشارك كل شي أصنعه — مجاناً — عشان المجتمع يبني ألعاب أحسن.</p>
-      <p>سكربتات وموديلات تنزل دايماً. لو استخدمت شغلي، الكرديت محل تقدير بس مو شرط. بس ابني شي حلو.</p>
+      <p>سكربتات وموديلات تنزل دايماً. لو استخدمت شغلي، الكرديت محل تقدير بس مو شرط.</p>
       <div class="stat-row">
         <div class="mini-stat"><span class="snum">20+</span><span class="lbl">SCRIPTS</span></div>
         <div class="mini-stat"><span class="snum">10+</span><span class="lbl">MODELS</span></div>
@@ -894,7 +762,7 @@ Players.PlayerAdded:<span class="fn">Connect</span>(<span class="kw">function</s
     <span class="vc-text">زوار الموقع</span>
     <span class="vc-num" id="visitor-count">...</span>
   </div>
-  <a href="https://www.tiktok.com/@moaj601" target="_blank" style="display:flex;align-items:center;gap:8px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,59,59,0.2);border-radius:8px;padding:8px 16px;text-decoration:none;color:#f0f0ff;font-family:'Cairo',sans-serif;font-size:0.85rem;font-weight:600;transition:all 0.3s;" onmouseover="this.style.borderColor='#ff3b3b';this.style.color='#ff3b3b'" onmouseout="this.style.borderColor='rgba(255,59,59,0.2)';this.style.color='#f0f0ff'">
+  <a href="https://www.tiktok.com/@moaj601" target="_blank" style="display:flex;align-items:center;gap:8px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,59,59,0.2);border-radius:8px;padding:8px 16px;text-decoration:none;color:#f0f0ff;font-family:'Cairo',sans-serif;font-size:0.85rem;font-weight:600;transition:all 0.3s;">
     <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.26 8.26 0 004.83 1.56V6.79a4.85 4.85 0 01-1.06-.1z"/></svg>
     @moaj601
   </a>
@@ -907,10 +775,7 @@ Players.PlayerAdded:<span class="fn">Connect</span>(<span class="kw">function</s
     <div class="guide-head">
       <div class="guide-head-left">
         <div class="guide-icon" id="guide-icon">📖</div>
-        <div>
-          <div class="guide-title" id="guide-title">شرح السكربت</div>
-          <div class="guide-subtitle" id="guide-subtitle">دليل الاستخدام الكامل</div>
-        </div>
+        <div><div class="guide-title" id="guide-title">شرح السكربت</div><div class="guide-subtitle" id="guide-subtitle">دليل الاستخدام الكامل</div></div>
       </div>
       <button class="guide-close" onclick="document.getElementById('guide-modal').classList.remove('active')">✕</button>
     </div>
@@ -918,7 +783,7 @@ Players.PlayerAdded:<span class="fn">Connect</span>(<span class="kw">function</s
   </div>
 </div>
 
-<!-- MODAL -->
+<!-- SCRIPT MODAL -->
 <div class="modal-overlay" id="modal" onclick="closeModal(event)">
   <div class="modal">
     <div class="modal-head">
@@ -939,10 +804,8 @@ Players.PlayerAdded:<span class="fn">Connect</span>(<span class="kw">function</s
         <div class="modal-comments-title">💬 التعليقات والأخطاء<span id="modal-comment-count">0</span></div>
         <div class="comments-list" id="modal-comments-list"></div>
         <div class="comment-form">
-          <div class="comment-form-row">
-            <input class="comment-input" id="comment-name" placeholder="اسمك (اختياري)" />
-          </div>
-          <textarea class="comment-input" id="comment-text" placeholder="اكتب تعليقك أو الخطأ اللي وجدته في السكربت..."></textarea>
+          <div class="comment-form-row"><input class="comment-input" id="comment-name" placeholder="اسمك (اختياري)" /></div>
+          <textarea class="comment-input" id="comment-text" placeholder="اكتب تعليقك أو الخطأ اللي وجدته..."></textarea>
           <button class="btn-submit-comment" onclick="submitModalComment()">إرسال التعليق ←</button>
         </div>
       </div>
@@ -961,16 +824,16 @@ Players.PlayerAdded:<span class="fn">Connect</span>(<span class="kw">function</s
     daynight: `-- Day/Night Cycle by RealX\nlocal Lighting = game:GetService("Lighting")\nlocal cycleSpeed = 60\nwhile true do\n    for hour = 0, 24, 0.01 do\n        Lighting.TimeOfDay = string.format("%02d:%02d:00", math.floor(hour), math.floor((hour % 1) * 60))\n        task.wait(cycleSpeed / 2400)\n    end\nend`,
     kill: `-- Kill Brick by RealX\nlocal part = script.Parent\npart.Touched:Connect(function(hit)\n    local character = hit.Parent\n    local humanoid = character:FindFirstChildOfClass("Humanoid")\n    if humanoid and humanoid.Health > 0 then\n        humanoid.Health = 0\n    end\nend)`,
     leaderboard: `-- Leaderboard Points System by RealX\nlocal Players = game:GetService("Players")\nPlayers.PlayerAdded:Connect(function(player)\n    local leaderstats = Instance.new("Folder")\n    leaderstats.Name = "leaderstats"\n    leaderstats.Parent = player\n    local points = Instance.new("IntValue")\n    points.Name = "Points"\n    points.Value = 0\n    points.Parent = leaderstats\nend)`,
-    sizechange_local: `-- Size Changer GUI — LocalScript by RealX\n-- ضعه في: StarterPlayerScripts\nlocal player = game.Players.LocalPlayer\n-- (full script in modal)`,
-    sizechange_server: `-- Size Changer — ServerScript by RealX\n-- ضعه في: ServerScriptService\nlocal ReplicatedStorage = game:GetService("ReplicatedStorage")\nlocal event = Instance.new("RemoteEvent")\nevent.Name = "ChangeSize"\nevent.Parent = ReplicatedStorage\nevent.OnServerEvent:Connect(function(player, newSize)\n    local character = player.Character\n    if not character then return end\n    local humanoid = character:FindFirstChildOfClass("Humanoid")\n    if not humanoid then return end\n    humanoid.BodyDepthScale.Value = newSize\n    humanoid.BodyHeightScale.Value = newSize\n    humanoid.BodyWidthScale.Value = newSize\n    humanoid.HeadScale.Value = newSize\nend)`,
+    sizechange_local: `-- Size Changer GUI — LocalScript by RealX\n-- ضعه في: StarterPlayerScripts`,
+    sizechange_server: `-- Size Changer — ServerScript by RealX\nlocal ReplicatedStorage = game:GetService("ReplicatedStorage")\nlocal event = Instance.new("RemoteEvent")\nevent.Name = "ChangeSize"\nevent.Parent = ReplicatedStorage\nevent.OnServerEvent:Connect(function(player, newSize)\n    local character = player.Character\n    if not character then return end\n    local humanoid = character:FindFirstChildOfClass("Humanoid")\n    if not humanoid then return end\n    humanoid.BodyDepthScale.Value = newSize\n    humanoid.BodyHeightScale.Value = newSize\n    humanoid.BodyWidthScale.Value = newSize\n    humanoid.HeadScale.Value = newSize\nend)`,
     npc: `-- NPC AI by RealX\nlocal npc = script.Parent\nlocal CHASE_DISTANCE = 40\nlocal ATTACK_DISTANCE = 7\nlocal NPC_SPEED = 16\nlocal humanoid = npc:WaitForChild("Humanoid")\nlocal rootPart = npc:WaitForChild("HumanoidRootPart")\nhumanoid.WalkSpeed = NPC_SPEED`,
     gravity: `-- Gravity Controller — LocalScript by RealX\nlocal DEFAULT_GRAVITY = 196.2\nlocal MIN_GRAVITY = 8\nlocal MAX_GRAVITY = 500`,
     killfeed_feed: `-- KillFeed — LocalScript by RealX\nlocal killFeedRemote = ReplicatedStorage:WaitForChild("KillFeedEvent", 15)\nkillFeedRemote.OnClientEvent:Connect(function(killedName)\n    showKillCard(killedName)\nend)`,
-    killfeed_damage: `-- Damage Numbers GTA Style — LocalScript by RealX\nlocal function showDamage(character, damage)\n    local hrp = character:FindFirstChild("HumanoidRootPart")\n    if not hrp then return end\nend`,
-    pointssystem_main: "local Players = game:GetService(\"Players\")\nlocal DataStoreService = game:GetService(\"DataStoreService\")\nlocal ReplicatedStorage = game:GetService(\"ReplicatedStorage\")\nlocal PointsStore = DataStoreService:GetDataStore(\"PlayerPointsV2\")\nlocal pointsEvent = Instance.new(\"RemoteEvent\")\npointsEvent.Name = \"ShowPointsGui\"\npointsEvent.Parent = ReplicatedStorage\nlocal congratsMessages = {\n\t[100]  = \"Congrats! You hit 100 Points!\",\n\t[200]  = \"Amazing! 200 Points reached!\",\n\t[500]  = \"Legend! 500 Points!\",\n\t[1000] = \"GOAT! 1000 Points!\",\n}\nlocal function getCongratsMessage(points)\n\treturn congratsMessages[points] or (\"Congrats! You reached \" .. points .. \" Points!\")\nend\nlocal function setupLeaderStats(player)\n\tlocal leaderstats = Instance.new(\"Folder\")\n\tleaderstats.Name = \"leaderstats\"\n\tleaderstats.Parent = player\n\tlocal points = Instance.new(\"IntValue\")\n\tpoints.Name = \"Points\"\n\tpoints.Value = 0\n\tpoints.Parent = leaderstats\n\tlocal success, saved = pcall(function()\n\t\treturn PointsStore:GetAsync(\"Player_\" .. player.UserId)\n\tend)\n\tif success and saved then\n\t\tpoints.Value = saved\n\tend\nend\nlocal function saveData(player)\n\tlocal ls = player:FindFirstChild(\"leaderstats\")\n\tif not ls then return end\n\tlocal pts = ls:FindFirstChild(\"Points\")\n\tif not pts then return end\n\tpcall(function()\n\t\tPointsStore:SetAsync(\"Player_\" .. player.UserId, pts.Value)\n\tend)\nend\nlocal function givePoints(player, amount)\n\tlocal ls = player:FindFirstChild(\"leaderstats\")\n\tif not ls then return end\n\tlocal pts = ls:FindFirstChild(\"Points\")\n\tif not pts then return end\n\tpts.Value = pts.Value + amount\n\tpointsEvent:FireClient(player, pts.Value, getCongratsMessage(pts.Value))\nend\n_G.GivePoints = givePoints\nPlayers.PlayerAdded:Connect(function(player)\n\tsetupLeaderStats(player)\n\ttask.spawn(function()\n\t\twhile player.Parent do\n\t\t\ttask.wait(1)\n\t\t\tif player.Parent then givePoints(player, 10) end\n\t\tend\n\tend)\nend)\nPlayers.PlayerRemoving:Connect(saveData)\ngame:BindToClose(function()\n\tfor _, p in ipairs(Players:GetPlayers()) do saveData(p) end\nend)",
-    pointssystem_local: "local Players = game:GetService(\"Players\")\nlocal ReplicatedStorage = game:GetService(\"ReplicatedStorage\")\nlocal TweenService = game:GetService(\"TweenService\")\nlocal player = Players.LocalPlayer\nlocal playerGui = player:WaitForChild(\"PlayerGui\")\nlocal pointsEvent = ReplicatedStorage:WaitForChild(\"ShowPointsGui\")\nlocal screenGui = playerGui:WaitForChild(\"PointsNotification\")\nlocal frame = screenGui:WaitForChild(\"NotifFrame\")\nlocal pointsLabel = frame:WaitForChild(\"PointsLabel\")\nlocal messageLabel = frame:WaitForChild(\"MessageLabel\")\nlocal hideThread = nil\nlocal function showNotification(totalPoints, message)\n\tscreenGui.Enabled = true\n\tpointsLabel.Text = totalPoints .. \" Points\"\n\tmessageLabel.Text = message\n\tframe.Position = UDim2.new(1, 20, 1, -90)\n\tTweenService:Create(frame,\n\t\tTweenInfo.new(0.4, Enum.EasingStyle.Back, Enum.EasingDirection.Out),\n\t\t{Position = UDim2.new(1, -280, 1, -90)}\n\t):Play()\n\tif hideThread then task.cancel(hideThread) end\n\thideThread = task.delay(2.5, function()\n\t\tlocal tweenOut = TweenService:Create(frame,\n\t\t\tTweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.In),\n\t\t\t{Position = UDim2.new(1, 20, 1, -90)}\n\t\t)\n\t\ttweenOut:Play()\n\t\ttweenOut.Completed:Connect(function()\n\t\t\tscreenGui.Enabled = false\n\t\tend)\n\tend)\nend\npointsEvent.OnClientEvent:Connect(showNotification)",
-    daystreak: `-- Daily Streak System by RealX\nlocal DataStoreService = game:GetService("DataStoreService")\nlocal Players = game:GetService("Players")\nlocal streakStore = DataStoreService:GetDataStore("DayStreak_v2")\nlocal SECONDS_IN_DAY = 86400\n\nlocal function loadStreak(userId)\n\tlocal success, data = pcall(function()\n\t\treturn streakStore:GetAsync(userId)\n\tend)\n\tif not success or not data then return 1, 0 end\n\treturn data.streak or 1, data.lastLogin or 0\nend`,
-    flagscript: `local Players = game:GetService("Players")\nlocal LocalizationService = game:GetService("LocalizationService")\nlocal RunService = game:GetService("RunService")\nlocal IS_STUDIO = RunService:IsStudio()\n\nlocal Flags = {\n\t["us"] = "🇺🇸", ["ca"] = "🇨🇦", ["mx"] = "🇲🇽",\n\t["gt"] = "🇬🇹", ["bz"] = "🇧🇿", ["hn"] = "🇭🇳", ["sv"] = "🇸🇻",\n\t["ni"] = "🇳🇮", ["cr"] = "🇨🇷", ["pa"] = "🇵🇦",\n\t["cu"] = "🇨🇺", ["jm"] = "🇯🇲", ["ht"] = "🇭🇹", ["do"] = "🇩🇴",\n\t["pr"] = "🇵🇷", ["tt"] = "🇹🇹", ["bb"] = "🇧🇧", ["lc"] = "🇱🇨",\n\t["vc"] = "🇻🇨", ["gd"] = "🇬🇩", ["ag"] = "🇦🇬", ["dm"] = "🇩🇲",\n\t["kn"] = "🇰🇳", ["bs"] = "🇧🇸",\n\t["br"] = "🇧🇷", ["ar"] = "🇦🇷", ["cl"] = "🇨🇱", ["co"] = "🇨🇴",\n\t["pe"] = "🇵🇪", ["ve"] = "🇻🇪", ["ec"] = "🇪🇨", ["bo"] = "🇧🇴",\n\t["py"] = "🇵🇾", ["uy"] = "🇺🇾", ["gy"] = "🇬🇾", ["sr"] = "🇸🇷",\n\t["gb"] = "🇬🇧", ["ie"] = "🇮🇪", ["fr"] = "🇫🇷", ["de"] = "🇩🇪",\n\t["at"] = "🇦🇹", ["ch"] = "🇨🇭", ["be"] = "🇧🇪", ["nl"] = "🇳🇱",\n\t["lu"] = "🇱🇺", ["mc"] = "🇲🇨", ["li"] = "🇱🇮", ["it"] = "🇮🇹",\n\t["es"] = "🇪🇸", ["pt"] = "🇵🇹", ["gr"] = "🇬🇷", ["mt"] = "🇲🇹",\n\t["cy"] = "🇨🇾", ["sm"] = "🇸🇲", ["va"] = "🇻🇦", ["ad"] = "🇦🇩",\n\t["dk"] = "🇩🇰", ["se"] = "🇸🇪", ["no"] = "🇳🇴", ["fi"] = "🇫🇮",\n\t["is"] = "🇮🇸", ["ee"] = "🇪🇪", ["lv"] = "🇱🇻", ["lt"] = "🇱🇹",\n\t["pl"] = "🇵🇱", ["cz"] = "🇨🇿", ["sk"] = "🇸🇰", ["hu"] = "🇭🇺",\n\t["ro"] = "🇷🇴", ["bg"] = "🇧🇬", ["si"] = "🇸🇮", ["hr"] = "🇭🇷",\n\t["rs"] = "🇷🇸", ["ba"] = "🇧🇦", ["me"] = "🇲🇪", ["mk"] = "🇲🇰",\n\t["al"] = "🇦🇱", ["xk"] = "🇽🇰", ["ru"] = "🇷🇺", ["ua"] = "🇺🇦",\n\t["by"] = "🇧🇾", ["md"] = "🇲🇩",\n\t["sa"] = "🇸🇦", ["ae"] = "🇦🇪", ["qa"] = "🇶🇦", ["kw"] = "🇰🇼",\n\t["bh"] = "🇧🇭", ["om"] = "🇴🇲", ["ye"] = "🇾🇪", ["iq"] = "🇮🇶",\n\t["ir"] = "🇮🇷", ["sy"] = "🇸🇾", ["lb"] = "🇱🇧", ["jo"] = "🇯🇴",\n\t["il"] = "🇮🇱", ["ps"] = "🇵🇸", ["tr"] = "🇹🇷",\n\t["in"] = "🇮🇳", ["pk"] = "🇵🇰", ["bd"] = "🇧🇩", ["lk"] = "🇱🇰",\n\t["np"] = "🇳🇵", ["bt"] = "🇧🇹", ["mv"] = "🇲🇻", ["af"] = "🇦🇫",\n\t["jp"] = "🇯🇵", ["kr"] = "🇰🇷", ["cn"] = "🇨🇳", ["hk"] = "🇭🇰",\n\t["tw"] = "🇹🇼", ["mn"] = "🇲🇳", ["kp"] = "🇰🇵",\n\t["sg"] = "🇸🇬", ["th"] = "🇹🇭", ["ph"] = "🇵🇭", ["id"] = "🇮🇩",\n\t["my"] = "🇲🇾", ["vn"] = "🇻🇳", ["mm"] = "🇲🇲", ["kh"] = "🇰🇭",\n\t["la"] = "🇱🇦", ["bn"] = "🇧🇳", ["tl"] = "🇹🇱",\n\t["am"] = "🇦🇲", ["az"] = "🇦🇿", ["ge"] = "🇬🇪",\n\t["kz"] = "🇰🇿", ["uz"] = "🇺🇿", ["tm"] = "🇹🇲",\n\t["kg"] = "🇰🇬", ["tj"] = "🇹🇯",\n\t["eg"] = "🇪🇬", ["ly"] = "🇱🇾", ["tn"] = "🇹🇳", ["dz"] = "🇩🇿",\n\t["ma"] = "🇲🇦", ["sd"] = "🇸🇩", ["mr"] = "🇲🇷",\n\t["ng"] = "🇳🇬", ["za"] = "🇿🇦", ["ke"] = "🇰🇪", ["et"] = "🇪🇹",\n\t["gh"] = "🇬🇭", ["tz"] = "🇹🇿", ["ug"] = "🇺🇬", ["ao"] = "🇦🇴",\n\t["mz"] = "🇲🇿", ["zm"] = "🇿🇲", ["zw"] = "🇿🇼", ["bw"] = "🇧🇼",\n\t["na"] = "🇳🇦", ["ls"] = "🇱🇸", ["sz"] = "🇸🇿", ["mg"] = "🇲🇬",\n\t["rw"] = "🇷🇼", ["bi"] = "🇧🇮", ["ss"] = "🇸🇸", ["cd"] = "🇨🇩",\n\t["cg"] = "🇨🇬", ["cm"] = "🇨🇲", ["cf"] = "🇨🇫", ["td"] = "🇹🇩",\n\t["ne"] = "🇳🇪", ["ml"] = "🇲🇱", ["bf"] = "🇧🇫", ["sn"] = "🇸🇳",\n\t["gm"] = "🇬🇲", ["gn"] = "🇬🇳", ["gw"] = "🇬🇼", ["sl"] = "🇸🇱",\n\t["lr"] = "🇱🇷", ["ci"] = "🇨🇮", ["tg"] = "🇹🇬", ["bj"] = "🇧🇯",\n\t["ga"] = "🇬🇦", ["gq"] = "🇬🇶", ["st"] = "🇸🇹", ["cv"] = "🇨🇻",\n\t["dj"] = "🇩🇯", ["er"] = "🇪🇷", ["so"] = "🇸🇴", ["km"] = "🇰🇲",\n\t["sc"] = "🇸🇨", ["mu"] = "🇲🇺", ["mw"] = "🇲🇼",\n\t["au"] = "🇦🇺", ["nz"] = "🇳🇿", ["fj"] = "🇫🇯", ["pg"] = "🇵🇬",\n\t["sb"] = "🇸🇧", ["vu"] = "🇻🇺", ["ws"] = "🇼🇸", ["to"] = "🇹🇴",\n}\n\nlocal function addFlag(player, character)\n\tlocal success, result = pcall(function()\n\t\tlocal countryShort\n\t\tif IS_STUDIO then\n\t\t\tcountryShort = "sa"\n\t\telse\n\t\t\tlocal locale = LocalizationService:GetCountryRegionForPlayerAsync(player)\n\t\t\tcountryShort = locale:split("-")[1]:lower()\n\t\tend\n\t\tlocal flag = Flags[countryShort] or "🏳️"\n\t\tlocal head = character:WaitForChild("Head", 10)\n\t\tif not head then return end\n\t\tlocal old = character:FindFirstChild("FlagDisplay")\n\t\tif old then old:Destroy() end\n\t\tlocal billboard = Instance.new("BillboardGui")\n\t\tbillboard.Name = "FlagDisplay"\n\t\tbillboard.Size = UDim2.new(0, 160, 0, 70)\n\t\tbillboard.StudsOffset = Vector3.new(0, 3.2, 0)\n\t\tbillboard.Adornee = head\n\t\tbillboard.AlwaysOnTop = false\n\t\tbillboard.MaxDistance = 50\n\t\tbillboard.Parent = character\n\t\tlocal mainFrame = Instance.new("Frame")\n\t\tmainFrame.Size = UDim2.new(1, 0, 1, 0)\n\t\tmainFrame.BackgroundTransparency = 1\n\t\tmainFrame.Parent = billboard\n\t\tlocal flagLabel = Instance.new("TextLabel")\n\t\tflagLabel.Size = UDim2.new(0.3, 0, 1, 0)\n\t\tflagLabel.Position = UDim2.new(0, 0, 0, 0)\n\t\tflagLabel.BackgroundTransparency = 1\n\t\tflagLabel.TextScaled = true\n\t\tflagLabel.Font = Enum.Font.SourceSansBold\n\t\tflagLabel.Text = flag\n\t\tflagLabel.Parent = mainFrame\n\t\tlocal divider = Instance.new("Frame")\n\t\tdivider.Size = UDim2.new(0, 2, 0.6, 0)\n\t\tdivider.Position = UDim2.new(0.33, 0, 0.2, 0)\n\t\tdivider.BackgroundColor3 = Color3.fromRGB(255, 255, 255)\n\t\tdivider.BackgroundTransparency = 0.5\n\t\tdivider.BorderSizePixel = 0\n\t\tdivider.Parent = mainFrame\n\t\tlocal nameLabel = Instance.new("TextLabel")\n\t\tnameLabel.Size = UDim2.new(0.63, 0, 1, 0)\n\t\tnameLabel.Position = UDim2.new(0.36, 0, 0, 0)\n\t\tnameLabel.BackgroundTransparency = 1\n\t\tnameLabel.TextScaled = true\n\t\tnameLabel.Font = Enum.Font.GothamBold\n\t\tnameLabel.Text = player.DisplayName\n\t\tnameLabel.TextColor3 = Color3.fromRGB(255, 255, 255)\n\t\tnameLabel.TextStrokeTransparency = 0.4\n\t\tnameLabel.TextStrokeColor3 = Color3.fromRGB(0, 0, 0)\n\t\tnameLabel.Parent = mainFrame\n\tend)\n\tif not success then\n\t\twarn("FlagScript Error: " .. tostring(result))\n\tend\nend\n\nPlayers.PlayerAdded:Connect(function(player)\n\tplayer.CharacterAdded:Connect(function(character)\n\t\taddFlag(player, character)\n\tend)\nend)\n\nfor _, player in ipairs(Players:GetPlayers()) do\n\tif player.Character then\n\t\taddFlag(player, player.Character)\n\tend\nend`
+    killfeed_damage: `-- Damage Numbers GTA Style — LocalScript by RealX`,
+    pointssystem_main: `-- Points System Server by RealX\nlocal Players = game:GetService("Players")\nlocal DataStoreService = game:GetService("DataStoreService")\nlocal PointsStore = DataStoreService:GetDataStore("PlayerPointsV2")`,
+    pointssystem_local: `-- Points System LocalScript by RealX\nlocal pointsEvent = ReplicatedStorage:WaitForChild("ShowPointsGui")`,
+    daystreak: `-- Daily Streak System by RealX\nlocal streakStore = DataStoreService:GetDataStore("DayStreak_v2")\nlocal SECONDS_IN_DAY = 86400`,
+    flagscript: `-- Country Flag System by RealX\nlocal Players = game:GetService("Players")\nlocal LocalizationService = game:GetService("LocalizationService")`
   };
 
   let currentTab = 'local';
@@ -979,205 +842,34 @@ Players.PlayerAdded:<span class="fn">Connect</span>(<span class="kw">function</s
     currentTab = tab;
     const key = document.getElementById('modal').dataset.key;
     let code;
-    if (key === 'sizechange') {
-      code = tab === 'local' ? scripts.sizechange_local : scripts.sizechange_server;
-    } else if (key === 'killfeed') {
-      code = tab === 'local' ? scripts.killfeed_feed : scripts.killfeed_damage;
-    } else if (key === 'pointssystem') {
-      code = tab === 'local' ? scripts.pointssystem_local : scripts.pointssystem_main;
-    }
+    if (key === 'sizechange') code = tab === 'local' ? scripts.sizechange_local : scripts.sizechange_server;
+    else if (key === 'killfeed') code = tab === 'local' ? scripts.killfeed_feed : scripts.killfeed_damage;
+    else if (key === 'pointssystem') code = tab === 'local' ? scripts.pointssystem_local : scripts.pointssystem_main;
     document.getElementById('modal-code').textContent = code;
     document.getElementById('tab-local').classList.toggle('active', tab === 'local');
     document.getElementById('tab-server').classList.toggle('active', tab === 'server');
   }
 
   const guides = {};
-
-  guides.speed = {
-    icon: '⚡', title: 'نظام السرعة الزائدة', subtitle: 'Script داخل Part في Workspace',
-    sections: [
-      { head: '📦 أين تحط السكربت؟', content: `<div class="guide-steps"><div class="guide-step"><div class="step-num">1</div><div class="step-content"><div class="step-title">أنشئ Part في Workspace</div></div></div><div class="guide-step"><div class="step-num">2</div><div class="step-content"><div class="step-title">أضف Script داخل الـ Part</div><span class="step-code">Workspace → Part → Script ✅</span></div></div></div>` },
-      { head: '🏷️ نوع السكربت', content: `<div class="guide-tags"><span class="guide-tag type-server">Server Script</span><span class="guide-tag type-free">مجاني</span></div>` }
-    ]
-  };
-  guides.daynight = {
-    icon: '🌙', title: 'دورة الليل والنهار', subtitle: 'Script في ServerScriptService',
-    sections: [
-      { head: '📦 أين تحط السكربت؟', content: `<div class="guide-steps"><div class="guide-step"><div class="step-num">1</div><div class="step-content"><div class="step-title">ServerScriptService → Script</div><span class="step-code">ServerScriptService → Script ✅</span></div></div></div>` },
-      { head: '🏷️ نوع السكربت', content: `<div class="guide-tags"><span class="guide-tag type-server">Server Script</span><span class="guide-tag type-free">مجاني</span></div>` }
-    ]
-  };
-  guides.kill = {
-    icon: '💀', title: 'طابوق القتل', subtitle: 'Script داخل Part في Workspace',
-    sections: [
-      { head: '📦 أين تحط السكربت؟', content: `<div class="guide-steps"><div class="guide-step"><div class="step-num">1</div><div class="step-content"><div class="step-title">أنشئ Part وأضف Script داخله</div><span class="step-code">Workspace → KillBrick → Script ✅</span></div></div></div>` },
-      { head: '🏷️ نوع السكربت', content: `<div class="guide-tags"><span class="guide-tag type-server">Server Script</span><span class="guide-tag type-free">مجاني</span></div>` }
-    ]
-  };
-  guides.leaderboard = {
-    icon: '🏆', title: 'نظام النقاط', subtitle: 'Script في ServerScriptService',
-    sections: [
-      { head: '📦 أين تحط السكربت؟', content: `<div class="guide-steps"><div class="guide-step"><div class="step-num">1</div><div class="step-content"><div class="step-title">ServerScriptService → Script</div><span class="step-code">ServerScriptService → LeaderboardScript ✅</span></div></div></div>` },
-      { head: '🏷️ نوع السكربت', content: `<div class="guide-tags"><span class="guide-tag type-server">Server Script</span><span class="guide-tag type-free">مجاني</span></div>` }
-    ]
-  };
-  guides.npc = {
-    icon: '🤖', title: 'NPC — ذكاء اصطناعي', subtitle: 'Script داخل Model في Workspace',
-    sections: [
-      { head: '📦 أين تحط السكربت؟', content: `<div class="guide-steps"><div class="guide-step"><div class="step-num">1</div><div class="step-content"><div class="step-title">Workspace → NPC_Model → Script</div><span class="step-code">Workspace → NPC_Model → Script ✅</span></div></div></div>` },
-      { head: '🏷️ نوع السكربت', content: `<div class="guide-tags"><span class="guide-tag type-server">Server Script</span><span class="guide-tag type-free">مجاني</span></div>` }
-    ]
-  };
-  guides.sizechange = {
-    icon: '📏', title: 'مغير الحجم', subtitle: 'LocalScript + ServerScript',
-    sections: [
-      { head: '📦 الملفات المطلوبة', content: `<div class="guide-tip info"><span class="guide-tip-icon">ℹ️</span>هذا السكربت مكوّن من <b>سكربتين</b></div>` },
-      { head: '🖥️ ServerScript', content: `<div class="guide-steps"><div class="guide-step"><div class="step-num">1</div><div class="step-content"><span class="step-code">ServerScriptService → Script ✅</span></div></div></div>` },
-      { head: '📱 LocalScript', content: `<div class="guide-steps"><div class="guide-step"><div class="step-num">1</div><div class="step-content"><span class="step-code">StarterPlayerScripts → LocalScript ✅</span></div></div></div>` },
-      { head: '🏷️ نوع السكربت', content: `<div class="guide-tags"><span class="guide-tag type-local">LocalScript</span><span class="guide-tag type-server">ServerScript</span><span class="guide-tag type-free">مجاني</span></div>` }
-    ]
-  };
-  guides.gravity = {
-    icon: '🌍', title: 'Gravity Controller', subtitle: 'LocalScript في StarterPlayerScripts',
-    sections: [
-      { head: '📦 أين تحط السكربت؟', content: `<div class="guide-steps"><div class="guide-step"><div class="step-num">1</div><div class="step-content"><span class="step-code">StarterPlayerScripts → LocalScript ✅</span></div></div></div>` },
-      { head: '🏷️ نوع السكربت', content: `<div class="guide-tags"><span class="guide-tag type-local">LocalScript</span><span class="guide-tag type-free">مجاني</span></div>` }
-    ]
-  };
-  guides.killfeed = {
-    icon: '☠', title: 'KillFeed + أرقام الضرر', subtitle: 'LocalScript في StarterCharacterScripts',
-    sections: [
-      { head: '📦 كيف تحطه؟', content: `<div class="guide-steps"><div class="guide-step"><div class="step-num">1</div><div class="step-content"><div class="step-title">RemoteEvent في ReplicatedStorage</div><span class="step-code">KillFeedEvent</span></div></div><div class="guide-step"><div class="step-num">2</div><div class="step-content"><span class="step-code">StarterCharacterScripts → LocalScript ✅</span></div></div></div>` },
-      { head: '🏷️ نوع السكربت', content: `<div class="guide-tags"><span class="guide-tag type-local">LocalScript</span><span class="guide-tag type-free">مجاني</span></div>` }
-    ]
-  };
-  guides.pointssystem = {
-    icon: '🏆', title: 'نظام النقاط الكامل', subtitle: 'MainScript + LocalScript',
-    sections: [
-      { head: '🖥️ MainScript', content: `<div class="guide-steps"><div class="guide-step"><div class="step-num">1</div><div class="step-content"><span class="step-code">ServerScriptService → MainScript ✅</span></div></div></div>` },
-      { head: '📱 LocalScript', content: `<div class="guide-steps"><div class="guide-step"><div class="step-num">1</div><div class="step-content"><span class="step-code">StarterPlayerScripts → LocalScript ✅</span></div></div></div>` },
-      { head: '⚙️ إعطاء نقاط', content: `<div class="guide-steps"><div class="guide-step"><div class="step-num">💡</div><div class="step-content"><span class="step-code">_G.GivePoints(player, 50)</span></div></div></div>` },
-      { head: '🏷️', content: `<div class="guide-tags"><span class="guide-tag type-server">ServerScript</span><span class="guide-tag type-local">LocalScript</span><span class="guide-tag type-module">DataStore</span><span class="guide-tag type-free">مجاني</span></div>` }
-    ]
-  };
-  guides.daystreak = {
-    icon: '🔥', title: 'نظام السترييك اليومي', subtitle: 'Script في ServerScriptService',
-    sections: [
-      { head: '📦 وش يسوي؟', content: `<div class="guide-steps"><div class="guide-step"><div class="step-num">🔥</div><div class="step-content"><div class="step-title">Billboard فوق الرأس</div></div></div><div class="guide-step"><div class="step-num">💾</div><div class="step-content"><div class="step-title">DataStore — حفظ السترييك</div></div></div><div class="guide-step"><div class="step-num">📊</div><div class="step-content"><div class="step-title">LeaderStats تلقائي</div></div></div></div>` },
-      { head: '📍 أين تحطه؟', content: `<div class="guide-steps"><div class="guide-step"><div class="step-num">1</div><div class="step-content"><span class="step-code">ServerScriptService → Script ✅</span></div></div></div>` },
-      { head: '💡 ملاحظات', content: `<div class="guide-tip warn"><span class="guide-tip-icon">⚠️</span>فعّل <b>Enable Studio Access to API Services</b></div>` },
-      { head: '🏷️', content: `<div class="guide-tags"><span class="guide-tag type-server">Server Script</span><span class="guide-tag type-module">DataStore</span><span class="guide-tag type-free">مجاني</span></div>` }
-    ]
-  };
-
-  // ✅ NEW: Flag Script Guide
-  guides.flagscript = {
-    icon: '🌍',
-    title: 'علم الدولة فوق الرأس',
-    subtitle: 'Script في ServerScriptService — 195+ دولة تلقائياً',
-    sections: [
-      {
-        head: '📦 وش يسوي هذا السكربت؟',
-        content: `<div class="guide-steps">
-          <div class="guide-step"><div class="step-num">🚩</div><div class="step-content"><div class="step-title">علم الدولة فوق رأس اللاعب</div><div class="step-desc">يكشف بلد اللاعب تلقائياً ويحط علمه فوق رأسه</div></div></div>
-          <div class="guide-step"><div class="step-num">👤</div><div class="step-content"><div class="step-title">اسم اللاعب بجانب العلم</div><div class="step-desc">DisplayName بخط Gotham Bold مع خط فاصل أبيض</div></div></div>
-          <div class="guide-step"><div class="step-num">📏</div><div class="step-content"><div class="step-title">يختفي بعد 50 stud</div><div class="step-desc">MaxDistance = 50 — ما يضغط على الأداء</div></div></div>
-          <div class="guide-step"><div class="step-num">🌍</div><div class="step-content"><div class="step-title">195+ دولة مدعومة</div><div class="step-desc">كل دول العالم موجودة — إذا ما عرف البلد يطلع 🏳️</div></div></div>
-        </div>`
-      },
-      {
-        head: '📍 أين تحط السكربت؟',
-        content: `<div class="guide-steps">
-          <div class="guide-step"><div class="step-num">1</div><div class="step-content"><div class="step-title">روح ServerScriptService</div><div class="step-desc">Explorer → ServerScriptService → كليك يمين → Insert Object → Script</div></div></div>
-          <div class="guide-step"><div class="step-num">2</div><div class="step-content"><div class="step-title">الصق السكربت كامل واحفظ</div><span class="step-code">ServerScriptService → FlagScript ✅</span></div></div>
-        </div>`
-      },
-      {
-        head: '🧪 اختبار في Studio',
-        content: `<div class="guide-steps">
-          <div class="guide-step"><div class="step-num">⚠️</div><div class="step-content"><div class="step-title">في Studio دايمًا يطلع علم SA</div><div class="step-desc">هذا طبيعي — السكربت يستخدم "sa" كـ fallback في Studio تلقائياً</div></div></div>
-          <div class="guide-step"><div class="step-num">✅</div><div class="step-content"><div class="step-title">العلم الصحيح يطلع بعد النشر</div><div class="step-desc">Publish اللعبة وجرّبها من Roblox مباشرة</div></div></div>
-          <div class="guide-step"><div class="step-num">💡</div><div class="step-content"><div class="step-title">لتغيير دولة الاختبار في Studio</div><span class="step-code">countryShort = "us"  -- غيّرها لأي كود</span></div></div>
-        </div>`
-      },
-      {
-        head: '⚙️ إعدادات قابلة للتغيير',
-        content: `<div class="guide-steps">
-          <div class="guide-step"><div class="step-num">📏</div><div class="step-content"><div class="step-title">MaxDistance = 50</div><div class="step-desc">المسافة اللي يظهر فيها العلم — غيّره حسب لعبتك</div><span class="step-code">billboard.MaxDistance = 50</span></div></div>
-          <div class="guide-step"><div class="step-num">📐</div><div class="step-content"><div class="step-title">حجم الـ Billboard</div><span class="step-code">billboard.Size = UDim2.new(0, 160, 0, 70)</span></div></div>
-          <div class="guide-step"><div class="step-num">↕️</div><div class="step-content"><div class="step-title">ارتفاع العلم فوق الرأس</div><span class="step-code">billboard.StudsOffset = Vector3.new(0, 3.2, 0)</span></div></div>
-        </div>`
-      },
-      {
-        head: '💡 ملاحظات مهمة',
-        content: `<div class="guide-tip success"><span class="guide-tip-icon">✅</span>يشتغل مع اللاعبين الموجودين قبل تشغيل السكربت</div><br>
-        <div class="guide-tip info" style="margin-top:8px;"><span class="guide-tip-icon">ℹ️</span>السكربت Server-only — ما يحتاج LocalScript</div><br>
-        <div class="guide-tip warn" style="margin-top:8px;"><span class="guide-tip-icon">⚠️</span>GetCountryRegionForPlayerAsync قد تأخذ ثانية — هذا طبيعي</div>`
-      },
-      {
-        head: '🏷️ تفاصيل',
-        content: `<div class="guide-tags"><span class="guide-tag type-server">Server Script</span><span class="guide-tag type-module">195+ دولة</span><span class="guide-tag type-free">مجاني 100%</span></div>`
-      }
-    ]
-  };
-
-  guides.model_timer = {
-    icon: '⏱️', title: 'Simple Timer', subtitle: 'تايمر جاهز',
-    sections: [
-      { head: '🚀 كيف أستخدمه؟', content: `<div class="guide-steps"><div class="guide-step"><div class="step-num">1</div><div class="step-content"><div class="step-title">Toolbox → My Models → اسحب في Workspace</div></div></div></div>` },
-      { head: '🏷️', content: `<div class="guide-tags"><span class="guide-tag type-free">مجاني</span></div>` }
-    ]
-  };
-  guides.model_hotbar = {
-    icon: '🎮', title: 'CustomHotBarGui', subtitle: 'شريط أدوات UI',
-    sections: [
-      { head: '🚀 كيف أستخدمه؟', content: `<div class="guide-steps"><div class="guide-step"><div class="step-num">1</div><div class="step-content"><span class="step-code">StarterGui → CustomHotBarGui ✅</span></div></div></div>` },
-      { head: '🏷️', content: `<div class="guide-tags"><span class="guide-tag type-local">StarterGui</span><span class="guide-tag type-free">مجاني</span></div>` }
-    ]
-  };
-  guides.model_trees = {
-    icon: '🌲', title: 'حزمة الأشجار', subtitle: 'أشجار 3D',
-    sections: [
-      { head: '🚀 كيف أستخدمها؟', content: `<div class="guide-steps"><div class="guide-step"><div class="step-num">1</div><div class="step-content"><div class="step-title">اسحب في Workspace</div></div></div></div>` },
-      { head: '🏷️', content: `<div class="guide-tags"><span class="guide-tag type-module">3D Model</span><span class="guide-tag type-free">مجاني</span></div>` }
-    ]
-  };
-  guides.model_dash = {
-    icon: '💨', title: 'Dash v1', subtitle: 'داش مع دعم الجوال',
-    sections: [
-      { head: '🎮 كيف أستخدمه؟', content: `<div class="guide-steps"><div class="guide-step"><div class="step-num">1</div><div class="step-content"><span class="step-code">StarterCharacterScripts → LocalScript ✅</span></div></div></div>` },
-      { head: '🏷️', content: `<div class="guide-tags"><span class="guide-tag type-local">LocalScript</span><span class="guide-tag type-free">مجاني</span></div>` }
-    ]
-  };
-  guides.model_weaponwheel = {
-    icon: '⚔️', title: 'WeaponWheel', subtitle: 'عجلة أسلحة GTA',
-    sections: [
-      { head: '🎮 كيف أستخدمه؟', content: `<div class="guide-steps"><div class="guide-step"><div class="step-num">1</div><div class="step-content"><span class="step-code">StarterPlayerScripts → Script ✅</span></div></div></div>` },
-      { head: '🏷️', content: `<div class="guide-tags"><span class="guide-tag type-local">ScreenGui</span><span class="guide-tag type-free">مجاني</span></div>` }
-    ]
-  };
-  guides.model_playertracker = {
-    icon: '🔔', title: 'Player Tracker', subtitle: 'عداد لاعبين',
-    sections: [
-      { head: '🎮 كيف أستخدمه؟', content: `<div class="guide-steps"><div class="guide-step"><div class="step-num">1</div><div class="step-content"><span class="step-code">ServerScriptService → Script ✅</span></div></div></div>` },
-      { head: '🏷️', content: `<div class="guide-tags"><span class="guide-tag type-free">مجاني</span></div>` }
-    ]
-  };
-  guides.model_roundsystem = {
-    icon: '🗺️', title: 'نظام الراوند', subtitle: 'نظام راوند كامل',
-    sections: [
-      { head: '🚀 كيف أستخدمه؟', content: `<div class="guide-steps"><div class="guide-step"><div class="step-num">1</div><div class="step-content"><div class="step-title">ServerStorage → Maps</div></div></div></div>` },
-      { head: '💡', content: `<div class="guide-tip warn"><span class="guide-tip-icon">⚠️</span>اسم الأرضية لازم <b>Floor</b></div>` },
-      { head: '🏷️', content: `<div class="guide-tags"><span class="guide-tag type-server">ServerScript</span><span class="guide-tag type-free">مجاني</span></div>` }
-    ]
-  };
-  guides.model_speedsystem = {
-    icon: '⚡', title: 'نظام سرعه', subtitle: 'نظام سرعة احترافي',
-    sections: [
-      { head: '🚀 كيف أستخدمه؟', content: `<div class="guide-steps"><div class="guide-step"><div class="step-num">1</div><div class="step-content"><span class="step-code">Workspace → SpeedBoostPart ✅</span></div></div></div>` },
-      { head: '🏷️', content: `<div class="guide-tags"><span class="guide-tag type-server">Server Script</span><span class="guide-tag type-free">مجاني</span></div>` }
-    ]
-  };
+  guides.speed = { icon:'⚡', title:'نظام السرعة الزائدة', subtitle:'Script داخل Part', sections:[{head:'📦 أين تحط السكربت؟',content:`<div class="guide-steps"><div class="guide-step"><div class="step-num">1</div><div class="step-content"><div class="step-title">Workspace → Part → Script</div><span class="step-code">Workspace → Part → Script ✅</span></div></div></div>`},{head:'🏷️ نوع',content:`<div class="guide-tags"><span class="guide-tag type-server">Server Script</span><span class="guide-tag type-free">مجاني</span></div>`}]};
+  guides.daynight = { icon:'🌙', title:'دورة الليل والنهار', subtitle:'Script في ServerScriptService', sections:[{head:'📦 أين تحط السكربت؟',content:`<div class="guide-steps"><div class="guide-step"><div class="step-num">1</div><div class="step-content"><span class="step-code">ServerScriptService → Script ✅</span></div></div></div>`},{head:'🏷️',content:`<div class="guide-tags"><span class="guide-tag type-server">Server Script</span><span class="guide-tag type-free">مجاني</span></div>`}]};
+  guides.kill = { icon:'💀', title:'طابوق القتل', subtitle:'Script داخل Part', sections:[{head:'📦 أين؟',content:`<div class="guide-steps"><div class="guide-step"><div class="step-num">1</div><div class="step-content"><span class="step-code">Workspace → KillBrick → Script ✅</span></div></div></div>`},{head:'🏷️',content:`<div class="guide-tags"><span class="guide-tag type-server">Server Script</span><span class="guide-tag type-free">مجاني</span></div>`}]};
+  guides.leaderboard = { icon:'🏆', title:'نظام النقاط', subtitle:'Script في ServerScriptService', sections:[{head:'📦 أين؟',content:`<div class="guide-steps"><div class="guide-step"><div class="step-num">1</div><div class="step-content"><span class="step-code">ServerScriptService → Script ✅</span></div></div></div>`},{head:'🏷️',content:`<div class="guide-tags"><span class="guide-tag type-server">Server Script</span><span class="guide-tag type-free">مجاني</span></div>`}]};
+  guides.npc = { icon:'🤖', title:'NPC AI', subtitle:'Script داخل Model', sections:[{head:'📦 أين؟',content:`<div class="guide-steps"><div class="guide-step"><div class="step-num">1</div><div class="step-content"><span class="step-code">Workspace → NPC_Model → Script ✅</span></div></div></div>`},{head:'🏷️',content:`<div class="guide-tags"><span class="guide-tag type-server">Server Script</span><span class="guide-tag type-free">مجاني</span></div>`}]};
+  guides.sizechange = { icon:'📏', title:'مغير الحجم', subtitle:'LocalScript + ServerScript', sections:[{head:'🖥️ ServerScript',content:`<div class="guide-steps"><div class="guide-step"><div class="step-num">1</div><div class="step-content"><span class="step-code">ServerScriptService → Script ✅</span></div></div></div>`},{head:'📱 LocalScript',content:`<div class="guide-steps"><div class="guide-step"><div class="step-num">1</div><div class="step-content"><span class="step-code">StarterPlayerScripts → LocalScript ✅</span></div></div></div>`},{head:'🏷️',content:`<div class="guide-tags"><span class="guide-tag type-local">LocalScript</span><span class="guide-tag type-server">ServerScript</span><span class="guide-tag type-free">مجاني</span></div>`}]};
+  guides.gravity = { icon:'🌍', title:'Gravity Controller', subtitle:'LocalScript في StarterPlayerScripts', sections:[{head:'📦 أين؟',content:`<div class="guide-steps"><div class="guide-step"><div class="step-num">1</div><div class="step-content"><span class="step-code">StarterPlayerScripts → LocalScript ✅</span></div></div></div>`},{head:'🏷️',content:`<div class="guide-tags"><span class="guide-tag type-local">LocalScript</span><span class="guide-tag type-free">مجاني</span></div>`}]};
+  guides.killfeed = { icon:'☠', title:'KillFeed + أرقام الضرر', subtitle:'LocalScript', sections:[{head:'📦 كيف؟',content:`<div class="guide-steps"><div class="guide-step"><div class="step-num">1</div><div class="step-content"><div class="step-title">RemoteEvent في ReplicatedStorage</div><span class="step-code">KillFeedEvent</span></div></div><div class="guide-step"><div class="step-num">2</div><div class="step-content"><span class="step-code">StarterCharacterScripts → LocalScript ✅</span></div></div></div>`},{head:'🏷️',content:`<div class="guide-tags"><span class="guide-tag type-local">LocalScript</span><span class="guide-tag type-free">مجاني</span></div>`}]};
+  guides.pointssystem = { icon:'🏆', title:'نظام النقاط الكامل', subtitle:'MainScript + LocalScript', sections:[{head:'🖥️ MainScript',content:`<div class="guide-steps"><div class="guide-step"><div class="step-num">1</div><div class="step-content"><span class="step-code">ServerScriptService → Script ✅</span></div></div></div>`},{head:'📱 LocalScript',content:`<div class="guide-steps"><div class="guide-step"><div class="step-num">1</div><div class="step-content"><span class="step-code">StarterPlayerScripts → LocalScript ✅</span></div></div></div>`},{head:'⚙️ إعطاء نقاط',content:`<div class="guide-steps"><div class="guide-step"><div class="step-num">💡</div><div class="step-content"><span class="step-code">_G.GivePoints(player, 50)</span></div></div></div>`},{head:'🏷️',content:`<div class="guide-tags"><span class="guide-tag type-server">ServerScript</span><span class="guide-tag type-local">LocalScript</span><span class="guide-tag type-module">DataStore</span><span class="guide-tag type-free">مجاني</span></div>`}]};
+  guides.daystreak = { icon:'🔥', title:'نظام السترييك', subtitle:'Script في ServerScriptService', sections:[{head:'📍 أين؟',content:`<div class="guide-steps"><div class="guide-step"><div class="step-num">1</div><div class="step-content"><span class="step-code">ServerScriptService → Script ✅</span></div></div></div>`},{head:'💡',content:`<div class="guide-tip warn"><span class="guide-tip-icon">⚠️</span>فعّل <b>Enable Studio Access to API Services</b></div>`},{head:'🏷️',content:`<div class="guide-tags"><span class="guide-tag type-server">Server Script</span><span class="guide-tag type-module">DataStore</span><span class="guide-tag type-free">مجاني</span></div>`}]};
+  guides.flagscript = { icon:'🌍', title:'علم الدولة فوق الرأس', subtitle:'Script في ServerScriptService', sections:[{head:'📦 وش يسوي؟',content:`<div class="guide-steps"><div class="guide-step"><div class="step-num">🚩</div><div class="step-content"><div class="step-title">علم الدولة + اسم اللاعب فوق رأسه</div></div></div><div class="guide-step"><div class="step-num">📏</div><div class="step-content"><div class="step-title">يختفي بعد 50 stud</div></div></div><div class="guide-step"><div class="step-num">🌍</div><div class="step-content"><div class="step-title">195+ دولة مدعومة</div></div></div></div>`},{head:'📍 أين؟',content:`<div class="guide-steps"><div class="guide-step"><div class="step-num">1</div><div class="step-content"><span class="step-code">ServerScriptService → FlagScript ✅</span></div></div></div>`},{head:'🏷️',content:`<div class="guide-tags"><span class="guide-tag type-server">Server Script</span><span class="guide-tag type-module">195+ دولة</span><span class="guide-tag type-free">مجاني 100%</span></div>`}]};
+  guides.model_timer = { icon:'⏱️', title:'Simple Timer', subtitle:'تايمر جاهز', sections:[{head:'🚀 كيف؟',content:`<div class="guide-steps"><div class="guide-step"><div class="step-num">1</div><div class="step-content"><div class="step-title">Toolbox → My Models → اسحب في Workspace</div></div></div></div>`},{head:'🏷️',content:`<div class="guide-tags"><span class="guide-tag type-free">مجاني</span></div>`}]};
+  guides.model_hotbar = { icon:'🎮', title:'CustomHotBarGui', subtitle:'شريط أدوات UI', sections:[{head:'🚀 كيف؟',content:`<div class="guide-steps"><div class="guide-step"><div class="step-num">1</div><div class="step-content"><span class="step-code">StarterGui → CustomHotBarGui ✅</span></div></div></div>`},{head:'🏷️',content:`<div class="guide-tags"><span class="guide-tag type-local">StarterGui</span><span class="guide-tag type-free">مجاني</span></div>`}]};
+  guides.model_trees = { icon:'🌲', title:'حزمة الأشجار', subtitle:'أشجار 3D', sections:[{head:'🚀 كيف؟',content:`<div class="guide-steps"><div class="guide-step"><div class="step-num">1</div><div class="step-content"><div class="step-title">اسحب في Workspace</div></div></div></div>`},{head:'🏷️',content:`<div class="guide-tags"><span class="guide-tag type-module">3D Model</span><span class="guide-tag type-free">مجاني</span></div>`}]};
+  guides.model_dash = { icon:'💨', title:'Dash v1', subtitle:'داش مع دعم الجوال', sections:[{head:'🎮 كيف؟',content:`<div class="guide-steps"><div class="guide-step"><div class="step-num">1</div><div class="step-content"><span class="step-code">StarterCharacterScripts → LocalScript ✅</span></div></div></div>`},{head:'🏷️',content:`<div class="guide-tags"><span class="guide-tag type-local">LocalScript</span><span class="guide-tag type-free">مجاني</span></div>`}]};
+  guides.model_weaponwheel = { icon:'⚔️', title:'WeaponWheel', subtitle:'عجلة أسلحة GTA', sections:[{head:'🎮 كيف؟',content:`<div class="guide-steps"><div class="guide-step"><div class="step-num">1</div><div class="step-content"><span class="step-code">StarterPlayerScripts → Script ✅</span></div></div></div>`},{head:'🏷️',content:`<div class="guide-tags"><span class="guide-tag type-local">ScreenGui</span><span class="guide-tag type-free">مجاني</span></div>`}]};
+  guides.model_playertracker = { icon:'🔔', title:'Player Tracker', subtitle:'عداد لاعبين', sections:[{head:'🎮 كيف؟',content:`<div class="guide-steps"><div class="guide-step"><div class="step-num">1</div><div class="step-content"><span class="step-code">ServerScriptService → Script ✅</span></div></div></div>`},{head:'🏷️',content:`<div class="guide-tags"><span class="guide-tag type-free">مجاني</span></div>`}]};
+  guides.model_roundsystem = { icon:'🗺️', title:'نظام الراوند', subtitle:'نظام راوند كامل', sections:[{head:'🚀 كيف؟',content:`<div class="guide-steps"><div class="guide-step"><div class="step-num">1</div><div class="step-content"><div class="step-title">ServerStorage → Maps</div></div></div></div>`},{head:'💡',content:`<div class="guide-tip warn"><span class="guide-tip-icon">⚠️</span>اسم الأرضية لازم <b>Floor</b></div>`},{head:'🏷️',content:`<div class="guide-tags"><span class="guide-tag type-server">ServerScript</span><span class="guide-tag type-free">مجاني</span></div>`}]};
+  guides.model_speedsystem = { icon:'⚡', title:'نظام سرعه', subtitle:'نظام سرعة احترافي', sections:[{head:'🚀 كيف؟',content:`<div class="guide-steps"><div class="guide-step"><div class="step-num">1</div><div class="step-content"><span class="step-code">Workspace → SpeedBoostPart ✅</span></div></div></div>`},{head:'🏷️',content:`<div class="guide-tags"><span class="guide-tag type-server">Server Script</span><span class="guide-tag type-free">مجاني</span></div>`}]};
 
   function openGuide(key) {
     const g = guides[key];
@@ -1185,39 +877,27 @@ Players.PlayerAdded:<span class="fn">Connect</span>(<span class="kw">function</s
     document.getElementById('guide-icon').textContent = g.icon;
     document.getElementById('guide-title').textContent = g.title;
     document.getElementById('guide-subtitle').textContent = g.subtitle;
-    const body = document.getElementById('guide-body');
-    body.innerHTML = g.sections.map(s => `
-      <div class="guide-section">
-        <div class="guide-section-head">${s.head}</div>
-        <div class="guide-section-body">${s.content}</div>
-      </div>
-    `).join('');
+    document.getElementById('guide-body').innerHTML = g.sections.map(s => `<div class="guide-section"><div class="guide-section-head">${s.head}</div><div class="guide-section-body">${s.content}</div></div>`).join('');
     document.getElementById('guide-modal').classList.add('active');
   }
 
   function closeGuide(e) {
-    if (e.target === document.getElementById('guide-modal')) {
-      document.getElementById('guide-modal').classList.remove('active');
-    }
+    if (e.target === document.getElementById('guide-modal')) document.getElementById('guide-modal').classList.remove('active');
   }
 
   window._renderCommentsList = function(key, comments, mode) {
     if (mode === 'mini') {
       const list = document.getElementById('mini-comments-' + key);
       if (!list) return;
-      if (comments.length === 0) { list.innerHTML = '<div class="no-comments">لا يوجد تعليقات بعد</div>'; return; }
-      list.innerHTML = comments.map(c =>
-        `<div class="card-comment-item"><span class="cc-name">${escHtml(c.name||'زائر')}</span>${escHtml(c.text)}<span class="cc-time">${timeAgo(c.ts)}</span></div>`
-      ).join('');
+      if (!comments.length) { list.innerHTML = '<div class="no-comments">لا يوجد تعليقات بعد</div>'; return; }
+      list.innerHTML = comments.map(c => `<div class="card-comment-item"><span class="cc-name">${escHtml(c.name||'زائر')}</span>${escHtml(c.text)}<span class="cc-time">${timeAgo(c.ts)}</span></div>`).join('');
     } else {
       const list = document.getElementById('modal-comments-list');
       const countEl = document.getElementById('modal-comment-count');
       if (!list) return;
       if (countEl) countEl.textContent = comments.length;
-      if (comments.length === 0) { list.innerHTML = `<div class="no-comments-msg"><span class="icon">💬</span>كن أول من يعلق!</div>`; return; }
-      list.innerHTML = comments.map(c =>
-        `<div class="comment-item"><div class="comment-header"><span class="comment-name">${escHtml(c.name||'زائر')}</span><span class="comment-time">${timeAgo(c.ts)}</span></div><div class="comment-text">${escHtml(c.text)}</div></div>`
-      ).join('');
+      if (!comments.length) { list.innerHTML = `<div class="no-comments-msg"><span class="icon">💬</span>كن أول من يعلق!</div>`; return; }
+      list.innerHTML = comments.map(c => `<div class="comment-item"><div class="comment-header"><span class="comment-name">${escHtml(c.name||'زائر')}</span><span class="comment-time">${timeAgo(c.ts)}</span></div><div class="comment-text">${escHtml(c.text)}</div></div>`).join('');
     }
   };
 
@@ -1252,14 +932,11 @@ Players.PlayerAdded:<span class="fn">Connect</span>(<span class="kw">function</s
     showToast('✓ تم إرسال تعليقك!');
   }
 
-  function escHtml(str) {
-    return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
-  }
+  function escHtml(str) { return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
 
   function showToast(msg) {
     const t = document.getElementById('toast');
-    t.textContent = msg;
-    t.classList.add('show');
+    t.textContent = msg; t.classList.add('show');
     setTimeout(() => t.classList.remove('show'), 2500);
   }
 
@@ -1288,22 +965,19 @@ Players.PlayerAdded:<span class="fn">Connect</span>(<span class="kw">function</s
       tabs.style.display = 'flex'; currentTab = 'local';
       document.getElementById('tab-local').innerHTML = '📱 LocalScript (GUI)';
       document.getElementById('tab-server').innerHTML = '🖥️ ServerScript';
-      document.getElementById('tab-local').classList.add('active');
-      document.getElementById('tab-server').classList.remove('active');
+      document.getElementById('tab-local').classList.add('active'); document.getElementById('tab-server').classList.remove('active');
       document.getElementById('modal-code').textContent = scripts.sizechange_local;
     } else if (key === 'killfeed') {
       tabs.style.display = 'flex'; currentTab = 'local';
       document.getElementById('tab-local').innerHTML = '☠️ KillFeed';
       document.getElementById('tab-server').innerHTML = '💢 أرقام الضرر';
-      document.getElementById('tab-local').classList.add('active');
-      document.getElementById('tab-server').classList.remove('active');
+      document.getElementById('tab-local').classList.add('active'); document.getElementById('tab-server').classList.remove('active');
       document.getElementById('modal-code').textContent = scripts.killfeed_feed;
     } else if (key === 'pointssystem') {
       tabs.style.display = 'flex'; currentTab = 'local';
       document.getElementById('tab-local').innerHTML = '📱 LocalScript (GUI)';
       document.getElementById('tab-server').innerHTML = '🖥️ MainScript (Server)';
-      document.getElementById('tab-local').classList.add('active');
-      document.getElementById('tab-server').classList.remove('active');
+      document.getElementById('tab-local').classList.add('active'); document.getElementById('tab-server').classList.remove('active');
       document.getElementById('modal-code').textContent = scripts.pointssystem_local;
     } else {
       tabs.style.display = 'none';
@@ -1316,10 +990,10 @@ Players.PlayerAdded:<span class="fn">Connect</span>(<span class="kw">function</s
   function copyFromModal() {
     const key = document.getElementById('modal').dataset.key;
     let code;
-    if (key === 'sizechange') { code = currentTab === 'local' ? scripts.sizechange_local : scripts.sizechange_server; }
-    else if (key === 'killfeed') { code = currentTab === 'local' ? scripts.killfeed_feed : scripts.killfeed_damage; }
-    else if (key === 'pointssystem') { code = currentTab === 'local' ? scripts.pointssystem_local : scripts.pointssystem_main; }
-    else { code = scripts[key] || ''; }
+    if (key === 'sizechange') code = currentTab === 'local' ? scripts.sizechange_local : scripts.sizechange_server;
+    else if (key === 'killfeed') code = currentTab === 'local' ? scripts.killfeed_feed : scripts.killfeed_damage;
+    else if (key === 'pointssystem') code = currentTab === 'local' ? scripts.pointssystem_local : scripts.pointssystem_main;
+    else code = scripts[key] || '';
     if (navigator.clipboard && window.isSecureContext) {
       navigator.clipboard.writeText(code).then(() => showToast('✓ تم نسخ السكربت!')).catch(() => fallbackCopy(code));
     } else { fallbackCopy(code); }
@@ -1338,5 +1012,500 @@ Players.PlayerAdded:<span class="fn">Connect</span>(<span class="kw">function</s
     if (e.key === 'Enter' && e.ctrlKey) submitModalComment();
   });
 </script>
+
+<!-- ========== RealX AI FLOATING WIDGET ========== -->
+
+<!-- ========== RealX AI FLOATING WIDGET ========== -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/lua.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
+
+<style>
+.rxai-fab {
+  position:fixed; bottom:32px; left:32px; z-index:800;
+  width:60px; height:60px; border-radius:18px;
+  background:linear-gradient(135deg,#ff3b3b,#ff6b35);
+  border:none; cursor:pointer;
+  display:flex; align-items:center; justify-content:center;
+  box-shadow:0 8px 28px rgba(255,59,59,0.5);
+  transition:all 0.3s cubic-bezier(0.34,1.56,0.64,1);
+  animation:rxai-pulse 3s ease infinite;
+}
+.rxai-fab:hover { transform:scale(1.1) translateY(-3px); box-shadow:0 14px 40px rgba(255,59,59,0.65); }
+.rxai-fab.is-open { transform:scale(0.9) rotate(12deg); background:linear-gradient(135deg,#c0392b,#d45019); animation:none; }
+@keyframes rxai-pulse {
+  0%,100% { box-shadow:0 8px 28px rgba(255,59,59,0.5),0 0 0 0 rgba(255,59,59,0.3); }
+  50% { box-shadow:0 8px 28px rgba(255,59,59,0.65),0 0 0 12px rgba(255,59,59,0); }
+}
+.rxai-fab .rxai-badge {
+  position:absolute; top:-7px; right:-7px;
+  background:#55efc4; border-radius:50%; border:2.5px solid #080810;
+  width:20px; height:20px; font-size:0.5rem; font-weight:900;
+  font-family:'Space Mono',monospace; color:#082a1e;
+  display:flex; align-items:center; justify-content:center;
+  animation:rxai-blink 2s ease infinite;
+}
+@keyframes rxai-blink { 0%,100%{opacity:1} 50%{opacity:0.5} }
+
+/* PANEL */
+.rxai-panel {
+  position:fixed; bottom:108px; left:32px; z-index:799;
+  width:390px; max-height:580px;
+  background:#09090f;
+  border:1px solid rgba(255,59,59,0.22);
+  border-radius:22px;
+  display:flex; flex-direction:column;
+  box-shadow:0 32px 80px rgba(0,0,0,0.78), inset 0 1px 0 rgba(255,255,255,0.04);
+  transform:translateY(20px) scale(0.95);
+  opacity:0; pointer-events:none;
+  transition:all 0.38s cubic-bezier(0.34,1.56,0.64,1);
+  overflow:hidden; direction:rtl;
+}
+.rxai-panel.is-open { transform:translateY(0) scale(1); opacity:1; pointer-events:all; }
+
+/* Header */
+.rxai-stats-wrap {
+  display:flex; flex-direction:column; gap:3px; align-items:flex-end; margin-right:6px;
+}
+.rxai-stat-pill {
+  display:flex; align-items:center; gap:4px;
+  background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.07);
+  border-radius:100px; padding:2px 8px;
+  font-family:'Space Mono',monospace;
+}
+.rxai-stat-icon { font-size:0.6rem; line-height:1; }
+.rxai-stat-val { font-size:0.62rem; color:#a0a8c0; font-weight:700; min-width:18px; }
+
+.rxai-head {
+  padding:14px 16px;
+  background:rgba(255,59,59,0.05);
+  border-bottom:1px solid rgba(255,59,59,0.12);
+  display:flex; align-items:center; gap:11px; flex-shrink:0;
+}
+.rxai-hav {
+  width:40px; height:40px; border-radius:12px;
+  background:linear-gradient(135deg,rgba(255,59,59,0.25),rgba(255,107,53,0.15));
+  border:1.5px solid rgba(255,59,59,0.35);
+  display:flex; align-items:center; justify-content:center;
+  font-size:1.25rem; flex-shrink:0; position:relative;
+}
+.rxai-hav::after {
+  content:''; position:absolute; bottom:-2px; right:-2px;
+  width:11px; height:11px; border-radius:50%;
+  background:#55efc4; border:2px solid #09090f;
+}
+.rxai-hinfo { flex:1; }
+.rxai-hname { font-family:'Space Mono',monospace; font-size:0.83rem; font-weight:700; color:#f0f0ff; letter-spacing:0.5px; }
+.rxai-hname .rxr { color:#ff3b3b; }
+.rxai-hstatus {
+  font-size:0.64rem; color:#55efc4; font-family:'Cairo',sans-serif;
+  display:flex; align-items:center; gap:4px; margin-top:2px;
+}
+.rxai-hstatus::before {
+  content:''; width:5px; height:5px; border-radius:50%;
+  background:#55efc4; animation:rxai-blink 1.5s ease infinite; flex-shrink:0;
+}
+.rxai-hclose { background:none; border:none; color:#6b7280; cursor:pointer; font-size:1.1rem; padding:4px; transition:color 0.2s; line-height:1; }
+.rxai-hclose:hover { color:#ff3b3b; }
+
+/* Messages */
+.rxai-msgs {
+  flex:1; overflow-y:auto; padding:14px;
+  display:flex; flex-direction:column; gap:10px; min-height:0;
+}
+.rxai-msgs::-webkit-scrollbar { width:3px; }
+.rxai-msgs::-webkit-scrollbar-thumb { background:rgba(255,59,59,0.25); border-radius:2px; }
+
+.rxai-msg { display:flex; gap:8px; align-items:flex-end; animation:rxai-in 0.28s ease both; }
+@keyframes rxai-in { from{opacity:0;transform:translateY(9px)} to{opacity:1;transform:translateY(0)} }
+.rxai-msg.u { flex-direction:row-reverse; }
+.rxai-bbl {
+  max-width:82%; padding:9px 13px; border-radius:14px;
+  font-family:'Cairo',sans-serif; font-size:0.82rem; line-height:1.75;
+  word-break:break-word;
+}
+.rxai-msg.b .rxai-bbl { background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.07); border-bottom-right-radius:4px; color:#c8d0e8; }
+.rxai-msg.u .rxai-bbl { background:linear-gradient(135deg,rgba(255,59,59,0.2),rgba(255,107,53,0.12)); border:1px solid rgba(255,59,59,0.28); border-bottom-left-radius:4px; color:#f0f0ff; text-align:right; }
+.rxai-ico { width:26px; height:26px; border-radius:8px; display:flex; align-items:center; justify-content:center; font-size:0.82rem; flex-shrink:0; }
+.rxai-msg.b .rxai-ico { background:rgba(255,59,59,0.12); border:1px solid rgba(255,59,59,0.22); }
+.rxai-msg.u .rxai-ico { background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.1); }
+
+/* Code blocks */
+.rxai-bbl .code-block-wrap { margin:8px 0; direction:ltr; }
+.rxai-bbl .rxai-code-hd {
+  display:flex; justify-content:space-between; align-items:center;
+  background:#10101e; border:1px solid rgba(255,59,59,0.18); border-bottom:none;
+  border-radius:8px 8px 0 0; padding:5px 10px; direction:ltr;
+}
+.rxai-bbl .rxai-lang { font-family:'Space Mono',monospace; font-size:0.62rem; color:#ff6b35; }
+.rxai-bbl .rxai-copy-btn {
+  background:rgba(255,59,59,0.12); border:1px solid rgba(255,59,59,0.28);
+  color:#ff8060; font-family:'Space Mono',monospace; font-size:0.6rem; font-weight:700;
+  padding:2px 8px; border-radius:4px; cursor:pointer; transition:all 0.2s;
+}
+.rxai-bbl .rxai-copy-btn:hover { background:rgba(255,59,59,0.35); color:#fff; }
+.rxai-bbl pre {
+  margin:0; padding:10px 12px;
+  background:#0c0c1a; border:1px solid rgba(255,59,59,0.15); border-radius:0 0 8px 8px;
+  font-family:'Space Mono',monospace; font-size:0.7rem;
+  overflow-x:auto; direction:ltr; text-align:left; line-height:1.65;
+}
+.rxai-bbl pre code { font-size:0.7rem; background:none; padding:0; color:inherit; }
+.rxai-bbl code:not(pre code) { font-family:'Space Mono',monospace; font-size:0.75rem; color:#ff9f7f; background:rgba(255,107,53,0.12); padding:1px 5px; border-radius:4px; }
+.rxai-bbl blockquote { border-right:3px solid #ff6b35; padding:6px 10px; background:rgba(255,107,53,0.07); border-radius:0 6px 6px 0; color:#e0c8a0; font-size:0.8rem; margin:6px 0; }
+.rxai-bbl h1,.rxai-bbl h2,.rxai-bbl h3 { color:#f0f0ff; margin:8px 0 4px; font-family:'Cairo',sans-serif; }
+.rxai-bbl h2 { font-size:0.92rem; } .rxai-bbl h3 { font-size:0.85rem; color:#a8b5d4; }
+.rxai-bbl ul,.rxai-bbl ol { padding-right:18px; margin:4px 0; }
+.rxai-bbl li { margin:2px 0; }
+.rxai-bbl strong { color:#f0f0ff; }
+.rxai-bbl p { margin:4px 0; }
+
+/* Typing */
+.rxai-typing { display:flex; gap:8px; align-items:flex-end; animation:rxai-in 0.28s ease both; }
+.rxai-typing-bbl { background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.07); border-radius:14px; border-bottom-right-radius:4px; padding:13px 16px; display:flex; gap:5px; align-items:center; }
+.rxai-d { width:6px;height:6px;border-radius:50%;background:#ff3b3b; animation:rxai-db 1.2s ease infinite; }
+.rxai-d:nth-child(2) { animation-delay:.2s; background:#ff6b35; }
+.rxai-d:nth-child(3) { animation-delay:.4s; background:#fdcb6e; }
+@keyframes rxai-db { 0%,60%,100%{transform:translateY(0)} 30%{transform:translateY(-7px)} }
+
+/* Quick buttons */
+.rxai-quick { padding:0 12px 8px; display:flex; flex-wrap:wrap; gap:5px; flex-shrink:0; }
+.rxai-qbtn { background:rgba(255,59,59,0.07); border:1px solid rgba(255,59,59,0.18); border-radius:100px; color:#9da8c0; font-family:'Cairo',sans-serif; font-size:0.7rem; font-weight:600; padding:5px 11px; cursor:pointer; transition:all 0.2s; white-space:nowrap; }
+.rxai-qbtn:hover { background:rgba(255,59,59,0.18); border-color:rgba(255,59,59,0.45); color:#f0f0ff; transform:translateY(-1px); }
+
+/* Input row */
+.rxai-input-row { padding:10px 12px; border-top:1px solid rgba(255,255,255,0.05); display:flex; gap:7px; align-items:flex-end; background:rgba(0,0,0,0.25); flex-shrink:0; }
+.rxai-input { flex:1; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.09); border-radius:10px; padding:8px 12px; color:#f0f0ff; font-family:'Cairo',sans-serif; font-size:0.82rem; outline:none; resize:none; max-height:90px; min-height:36px; line-height:1.5; transition:border-color 0.2s; direction:rtl; overflow-y:auto; }
+.rxai-input:focus { border-color:rgba(255,59,59,0.45); }
+.rxai-input::placeholder { color:#3a3f50; }
+.rxai-sendbtn { width:36px;height:36px;border-radius:9px; background:linear-gradient(135deg,#ff3b3b,#ff6b35); border:none; cursor:pointer; display:flex; align-items:center; justify-content:center; transition:all 0.2s; flex-shrink:0; }
+.rxai-sendbtn:hover { transform:scale(1.08); box-shadow:0 4px 16px rgba(255,59,59,0.5); }
+.rxai-sendbtn:disabled { opacity:0.35; cursor:not-allowed; transform:none; }
+.rxai-sendbtn svg { width:15px;height:15px;fill:#fff; }
+
+@media (max-width:480px) {
+  .rxai-panel { width:calc(100vw - 20px); left:10px; bottom:88px; }
+  .rxai-fab { left:14px; bottom:18px; }
+}
+</style>
+
+<!-- Floating AI Button -->
+<button class="rxai-fab" id="rxai-fab" onclick="rxaiToggle()">
+  <span class="rxai-badge">AI</span>
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="3" y="11" width="18" height="10" rx="3"/>
+    <circle cx="12" cy="5" r="2"/>
+    <path d="M12 7v4"/>
+    <circle cx="8.5" cy="16" r="1" fill="white" stroke="none"/>
+    <circle cx="12" cy="16" r="1" fill="white" stroke="none"/>
+    <circle cx="15.5" cy="16" r="1" fill="white" stroke="none"/>
+  </svg>
+</button>
+
+<!-- AI Chat Panel -->
+<div class="rxai-panel" id="rxai-panel">
+  <div class="rxai-head">
+    <div class="rxai-hav">🤖</div>
+    <div class="rxai-hinfo">
+      <div class="rxai-hname"><span class="rxr">Real</span>X AI</div>
+      <div class="rxai-hstatus">مساعد Luau — متصل الحين</div>
+    </div>
+    <div class="rxai-stats-wrap">
+      <div class="rxai-stat-pill" title="عدد من فتحوا الشات">
+        <span class="rxai-stat-icon">👁️</span>
+        <span class="rxai-stat-val" id="rxai-stat-opens">—</span>
+      </div>
+      <div class="rxai-stat-pill" title="عدد الرسائل المرسلة">
+        <span class="rxai-stat-icon">💬</span>
+        <span class="rxai-stat-val" id="rxai-stat-msgs">—</span>
+      </div>
+    </div>
+    <button class="rxai-hclose" onclick="rxaiToggle()">✕</button>
+  </div>
+
+  <div class="rxai-msgs" id="rxai-msgs">
+    <div class="rxai-msg b">
+      <div class="rxai-ico">🤖</div>
+      <div class="rxai-bbl">
+        هلا! أنا <strong>RealX AI</strong> ⚡<br>
+        اسألني عن أي شي يخص <strong>Luau</strong> أو <strong>Roblox Studio</strong>.<br>
+        <span style="color:#3a3f50;font-size:0.74rem;display:block;margin-top:4px;">بالعربي أو الإنجليزي 🇸🇦</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="rxai-quick" id="rxai-quick">
+    <button class="rxai-qbtn" onclick="rxaiQ('كيف أضيف ليدربورد؟')">🏆 ليدربورد</button>
+    <button class="rxai-qbtn" onclick="rxaiQ('كيف أعمل NPC يطارد اللاعب؟')">🤖 NPC AI</button>
+    <button class="rxai-qbtn" onclick="rxaiQ('وش الفرق بين Script و LocalScript؟')">❓ Local vs Server</button>
+    <button class="rxai-qbtn" onclick="rxaiQ('كيف أحفظ بيانات اللاعب؟')">💾 DataStore</button>
+    <button class="rxai-qbtn" onclick="rxaiQ('كيف أعمل نظام نقاط؟')">⭐ نظام نقاط</button>
+  </div>
+
+  <div class="rxai-input-row">
+    <textarea class="rxai-input" id="rxai-input" placeholder="اسأل عن Luau أو Roblox..." rows="1"></textarea>
+    <button class="rxai-sendbtn" id="rxai-sendbtn" onclick="rxaiSend()">
+      <svg viewBox="0 0 24 24"><path d="M22 2L11 13M22 2L15 22l-4-9-9-4 20-7z"/></svg>
+    </button>
+  </div>
+</div>
+
+<script>
+(function() {
+  // Setup marked + hljs renderer for AI responses
+  if (window.marked && window.hljs) {
+    const rxR = new marked.Renderer();
+    rxR.code = function(code, lang) {
+      const rawCode = typeof code === 'object' ? (code.text || '') : code;
+      const language = (lang || 'lua').toLowerCase();
+      const displayLang = (lang || 'LUAU').toUpperCase();
+      let highlighted;
+      try {
+        const validLang = hljs.getLanguage(language) ? language : 'lua';
+        highlighted = hljs.highlight(rawCode, { language: validLang }).value;
+      } catch(e) {
+        highlighted = rawCode.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+      }
+      const id = 'rxc_' + Math.random().toString(36).slice(2,8);
+      return '<div class="code-block-wrap"><div class="rxai-code-hd"><span class="rxai-lang">' + displayLang + '</span><button class="rxai-copy-btn" onclick="rxaiCopyCode(\'' + id + '\',this)">COPY</button></div><pre dir="ltr" style="direction:ltr;text-align:left"><code id="' + id + '" class="hljs" dir="ltr" style="direction:ltr;text-align:left">' + highlighted + '</code></pre></div>';
+    };
+    rxR.blockquote = function(q) { return '<blockquote>' + q + '</blockquote>'; };
+    marked.use({ renderer: rxR, breaks: true, gfm: true });
+  }
+
+  window.rxaiCopyCode = function(id, btn) {
+    const el = document.getElementById(id);
+    if (!el) return;
+    const text = el.innerText || el.textContent;
+    navigator.clipboard.writeText(text).then(() => {
+      btn.textContent = '✓'; setTimeout(() => btn.textContent = 'COPY', 1500);
+    }).catch(() => {
+      const ta = document.createElement('textarea');
+      ta.value = text; ta.style.position = 'fixed'; ta.style.top = '-9999px';
+      document.body.appendChild(ta); ta.select(); document.execCommand('copy');
+      document.body.removeChild(ta);
+      btn.textContent = '✓'; setTimeout(() => btn.textContent = 'COPY', 1500);
+    });
+  };
+
+  const RXAI_SYS = `أنت Roblox AI، خبير روبلكس ومطوّر ألعاب محترف على مستوى عالمي. تتكلم بالعربي السعودي دائماً.
+
+## خبرتك الشاملة:
+
+### لغة Luau:
+- Type annotations كاملة: string, number, boolean, Instance, Player, table
+- Generics, metatables, OOP كامل (inheritance, encapsulation)
+- Coroutines، Promise pattern، Signal pattern
+- task.wait() / task.spawn() / task.delay() / task.defer() (بدل القديمة wait/spawn)
+- pcall / xpcall لمعالجة الأخطاء
+- String patterns وstring manipulation
+- Table methods كاملة (table.insert, table.remove, table.sort, table.find)
+
+### خدمات Roblox الأساسية:
+- **Players**: GetPlayerByUserId, PlayerAdded, PlayerRemoving, CharacterAdded
+- **ReplicatedStorage**: RemoteEvent, RemoteFunction, للمشاركة بين Server-Client
+- **ServerScriptService**: كل سكربتات السيرفر هنا
+- **StarterGui / StarterPlayerScripts**: UI والـ LocalScripts
+- **Workspace**: المشهد الرئيسي، Terrain، BasePart
+- **DataStoreService**: حفظ البيانات (GlobalDataStore, OrderedDataStore)
+- **TweenService**: TweenInfo، الأنيميشن السلسة
+- **RunService**: Heartbeat، RenderStepped، Stepped
+- **UserInputService**: IsKeyDown، TouchBegan، MouseButton1Click
+- **HttpService**: JSONEncode، JSONDecode، RequestAsync
+- **MarketplaceService**: GamePasses، Developer Products، Prompts
+- **BadgeService**: AwardBadge، HasBadge
+- **PhysicsService**: CollisionGroups
+- **SoundService**: الأصوات والموسيقى
+- **ProximityPromptService**: للتفاعلات القريبة
+- **CollectionService**: Tags
+
+### Server-Client Architecture:
+- RemoteEvent:FireServer / FireClient / FireAllClients
+- RemoteFunction:InvokeServer / InvokeClient
+- BindableEvent / BindableFunction للتواصل داخل السيرفر
+- **القاعدة الذهبية**: لا تثق بالعميل أبداً، تحقق من كل شيء في السيرفر
+- تحقق من المسافة، الصلاحيات، والقيم دائماً في Server
+
+### DataStore Best Practices:
+- استخدم pcall دائماً مع DataStore
+- Retry logic للـ throttled requests
+- Auto-save كل X دقيقة + حفظ عند PlayerRemoving
+- فصل البيانات الحساسة عن الغير حساسة
+- استخدم UpdateAsync بدل SetAsync عند الإمكان
+
+### الأداء والتحسين:
+- تجنب loops بدون task.wait
+- استخدم RenderStepped للعرض فقط، Heartbeat للـ physics
+- Object pooling للـ parts المتكررة
+- Debounce وThrottle للأحداث المتكررة
+- تجنب RemoteEvents كثيرة، استخدم batch updates
+- BasePart.CastShadow = false للـ parts الكثيرة
+- StreapyEnabled للمشاهد الكبيرة
+
+### UI/UX:
+- ScreenGui وPlayerGui
+- Frame, TextLabel, TextButton, ImageLabel, ImageButton
+- UICorner, UIGradient, UIStroke, UIListLayout, UIGridLayout
+- Tween لـ GUI animations (TweenService:Create)
+- SurfaceGui وBillboardGui للعالم
+- AutoButtonColor = false للتحكم الكامل
+
+### الفيزياء والحركة:
+- BodyVelocity, BodyGyro, BodyPosition (قديمة لكن شائعة)
+- LinearVelocity, AngularVelocity (الحديثة Constraints)
+- Raycasting: workspace:Raycast(origin, direction, params)
+- Spatial queries: workspace:GetPartsInBox / GetPartsBoundInBox
+- WeldConstraint, HingeConstraint, RopeConstraint
+
+### Monetization:
+- GamePasses: UserOwnsGamePassAsync
+- Developer Products: ProcessReceipt (لازم تحفظ ProcessReceipt في Script واحد فقط)
+- Badges لتحفيز اللاعبين
+
+## قواعد الكود الصارمة:
+1. استخدم Luau فقط، لا Lua عادية
+2. استخدم task.wait() بدل wait()، task.spawn() بدل spawn()
+3. أضف type annotations حيثما أمكن
+4. أضف تعليقات عربية واضحة داخل الكود
+5. معالجة الأخطاء بـ pcall دائماً مع DataStore والـ HTTP
+6. عند كتابة سكربت، وضّح دائماً:
+   - نوعه: **Script** / **LocalScript** / **ModuleScript**
+   - مكانه: 📁 ServerScriptService / StarterPlayerScripts / إلخ
+
+## أسلوب الردود:
+- استخدم markdown للتنسيق: headers (#), bold (**text**), lists (- أو 1.)
+- كود Luau دائماً بين \\\\\\\`\\\\\\\`\\\\\\\`luau و \\\\\\\`\\\\\\\`\\\\\\\`
+- استخدم > للتنبيهات المهمة والـ security notes
+- إذا طُلب تعديل كود سابق، عدّل عليه مباشرة
+- إذا كان السؤال عاماً، ابحث في الإنترنت للمعلومات الحديثة
+- اشرح الكود خطوة بخطوة لمساعدة المستخدم على الفهم`;
+
+  let rxOpen = false, rxBusy = false, rxCountedOpen = false;
+  const rxHist = [];
+
+  // Init Firebase stats listener
+  function rxInitStats() {
+    if (!window._fb) { setTimeout(rxInitStats, 800); return; }
+    const { db, ref, onValue } = window._fb;
+    onValue(ref(db, 'ai_stats'), snap => {
+      const d = snap.val() || {};
+      const opensEl = document.getElementById('rxai-stat-opens');
+      const msgsEl = document.getElementById('rxai-stat-msgs');
+      if (opensEl) opensEl.textContent = fmtNum(d.opens || 0);
+      if (msgsEl) msgsEl.textContent = fmtNum(d.messages || 0);
+    });
+  }
+  function fmtNum(n) {
+    if (n >= 1000) return (n/1000).toFixed(1).replace('.0','') + 'K';
+    return n;
+  }
+  rxInitStats();
+
+  window.rxaiToggle = function() {
+    rxOpen = !rxOpen;
+    document.getElementById('rxai-panel').classList.toggle('is-open', rxOpen);
+    document.getElementById('rxai-fab').classList.toggle('is-open', rxOpen);
+    if (rxOpen) {
+      setTimeout(() => document.getElementById('rxai-input').focus(), 360);
+      // Count unique opens via Firebase
+      if (!rxCountedOpen && window._fb) {
+        rxCountedOpen = true;
+        const { db, ref, runTransaction } = window._fb;
+        runTransaction(ref(db, 'ai_stats/opens'), c => (c||0)+1);
+      }
+    }
+  };
+
+  window.rxaiQ = function(text) {
+    document.getElementById('rxai-input').value = text;
+    rxaiSend();
+  };
+
+  window.rxaiSend = async function() {
+    if (rxBusy) return;
+    const inp = document.getElementById('rxai-input');
+    const text = inp.value.trim();
+    if (!text) return;
+    document.getElementById('rxai-quick').style.display = 'none';
+    inp.value = ''; inp.style.height = 'auto';
+    rxMsg('u', text);
+    rxHist.push({ role: 'user', content: text });
+    if (rxHist.length > 36) rxHist.splice(0, rxHist.length - 36);
+    // Track message in Firebase
+    if (window._fb) {
+      const { db, ref, runTransaction } = window._fb;
+      runTransaction(ref(db, 'ai_stats/messages'), c => (c||0)+1);
+    }
+    rxTyping(true); rxBusy = true;
+    document.getElementById('rxai-sendbtn').disabled = true;
+    try {
+      const res = await fetch('https://api.anthropic.com/v1/messages', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          model: 'claude-sonnet-4-20250514',
+          max_tokens: 1000,
+          system: RXAI_SYS,
+          messages: rxHist.slice(-10)
+        })
+      });
+      const data = await res.json();
+      if (data.error) throw new Error(data.error.message);
+      const reply = data.content?.[0]?.text || 'ما قدرت أجيب إجابة.';
+      rxHist.push({ role: 'assistant', content: reply });
+      rxTyping(false);
+      rxMsg('b', reply);
+    } catch(e) {
+      rxTyping(false);
+      rxMsg('b', '❌ **خطأ في الاتصال**\n\nتحقق من اتصالك وحاول مرة ثانية.\n\n`' + e.message + '`');
+    }
+    rxBusy = false;
+    document.getElementById('rxai-sendbtn').disabled = false;
+  };
+
+  function rxMsg(role, text) {
+    const el = document.createElement('div');
+    el.className = 'rxai-msg ' + role;
+    const icon = role === 'b' ? '🤖' : '👤';
+    let content;
+    if (role === 'b' && window.marked) {
+      try { content = marked.parse(text); } catch(e) { content = text.replace(/\n/g,'<br>'); }
+    } else {
+      content = text.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/\n/g,'<br>');
+    }
+    el.innerHTML = '<div class="rxai-ico">' + icon + '</div><div class="rxai-bbl">' + content + '</div>';
+    document.getElementById('rxai-msgs').appendChild(el);
+    rxScroll();
+  }
+
+  function rxTyping(show) {
+    if (show) {
+      const el = document.createElement('div');
+      el.className = 'rxai-typing'; el.id = 'rxai-typing';
+      el.innerHTML = '<div class="rxai-ico">🤖</div><div class="rxai-typing-bbl"><div class="rxai-d"></div><div class="rxai-d"></div><div class="rxai-d"></div></div>';
+      document.getElementById('rxai-msgs').appendChild(el);
+      rxScroll();
+    } else {
+      document.getElementById('rxai-typing')?.remove();
+    }
+  }
+
+  function rxScroll() {
+    const m = document.getElementById('rxai-msgs');
+    setTimeout(() => m.scrollTop = m.scrollHeight, 60);
+  }
+
+  document.getElementById('rxai-input').addEventListener('keydown', function(e) {
+    if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); rxaiSend(); }
+  });
+  document.getElementById('rxai-input').addEventListener('input', function() {
+    this.style.height = 'auto';
+    this.style.height = Math.min(this.scrollHeight, 88) + 'px';
+  });
+})();
+</script>
+<!-- ========== END RealX AI WIDGET ========== -->
+
 </body>
 </html>
