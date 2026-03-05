@@ -696,7 +696,7 @@ killFeedRemote.OnClientEvent:<span class="fn">Connect</span>(<span class="kw">fu
       </div>
     </div>
 
-    <!-- ✅ NEW: علم الدولة فوق الرأس -->
+    <!-- Flag Script -->
     <div class="script-card" onclick="openModal('نظام علم الدولة فوق الرأس', 'flagscript')" style="border-color:rgba(100,200,255,0.35);">
       <div class="script-header" style="background:rgba(100,200,255,0.07);">
         <div class="script-dots"><span></span><span></span><span></span></div>
@@ -731,6 +731,43 @@ Players.PlayerAdded:<span class="fn">Connect</span>(<span class="kw">function</s
         <div class="card-comment-form">
           <input class="card-comment-input" id="mini-input-flagscript" placeholder="اكتب ملاحظة أو خطأ..." />
           <button class="btn-comment" onclick="submitMiniComment('flagscript')">إرسال</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ✅ NEW: Device Type Billboard -->
+    <div class="script-card" onclick="openModal('نظام كشف الجهاز', 'devicetype')" style="border-color:rgba(120,220,120,0.35);">
+      <div class="script-header" style="background:rgba(120,220,120,0.07);">
+        <div class="script-dots"><span></span><span></span><span></span></div>
+        <div class="script-header-right">
+          <button class="btn-info" onclick="event.stopPropagation(); openGuide('devicetype')" title="شرح طريقة الاستخدام" style="background:rgba(120,220,120,0.15);border-color:rgba(120,220,120,0.6);color:#78dc78;">!</button>
+          <span class="script-lang" style="background:rgba(120,220,120,0.12);color:#78dc78;border:1px solid rgba(120,220,120,0.3);">Luau × 2</span>
+        </div>
+      </div>
+      <div class="script-body">
+        <div class="script-code"><span class="cm">-- Device Type Billboard by RealX</span>
+<span class="kw">local</span> event = ReplicatedStorage
+  :<span class="fn">WaitForChild</span>(<span class="str">"DeviceTypeEvent"</span>)
+<span class="cm">-- 📱 موبايل | 💻 PC | 🎮 Controller</span>
+<span class="cm">-- 📟 تابلت | يكبر/يصغر بالمسافة</span>
+<span class="cm">-- يختفي بعد 50 stud ✅</span></div>
+        <div class="script-info">
+          <div>
+            <div class="script-name" style="display:flex;align-items:center;gap:6px;">
+              نظام كشف الجهاز
+              <span style="background:rgba(120,220,120,0.15);border:1px solid rgba(120,220,120,0.5);color:#78dc78;font-size:0.62rem;font-weight:800;padding:2px 7px;border-radius:100px;font-family:'Space Mono',monospace;letter-spacing:0.5px;">NEW</span>
+            </div>
+            <div class="script-desc">📱💻🎮 أيقونة الجهاز فوق الرأس • ديناميكي الحجم</div>
+          </div>
+          <button class="btn-copy" onclick="event.stopPropagation(); copyScript('devicetype_server')" style="border-color:rgba(120,220,120,0.3);color:#78dc78;background:rgba(120,220,120,0.08);">نسخ Server</button>
+        </div>
+      </div>
+      <div class="card-comments" onclick="event.stopPropagation()">
+        <div class="card-comments-title">💬 تعليقات وأخطاء</div>
+        <div class="card-comments-list" id="mini-comments-devicetype"></div>
+        <div class="card-comment-form">
+          <input class="card-comment-input" id="mini-input-devicetype" placeholder="اكتب ملاحظة أو خطأ..." />
+          <button class="btn-comment" onclick="submitMiniComment('devicetype')">إرسال</button>
         </div>
       </div>
     </div>
@@ -970,7 +1007,101 @@ Players.PlayerAdded:<span class="fn">Connect</span>(<span class="kw">function</s
     pointssystem_main: "local Players = game:GetService(\"Players\")\nlocal DataStoreService = game:GetService(\"DataStoreService\")\nlocal ReplicatedStorage = game:GetService(\"ReplicatedStorage\")\nlocal PointsStore = DataStoreService:GetDataStore(\"PlayerPointsV2\")\nlocal pointsEvent = Instance.new(\"RemoteEvent\")\npointsEvent.Name = \"ShowPointsGui\"\npointsEvent.Parent = ReplicatedStorage\nlocal congratsMessages = {\n\t[100]  = \"Congrats! You hit 100 Points!\",\n\t[200]  = \"Amazing! 200 Points reached!\",\n\t[500]  = \"Legend! 500 Points!\",\n\t[1000] = \"GOAT! 1000 Points!\",\n}\nlocal function getCongratsMessage(points)\n\treturn congratsMessages[points] or (\"Congrats! You reached \" .. points .. \" Points!\")\nend\nlocal function setupLeaderStats(player)\n\tlocal leaderstats = Instance.new(\"Folder\")\n\tleaderstats.Name = \"leaderstats\"\n\tleaderstats.Parent = player\n\tlocal points = Instance.new(\"IntValue\")\n\tpoints.Name = \"Points\"\n\tpoints.Value = 0\n\tpoints.Parent = leaderstats\n\tlocal success, saved = pcall(function()\n\t\treturn PointsStore:GetAsync(\"Player_\" .. player.UserId)\n\tend)\n\tif success and saved then\n\t\tpoints.Value = saved\n\tend\nend\nlocal function saveData(player)\n\tlocal ls = player:FindFirstChild(\"leaderstats\")\n\tif not ls then return end\n\tlocal pts = ls:FindFirstChild(\"Points\")\n\tif not pts then return end\n\tpcall(function()\n\t\tPointsStore:SetAsync(\"Player_\" .. player.UserId, pts.Value)\n\tend)\nend\nlocal function givePoints(player, amount)\n\tlocal ls = player:FindFirstChild(\"leaderstats\")\n\tif not ls then return end\n\tlocal pts = ls:FindFirstChild(\"Points\")\n\tif not pts then return end\n\tpts.Value = pts.Value + amount\n\tpointsEvent:FireClient(player, pts.Value, getCongratsMessage(pts.Value))\nend\n_G.GivePoints = givePoints\nPlayers.PlayerAdded:Connect(function(player)\n\tsetupLeaderStats(player)\n\ttask.spawn(function()\n\t\twhile player.Parent do\n\t\t\ttask.wait(1)\n\t\t\tif player.Parent then givePoints(player, 10) end\n\t\tend\n\tend)\nend)\nPlayers.PlayerRemoving:Connect(saveData)\ngame:BindToClose(function()\n\tfor _, p in ipairs(Players:GetPlayers()) do saveData(p) end\nend)",
     pointssystem_local: "local Players = game:GetService(\"Players\")\nlocal ReplicatedStorage = game:GetService(\"ReplicatedStorage\")\nlocal TweenService = game:GetService(\"TweenService\")\nlocal player = Players.LocalPlayer\nlocal playerGui = player:WaitForChild(\"PlayerGui\")\nlocal pointsEvent = ReplicatedStorage:WaitForChild(\"ShowPointsGui\")\nlocal screenGui = playerGui:WaitForChild(\"PointsNotification\")\nlocal frame = screenGui:WaitForChild(\"NotifFrame\")\nlocal pointsLabel = frame:WaitForChild(\"PointsLabel\")\nlocal messageLabel = frame:WaitForChild(\"MessageLabel\")\nlocal hideThread = nil\nlocal function showNotification(totalPoints, message)\n\tscreenGui.Enabled = true\n\tpointsLabel.Text = totalPoints .. \" Points\"\n\tmessageLabel.Text = message\n\tframe.Position = UDim2.new(1, 20, 1, -90)\n\tTweenService:Create(frame,\n\t\tTweenInfo.new(0.4, Enum.EasingStyle.Back, Enum.EasingDirection.Out),\n\t\t{Position = UDim2.new(1, -280, 1, -90)}\n\t):Play()\n\tif hideThread then task.cancel(hideThread) end\n\thideThread = task.delay(2.5, function()\n\t\tlocal tweenOut = TweenService:Create(frame,\n\t\t\tTweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.In),\n\t\t\t{Position = UDim2.new(1, 20, 1, -90)}\n\t\t)\n\t\ttweenOut:Play()\n\t\ttweenOut.Completed:Connect(function()\n\t\t\tscreenGui.Enabled = false\n\t\tend)\n\tend)\nend\npointsEvent.OnClientEvent:Connect(showNotification)",
     daystreak: `-- Daily Streak System by RealX\nlocal DataStoreService = game:GetService("DataStoreService")\nlocal Players = game:GetService("Players")\nlocal streakStore = DataStoreService:GetDataStore("DayStreak_v2")\nlocal SECONDS_IN_DAY = 86400\n\nlocal function loadStreak(userId)\n\tlocal success, data = pcall(function()\n\t\treturn streakStore:GetAsync(userId)\n\tend)\n\tif not success or not data then return 1, 0 end\n\treturn data.streak or 1, data.lastLogin or 0\nend`,
-    flagscript: `local Players = game:GetService("Players")\nlocal LocalizationService = game:GetService("LocalizationService")\nlocal RunService = game:GetService("RunService")\nlocal IS_STUDIO = RunService:IsStudio()\n\nlocal Flags = {\n\t["us"] = "🇺🇸", ["ca"] = "🇨🇦", ["mx"] = "🇲🇽",\n\t["gt"] = "🇬🇹", ["bz"] = "🇧🇿", ["hn"] = "🇭🇳", ["sv"] = "🇸🇻",\n\t["ni"] = "🇳🇮", ["cr"] = "🇨🇷", ["pa"] = "🇵🇦",\n\t["cu"] = "🇨🇺", ["jm"] = "🇯🇲", ["ht"] = "🇭🇹", ["do"] = "🇩🇴",\n\t["pr"] = "🇵🇷", ["tt"] = "🇹🇹", ["bb"] = "🇧🇧", ["lc"] = "🇱🇨",\n\t["vc"] = "🇻🇨", ["gd"] = "🇬🇩", ["ag"] = "🇦🇬", ["dm"] = "🇩🇲",\n\t["kn"] = "🇰🇳", ["bs"] = "🇧🇸",\n\t["br"] = "🇧🇷", ["ar"] = "🇦🇷", ["cl"] = "🇨🇱", ["co"] = "🇨🇴",\n\t["pe"] = "🇵🇪", ["ve"] = "🇻🇪", ["ec"] = "🇪🇨", ["bo"] = "🇧🇴",\n\t["py"] = "🇵🇾", ["uy"] = "🇺🇾", ["gy"] = "🇬🇾", ["sr"] = "🇸🇷",\n\t["gb"] = "🇬🇧", ["ie"] = "🇮🇪", ["fr"] = "🇫🇷", ["de"] = "🇩🇪",\n\t["at"] = "🇦🇹", ["ch"] = "🇨🇭", ["be"] = "🇧🇪", ["nl"] = "🇳🇱",\n\t["lu"] = "🇱🇺", ["mc"] = "🇲🇨", ["li"] = "🇱🇮", ["it"] = "🇮🇹",\n\t["es"] = "🇪🇸", ["pt"] = "🇵🇹", ["gr"] = "🇬🇷", ["mt"] = "🇲🇹",\n\t["cy"] = "🇨🇾", ["sm"] = "🇸🇲", ["va"] = "🇻🇦", ["ad"] = "🇦🇩",\n\t["dk"] = "🇩🇰", ["se"] = "🇸🇪", ["no"] = "🇳🇴", ["fi"] = "🇫🇮",\n\t["is"] = "🇮🇸", ["ee"] = "🇪🇪", ["lv"] = "🇱🇻", ["lt"] = "🇱🇹",\n\t["pl"] = "🇵🇱", ["cz"] = "🇨🇿", ["sk"] = "🇸🇰", ["hu"] = "🇭🇺",\n\t["ro"] = "🇷🇴", ["bg"] = "🇧🇬", ["si"] = "🇸🇮", ["hr"] = "🇭🇷",\n\t["rs"] = "🇷🇸", ["ba"] = "🇧🇦", ["me"] = "🇲🇪", ["mk"] = "🇲🇰",\n\t["al"] = "🇦🇱", ["xk"] = "🇽🇰", ["ru"] = "🇷🇺", ["ua"] = "🇺🇦",\n\t["by"] = "🇧🇾", ["md"] = "🇲🇩",\n\t["sa"] = "🇸🇦", ["ae"] = "🇦🇪", ["qa"] = "🇶🇦", ["kw"] = "🇰🇼",\n\t["bh"] = "🇧🇭", ["om"] = "🇴🇲", ["ye"] = "🇾🇪", ["iq"] = "🇮🇶",\n\t["ir"] = "🇮🇷", ["sy"] = "🇸🇾", ["lb"] = "🇱🇧", ["jo"] = "🇯🇴",\n\t["il"] = "🇮🇱", ["ps"] = "🇵🇸", ["tr"] = "🇹🇷",\n\t["in"] = "🇮🇳", ["pk"] = "🇵🇰", ["bd"] = "🇧🇩", ["lk"] = "🇱🇰",\n\t["np"] = "🇳🇵", ["bt"] = "🇧🇹", ["mv"] = "🇲🇻", ["af"] = "🇦🇫",\n\t["jp"] = "🇯🇵", ["kr"] = "🇰🇷", ["cn"] = "🇨🇳", ["hk"] = "🇭🇰",\n\t["tw"] = "🇹🇼", ["mn"] = "🇲🇳", ["kp"] = "🇰🇵",\n\t["sg"] = "🇸🇬", ["th"] = "🇹🇭", ["ph"] = "🇵🇭", ["id"] = "🇮🇩",\n\t["my"] = "🇲🇾", ["vn"] = "🇻🇳", ["mm"] = "🇲🇲", ["kh"] = "🇰🇭",\n\t["la"] = "🇱🇦", ["bn"] = "🇧🇳", ["tl"] = "🇹🇱",\n\t["am"] = "🇦🇲", ["az"] = "🇦🇿", ["ge"] = "🇬🇪",\n\t["kz"] = "🇰🇿", ["uz"] = "🇺🇿", ["tm"] = "🇹🇲",\n\t["kg"] = "🇰🇬", ["tj"] = "🇹🇯",\n\t["eg"] = "🇪🇬", ["ly"] = "🇱🇾", ["tn"] = "🇹🇳", ["dz"] = "🇩🇿",\n\t["ma"] = "🇲🇦", ["sd"] = "🇸🇩", ["mr"] = "🇲🇷",\n\t["ng"] = "🇳🇬", ["za"] = "🇿🇦", ["ke"] = "🇰🇪", ["et"] = "🇪🇹",\n\t["gh"] = "🇬🇭", ["tz"] = "🇹🇿", ["ug"] = "🇺🇬", ["ao"] = "🇦🇴",\n\t["mz"] = "🇲🇿", ["zm"] = "🇿🇲", ["zw"] = "🇿🇼", ["bw"] = "🇧🇼",\n\t["na"] = "🇳🇦", ["ls"] = "🇱🇸", ["sz"] = "🇸🇿", ["mg"] = "🇲🇬",\n\t["rw"] = "🇷🇼", ["bi"] = "🇧🇮", ["ss"] = "🇸🇸", ["cd"] = "🇨🇩",\n\t["cg"] = "🇨🇬", ["cm"] = "🇨🇲", ["cf"] = "🇨🇫", ["td"] = "🇹🇩",\n\t["ne"] = "🇳🇪", ["ml"] = "🇲🇱", ["bf"] = "🇧🇫", ["sn"] = "🇸🇳",\n\t["gm"] = "🇬🇲", ["gn"] = "🇬🇳", ["gw"] = "🇬🇼", ["sl"] = "🇸🇱",\n\t["lr"] = "🇱🇷", ["ci"] = "🇨🇮", ["tg"] = "🇹🇬", ["bj"] = "🇧🇯",\n\t["ga"] = "🇬🇦", ["gq"] = "🇬🇶", ["st"] = "🇸🇹", ["cv"] = "🇨🇻",\n\t["dj"] = "🇩🇯", ["er"] = "🇪🇷", ["so"] = "🇸🇴", ["km"] = "🇰🇲",\n\t["sc"] = "🇸🇨", ["mu"] = "🇲🇺", ["mw"] = "🇲🇼",\n\t["au"] = "🇦🇺", ["nz"] = "🇳🇿", ["fj"] = "🇫🇯", ["pg"] = "🇵🇬",\n\t["sb"] = "🇸🇧", ["vu"] = "🇻🇺", ["ws"] = "🇼🇸", ["to"] = "🇹🇴",\n}\n\nlocal function addFlag(player, character)\n\tlocal success, result = pcall(function()\n\t\tlocal countryShort\n\t\tif IS_STUDIO then\n\t\t\tcountryShort = "sa"\n\t\telse\n\t\t\tlocal locale = LocalizationService:GetCountryRegionForPlayerAsync(player)\n\t\t\tcountryShort = locale:split("-")[1]:lower()\n\t\tend\n\t\tlocal flag = Flags[countryShort] or "🏳️"\n\t\tlocal head = character:WaitForChild("Head", 10)\n\t\tif not head then return end\n\t\tlocal old = character:FindFirstChild("FlagDisplay")\n\t\tif old then old:Destroy() end\n\t\tlocal billboard = Instance.new("BillboardGui")\n\t\tbillboard.Name = "FlagDisplay"\n\t\tbillboard.Size = UDim2.new(0, 160, 0, 70)\n\t\tbillboard.StudsOffset = Vector3.new(0, 3.2, 0)\n\t\tbillboard.Adornee = head\n\t\tbillboard.AlwaysOnTop = false\n\t\tbillboard.MaxDistance = 50\n\t\tbillboard.Parent = character\n\t\tlocal mainFrame = Instance.new("Frame")\n\t\tmainFrame.Size = UDim2.new(1, 0, 1, 0)\n\t\tmainFrame.BackgroundTransparency = 1\n\t\tmainFrame.Parent = billboard\n\t\tlocal flagLabel = Instance.new("TextLabel")\n\t\tflagLabel.Size = UDim2.new(0.3, 0, 1, 0)\n\t\tflagLabel.Position = UDim2.new(0, 0, 0, 0)\n\t\tflagLabel.BackgroundTransparency = 1\n\t\tflagLabel.TextScaled = true\n\t\tflagLabel.Font = Enum.Font.SourceSansBold\n\t\tflagLabel.Text = flag\n\t\tflagLabel.Parent = mainFrame\n\t\tlocal divider = Instance.new("Frame")\n\t\tdivider.Size = UDim2.new(0, 2, 0.6, 0)\n\t\tdivider.Position = UDim2.new(0.33, 0, 0.2, 0)\n\t\tdivider.BackgroundColor3 = Color3.fromRGB(255, 255, 255)\n\t\tdivider.BackgroundTransparency = 0.5\n\t\tdivider.BorderSizePixel = 0\n\t\tdivider.Parent = mainFrame\n\t\tlocal nameLabel = Instance.new("TextLabel")\n\t\tnameLabel.Size = UDim2.new(0.63, 0, 1, 0)\n\t\tnameLabel.Position = UDim2.new(0.36, 0, 0, 0)\n\t\tnameLabel.BackgroundTransparency = 1\n\t\tnameLabel.TextScaled = true\n\t\tnameLabel.Font = Enum.Font.GothamBold\n\t\tnameLabel.Text = player.DisplayName\n\t\tnameLabel.TextColor3 = Color3.fromRGB(255, 255, 255)\n\t\tnameLabel.TextStrokeTransparency = 0.4\n\t\tnameLabel.TextStrokeColor3 = Color3.fromRGB(0, 0, 0)\n\t\tnameLabel.Parent = mainFrame\n\tend)\n\tif not success then\n\t\twarn("FlagScript Error: " .. tostring(result))\n\tend\nend\n\nPlayers.PlayerAdded:Connect(function(player)\n\tplayer.CharacterAdded:Connect(function(character)\n\t\taddFlag(player, character)\n\tend)\nend)\n\nfor _, player in ipairs(Players:GetPlayers()) do\n\tif player.Character then\n\t\taddFlag(player, player.Character)\n\tend\nend`
+    flagscript: `local Players = game:GetService("Players")\nlocal LocalizationService = game:GetService("LocalizationService")\nlocal RunService = game:GetService("RunService")\nlocal IS_STUDIO = RunService:IsStudio()\n\nlocal Flags = {\n\t["us"] = "🇺🇸", ["ca"] = "🇨🇦", ["sa"] = "🇸🇦", ["ae"] = "🇦🇪",\n\t["gb"] = "🇬🇧", ["fr"] = "🇫🇷", ["de"] = "🇩🇪", ["jp"] = "🇯🇵",\n\t-- ... 195+ countries\n}\n\nlocal function addFlag(player, character)\n\tlocal success, result = pcall(function()\n\t\tlocal countryShort\n\t\tif IS_STUDIO then\n\t\t\tcountryShort = "sa"\n\t\telse\n\t\t\tlocal locale = LocalizationService:GetCountryRegionForPlayerAsync(player)\n\t\t\tcountryShort = locale:split("-")[1]:lower()\n\t\tend\n\t\tlocal flag = Flags[countryShort] or "🏳️"\n\t\tlocal head = character:WaitForChild("Head", 10)\n\t\tif not head then return end\n\t\tlocal billboard = Instance.new("BillboardGui")\n\t\tbillboard.Size = UDim2.new(0, 160, 0, 70)\n\t\tbillboard.StudsOffset = Vector3.new(0, 3.2, 0)\n\t\tbillboard.MaxDistance = 50\n\t\tbillboard.Adornee = head\n\t\tbillboard.Parent = character\n\tend)\nend\n\nPlayers.PlayerAdded:Connect(function(player)\n\tplayer.CharacterAdded:Connect(function(character)\n\t\taddFlag(player, character)\n\tend)\nend)`,
+    devicetype_server: `-- Device Type Billboard — ServerScript by RealX
+-- ضعه في: ServerScriptService
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local Players = game:GetService("Players")
+
+local event = Instance.new("RemoteEvent")
+event.Name = "DeviceTypeEvent"
+event.Parent = ReplicatedStorage
+
+event.OnServerEvent:Connect(function(player, icon)
+\tlocal character = player.Character or player.CharacterAdded:Wait()
+\tlocal head = character:WaitForChild("Head")
+
+\t-- امسح القديم لو موجود
+\tlocal old = head:FindFirstChild("DeviceDisplay")
+\tif old then old:Destroy() end
+
+\tlocal billboard = Instance.new("BillboardGui")
+\tbillboard.Name = "DeviceDisplay"
+\tbillboard.Size = UDim2.new(0, 80, 0, 80)
+\tbillboard.StudsOffset = Vector3.new(0, 3, 0)
+\tbillboard.AlwaysOnTop = true
+\tbillboard.MaxDistance = 50
+\tbillboard.Adornee = head
+\tbillboard.Parent = head
+
+\tlocal label = Instance.new("TextLabel")
+\tlabel.Size = UDim2.new(1, 0, 1, 0)
+\tlabel.BackgroundTransparency = 1
+\tlabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+\tlabel.TextScaled = true
+\tlabel.Font = Enum.Font.SourceSansBold
+\tlabel.Text = icon
+\tlabel.Parent = billboard
+end)`,
+    devicetype_local: `-- Device Type Billboard — LocalScript by RealX
+-- ضعه في: StarterCharacterScripts
+local UserInputService = game:GetService("UserInputService")
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local Players = game:GetService("Players")
+local RunService = game:GetService("RunService")
+
+local player = Players.LocalPlayer
+local event = ReplicatedStorage:WaitForChild("DeviceTypeEvent", 10)
+if not event then return end
+
+local function isTablet()
+\tlocal vp = workspace.CurrentCamera.ViewportSize
+\treturn UserInputService.TouchEnabled and (vp.X >= 1024 or vp.Y >= 1024)
+end
+
+local function getDevice()
+\tif UserInputService.TouchEnabled and not UserInputService.KeyboardEnabled then
+\t\tif isTablet() then return "📟" end
+\t\treturn "📱"
+\telseif UserInputService.KeyboardEnabled and UserInputService.MouseEnabled then
+\t\treturn "💻"
+\telseif UserInputService.GamepadEnabled then
+\t\treturn "🎮"
+\telse
+\t\treturn "❓"
+\tend
+end
+
+-- أرسل نوع الجهاز للسيرفر
+local character = player.Character or player.CharacterAdded:Wait()
+character:WaitForChild("HumanoidRootPart")
+event:FireServer(getDevice())
+
+-- حجم ديناميكي حسب المسافة
+local MAX_DISTANCE = 50
+local MAX_SIZE = 120
+local MIN_SIZE = 20
+
+RunService.Heartbeat:Connect(function()
+\tlocal myRoot = player.Character and player.Character:FindFirstChild("HumanoidRootPart")
+\tif not myRoot then return end
+
+\tfor _, otherPlayer in pairs(Players:GetPlayers()) do
+\t\tlocal otherChar = otherPlayer.Character
+\t\tif not otherChar then continue end
+\t\tlocal otherHead = otherChar:FindFirstChild("Head")
+\t\tif not otherHead then continue end
+\t\tlocal billboard = otherHead:FindFirstChildOfClass("BillboardGui")
+\t\tif not billboard then continue end
+\t\tlocal otherRoot = otherChar:FindFirstChild("HumanoidRootPart")
+\t\tif not otherRoot then continue end
+
+\t\tlocal distance = (myRoot.Position - otherRoot.Position).Magnitude
+\t\tlocal ratio = 1 - math.clamp(distance / MAX_DISTANCE, 0, 1)
+\t\tlocal size = MIN_SIZE + (MAX_SIZE - MIN_SIZE) * ratio
+\t\tbillboard.Size = UDim2.new(0, size, 0, size)
+\tend
+end)`
   };
 
   let currentTab = 'local';
@@ -985,6 +1116,8 @@ Players.PlayerAdded:<span class="fn">Connect</span>(<span class="kw">function</s
       code = tab === 'local' ? scripts.killfeed_feed : scripts.killfeed_damage;
     } else if (key === 'pointssystem') {
       code = tab === 'local' ? scripts.pointssystem_local : scripts.pointssystem_main;
+    } else if (key === 'devicetype') {
+      code = tab === 'local' ? scripts.devicetype_local : scripts.devicetype_server;
     }
     document.getElementById('modal-code').textContent = code;
     document.getElementById('tab-local').classList.toggle('active', tab === 'local');
@@ -1070,53 +1203,62 @@ Players.PlayerAdded:<span class="fn">Connect</span>(<span class="kw">function</s
     ]
   };
 
-  // ✅ NEW: Flag Script Guide
   guides.flagscript = {
     icon: '🌍',
     title: 'علم الدولة فوق الرأس',
     subtitle: 'Script في ServerScriptService — 195+ دولة تلقائياً',
     sections: [
+      { head: '📦 وش يسوي هذا السكربت؟', content: `<div class="guide-steps"><div class="guide-step"><div class="step-num">🚩</div><div class="step-content"><div class="step-title">علم الدولة فوق رأس اللاعب</div><div class="step-desc">يكشف بلد اللاعب تلقائياً ويحط علمه فوق رأسه</div></div></div><div class="guide-step"><div class="step-num">👤</div><div class="step-content"><div class="step-title">اسم اللاعب بجانب العلم</div></div></div><div class="guide-step"><div class="step-num">📏</div><div class="step-content"><div class="step-title">يختفي بعد 50 stud</div></div></div></div>` },
+      { head: '📍 أين تحط السكربت؟', content: `<div class="guide-steps"><div class="guide-step"><div class="step-num">1</div><div class="step-content"><span class="step-code">ServerScriptService → FlagScript ✅</span></div></div></div>` },
+      { head: '🏷️', content: `<div class="guide-tags"><span class="guide-tag type-server">Server Script</span><span class="guide-tag type-module">195+ دولة</span><span class="guide-tag type-free">مجاني 100%</span></div>` }
+    ]
+  };
+
+  // ✅ NEW: Device Type Guide
+  guides.devicetype = {
+    icon: '📱',
+    title: 'نظام الجهاز',
+    subtitle: 'ServerScript + LocalScript — أيقونة الجهاز فوق الرأس',
+    sections: [
       {
         head: '📦 وش يسوي هذا السكربت؟',
         content: `<div class="guide-steps">
-          <div class="guide-step"><div class="step-num">🚩</div><div class="step-content"><div class="step-title">علم الدولة فوق رأس اللاعب</div><div class="step-desc">يكشف بلد اللاعب تلقائياً ويحط علمه فوق رأسه</div></div></div>
-          <div class="guide-step"><div class="step-num">👤</div><div class="step-content"><div class="step-title">اسم اللاعب بجانب العلم</div><div class="step-desc">DisplayName بخط Gotham Bold مع خط فاصل أبيض</div></div></div>
-          <div class="guide-step"><div class="step-num">📏</div><div class="step-content"><div class="step-title">يختفي بعد 50 stud</div><div class="step-desc">MaxDistance = 50 — ما يضغط على الأداء</div></div></div>
-          <div class="guide-step"><div class="step-num">🌍</div><div class="step-content"><div class="step-title">195+ دولة مدعومة</div><div class="step-desc">كل دول العالم موجودة — إذا ما عرف البلد يطلع 🏳️</div></div></div>
+          <div class="guide-step"><div class="step-num">📱</div><div class="step-content"><div class="step-title">يكشف نوع جهاز كل لاعب</div><div class="step-desc">📱 موبايل &nbsp;|&nbsp; 💻 PC &nbsp;|&nbsp; 🎮 Controller &nbsp;|&nbsp; 📟 تابلت</div></div></div>
+          <div class="guide-step"><div class="step-num">🏷️</div><div class="step-content"><div class="step-title">يعرض الأيقونة فوق رأس اللاعب</div><div class="step-desc">BillboardGui يظهر لكل من حوله</div></div></div>
+          <div class="guide-step"><div class="step-num">📏</div><div class="step-content"><div class="step-title">حجم ديناميكي حسب المسافة</div><div class="step-desc">كلما اقتربت صارت الأيقونة أكبر، وتختفي بعد 50 stud</div></div></div>
         </div>`
       },
       {
-        head: '📍 أين تحط السكربت؟',
+        head: '🖥️ ServerScript — أين تحطه؟',
         content: `<div class="guide-steps">
-          <div class="guide-step"><div class="step-num">1</div><div class="step-content"><div class="step-title">روح ServerScriptService</div><div class="step-desc">Explorer → ServerScriptService → كليك يمين → Insert Object → Script</div></div></div>
-          <div class="guide-step"><div class="step-num">2</div><div class="step-content"><div class="step-title">الصق السكربت كامل واحفظ</div><span class="step-code">ServerScriptService → FlagScript ✅</span></div></div>
+          <div class="guide-step"><div class="step-num">1</div><div class="step-content"><div class="step-title">ServerScriptService → Script جديد</div><span class="step-code">ServerScriptService → DeviceTypeServer ✅</span></div></div>
+          <div class="guide-step"><div class="step-num">2</div><div class="step-content"><div class="step-title">الصق كود الـ Server (التاب الثاني في المودال)</div></div></div>
         </div>`
       },
       {
-        head: '🧪 اختبار في Studio',
+        head: '📱 LocalScript — أين تحطه؟',
         content: `<div class="guide-steps">
-          <div class="guide-step"><div class="step-num">⚠️</div><div class="step-content"><div class="step-title">في Studio دايمًا يطلع علم SA</div><div class="step-desc">هذا طبيعي — السكربت يستخدم "sa" كـ fallback في Studio تلقائياً</div></div></div>
-          <div class="guide-step"><div class="step-num">✅</div><div class="step-content"><div class="step-title">العلم الصحيح يطلع بعد النشر</div><div class="step-desc">Publish اللعبة وجرّبها من Roblox مباشرة</div></div></div>
-          <div class="guide-step"><div class="step-num">💡</div><div class="step-content"><div class="step-title">لتغيير دولة الاختبار في Studio</div><span class="step-code">countryShort = "us"  -- غيّرها لأي كود</span></div></div>
+          <div class="guide-step"><div class="step-num">1</div><div class="step-content"><div class="step-title">StarterCharacterScripts → LocalScript جديد</div><span class="step-code">StarterCharacterScripts → DeviceTypeLocal ✅</span></div></div>
+          <div class="guide-step"><div class="step-num">2</div><div class="step-content"><div class="step-title">الصق كود الـ Local (التاب الأول في المودال)</div></div></div>
         </div>`
       },
       {
         head: '⚙️ إعدادات قابلة للتغيير',
         content: `<div class="guide-steps">
-          <div class="guide-step"><div class="step-num">📏</div><div class="step-content"><div class="step-title">MaxDistance = 50</div><div class="step-desc">المسافة اللي يظهر فيها العلم — غيّره حسب لعبتك</div><span class="step-code">billboard.MaxDistance = 50</span></div></div>
-          <div class="guide-step"><div class="step-num">📐</div><div class="step-content"><div class="step-title">حجم الـ Billboard</div><span class="step-code">billboard.Size = UDim2.new(0, 160, 0, 70)</span></div></div>
-          <div class="guide-step"><div class="step-num">↕️</div><div class="step-content"><div class="step-title">ارتفاع العلم فوق الرأس</div><span class="step-code">billboard.StudsOffset = Vector3.new(0, 3.2, 0)</span></div></div>
+          <div class="guide-step"><div class="step-num">📏</div><div class="step-content"><div class="step-title">MaxDistance = 50</div><div class="step-desc">المسافة اللي تختفي فيها الأيقونة</div><span class="step-code">billboard.MaxDistance = 50</span></div></div>
+          <div class="guide-step"><div class="step-num">📐</div><div class="step-content"><div class="step-title">MAX_SIZE / MIN_SIZE</div><div class="step-desc">حجم الأيقونة قريب (120) وبعيد (20)</div><span class="step-code">local MAX_SIZE = 120\nlocal MIN_SIZE = 20</span></div></div>
+          <div class="guide-step"><div class="step-num">↕️</div><div class="step-content"><div class="step-title">ارتفاع الأيقونة</div><span class="step-code">billboard.StudsOffset = Vector3.new(0, 3, 0)</span></div></div>
         </div>`
       },
       {
-        head: '💡 ملاحظات مهمة',
-        content: `<div class="guide-tip success"><span class="guide-tip-icon">✅</span>يشتغل مع اللاعبين الموجودين قبل تشغيل السكربت</div><br>
-        <div class="guide-tip info" style="margin-top:8px;"><span class="guide-tip-icon">ℹ️</span>السكربت Server-only — ما يحتاج LocalScript</div><br>
-        <div class="guide-tip warn" style="margin-top:8px;"><span class="guide-tip-icon">⚠️</span>GetCountryRegionForPlayerAsync قد تأخذ ثانية — هذا طبيعي</div>`
+        head: '💡 ملاحظات',
+        content: `<div class="guide-tip success"><span class="guide-tip-icon">✅</span>السكربتين يشتغلان مع بعض — الـ Server يستقبل النتيجة من الـ Local</div><br>
+        <div class="guide-tip info" style="margin-top:8px;"><span class="guide-tip-icon">ℹ️</span>الـ RemoteEvent يُنشأ تلقائياً بالـ ServerScript — ما تحتاج تسويه يدوياً</div><br>
+        <div class="guide-tip warn" style="margin-top:8px;"><span class="guide-tip-icon">⚠️</span>في Studio، يطلع 💻 دايماً — هذا طبيعي لأن Studio يستخدم Keyboard</div>`
       },
       {
         head: '🏷️ تفاصيل',
-        content: `<div class="guide-tags"><span class="guide-tag type-server">Server Script</span><span class="guide-tag type-module">195+ دولة</span><span class="guide-tag type-free">مجاني 100%</span></div>`
+        content: `<div class="guide-tags"><span class="guide-tag type-server">ServerScript</span><span class="guide-tag type-local">LocalScript</span><span class="guide-tag type-free">مجاني 100%</span></div>`
       }
     ]
   };
@@ -1305,6 +1447,13 @@ Players.PlayerAdded:<span class="fn">Connect</span>(<span class="kw">function</s
       document.getElementById('tab-local').classList.add('active');
       document.getElementById('tab-server').classList.remove('active');
       document.getElementById('modal-code').textContent = scripts.pointssystem_local;
+    } else if (key === 'devicetype') {
+      tabs.style.display = 'flex'; currentTab = 'local';
+      document.getElementById('tab-local').innerHTML = '📱 LocalScript';
+      document.getElementById('tab-server').innerHTML = '🖥️ ServerScript';
+      document.getElementById('tab-local').classList.add('active');
+      document.getElementById('tab-server').classList.remove('active');
+      document.getElementById('modal-code').textContent = scripts.devicetype_local;
     } else {
       tabs.style.display = 'none';
       document.getElementById('modal-code').textContent = scripts[key] || '';
@@ -1319,6 +1468,7 @@ Players.PlayerAdded:<span class="fn">Connect</span>(<span class="kw">function</s
     if (key === 'sizechange') { code = currentTab === 'local' ? scripts.sizechange_local : scripts.sizechange_server; }
     else if (key === 'killfeed') { code = currentTab === 'local' ? scripts.killfeed_feed : scripts.killfeed_damage; }
     else if (key === 'pointssystem') { code = currentTab === 'local' ? scripts.pointssystem_local : scripts.pointssystem_main; }
+    else if (key === 'devicetype') { code = currentTab === 'local' ? scripts.devicetype_local : scripts.devicetype_server; }
     else { code = scripts[key] || ''; }
     if (navigator.clipboard && window.isSecureContext) {
       navigator.clipboard.writeText(code).then(() => showToast('✓ تم نسخ السكربت!')).catch(() => fallbackCopy(code));
