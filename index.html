@@ -735,7 +735,7 @@ Players.PlayerAdded:<span class="fn">Connect</span>(<span class="kw">function</s
       </div>
     </div>
 
-    <!-- ✅ NEW: Device Type Billboard -->
+    <!-- Device Type Billboard -->
     <div class="script-card" onclick="openModal('نظام كشف الجهاز', 'devicetype')" style="border-color:rgba(120,220,120,0.35);">
       <div class="script-header" style="background:rgba(120,220,120,0.07);">
         <div class="script-dots"><span></span><span></span><span></span></div>
@@ -889,6 +889,25 @@ Players.PlayerAdded:<span class="fn">Connect</span>(<span class="kw">function</s
           <div class="model-meta"><span>بقلم RealX</span><span class="model-tag" style="background:rgba(255,107,53,0.15);color:#ff7043;border-color:rgba(255,107,53,0.35);">SYSTEM</span></div>
           <div style="font-size:0.78rem;color:var(--muted);margin-top:8px;line-height:1.6;">نظام سرعة احترافي كامل — بوستات، سرعة قابلة للتخصيص، وتأثيرات بصرية ناعمة.</div>
           <a href="https://create.roblox.com/store/asset/123325741527492/Escape-Tsunami-For-Brainrots" target="_blank" class="btn-dl" style="text-align:center;text-decoration:none;background:linear-gradient(90deg,#ff6b35,#d0300a);color:#fff;border:none;">↓ احصل عليه من Roblox</a>
+        </div>
+      </div>
+
+      <!-- ✅ NEW: نظام شات -->
+      <div class="model-card" style="border-color:rgba(80,160,255,0.35);">
+        <div class="model-preview" style="background:linear-gradient(135deg,#050a1a,#0a1530);position:relative;overflow:hidden;">
+          <span class="model-icon" style="filter:drop-shadow(0 0 24px rgba(80,160,255,0.8));">💬</span>
+        </div>
+        <div class="model-body">
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;">
+            <div class="model-name" style="margin-bottom:0;display:flex;align-items:center;gap:6px;">
+              نظام شات
+              <span style="background:rgba(80,160,255,0.15);border:1px solid rgba(80,160,255,0.5);color:#50a0ff;font-size:0.62rem;font-weight:800;padding:2px 7px;border-radius:100px;font-family:'Space Mono',monospace;letter-spacing:0.5px;">NEW</span>
+            </div>
+            <button class="btn-info" onclick="openGuide('model_chat')" title="شرح الموديل" style="background:rgba(80,160,255,0.15);border-color:rgba(80,160,255,0.6);color:#50a0ff;">!</button>
+          </div>
+          <div class="model-meta"><span>بقلم RealX</span><span class="model-tag" style="background:rgba(80,160,255,0.15);color:#50a0ff;border-color:rgba(80,160,255,0.35);">SYSTEM</span></div>
+          <div style="font-size:0.78rem;color:var(--muted);margin-top:8px;line-height:1.6;">نظام شات كامل جاهز للاستخدام في لعبتك.</div>
+          <a href="https://create.roblox.com/store/asset/100869720290138/%D9%86%D8%B8%D8%A7%D9%85-" target="_blank" class="btn-dl" style="text-align:center;text-decoration:none;background:linear-gradient(90deg,#3a7bd5,#1a4a9a);color:#fff;border:none;">↓ احصل عليه من Roblox</a>
         </div>
       </div>
 
@@ -1214,7 +1233,6 @@ end)`
     ]
   };
 
-  // ✅ NEW: Device Type Guide
   guides.devicetype = {
     icon: '📱',
     title: 'نظام الجهاز',
@@ -1243,22 +1261,31 @@ end)`
         </div>`
       },
       {
-        head: '⚙️ إعدادات قابلة للتغيير',
-        content: `<div class="guide-steps">
-          <div class="guide-step"><div class="step-num">📏</div><div class="step-content"><div class="step-title">MaxDistance = 50</div><div class="step-desc">المسافة اللي تختفي فيها الأيقونة</div><span class="step-code">billboard.MaxDistance = 50</span></div></div>
-          <div class="guide-step"><div class="step-num">📐</div><div class="step-content"><div class="step-title">MAX_SIZE / MIN_SIZE</div><div class="step-desc">حجم الأيقونة قريب (120) وبعيد (20)</div><span class="step-code">local MAX_SIZE = 120\nlocal MIN_SIZE = 20</span></div></div>
-          <div class="guide-step"><div class="step-num">↕️</div><div class="step-content"><div class="step-title">ارتفاع الأيقونة</div><span class="step-code">billboard.StudsOffset = Vector3.new(0, 3, 0)</span></div></div>
-        </div>`
-      },
-      {
         head: '💡 ملاحظات',
-        content: `<div class="guide-tip success"><span class="guide-tip-icon">✅</span>السكربتين يشتغلان مع بعض — الـ Server يستقبل النتيجة من الـ Local</div><br>
-        <div class="guide-tip info" style="margin-top:8px;"><span class="guide-tip-icon">ℹ️</span>الـ RemoteEvent يُنشأ تلقائياً بالـ ServerScript — ما تحتاج تسويه يدوياً</div><br>
-        <div class="guide-tip warn" style="margin-top:8px;"><span class="guide-tip-icon">⚠️</span>في Studio، يطلع 💻 دايماً — هذا طبيعي لأن Studio يستخدم Keyboard</div>`
+        content: `<div class="guide-tip warn"><span class="guide-tip-icon">⚠️</span>في Studio، يطلع 💻 دايماً — هذا طبيعي لأن Studio يستخدم Keyboard</div>`
       },
       {
         head: '🏷️ تفاصيل',
         content: `<div class="guide-tags"><span class="guide-tag type-server">ServerScript</span><span class="guide-tag type-local">LocalScript</span><span class="guide-tag type-free">مجاني 100%</span></div>`
+      }
+    ]
+  };
+
+  guides.model_chat = {
+    icon: '💬',
+    title: 'نظام شات',
+    subtitle: 'نظام شات كامل جاهز للاستخدام في لعبتك',
+    sections: [
+      {
+        head: '🚀 كيف أستخدمه؟',
+        content: `<div class="guide-steps">
+          <div class="guide-step"><div class="step-num">1</div><div class="step-content"><div class="step-title">احصل عليه من Roblox Creator Store</div><div class="step-desc">اضغط على زر <b>احصل عليه من Roblox</b> ثم افتح Toolbox في Studio</div></div></div>
+          <div class="guide-step"><div class="step-num">2</div><div class="step-content"><div class="step-title">اسحب الموديل في Workspace أو ServerScriptService</div><span class="step-code">Toolbox → My Models → ChatSystem ✅</span></div></div>
+        </div>`
+      },
+      {
+        head: '🏷️',
+        content: `<div class="guide-tags"><span class="guide-tag type-server">Server Script</span><span class="guide-tag type-free">مجاني 100%</span></div>`
       }
     ]
   };
