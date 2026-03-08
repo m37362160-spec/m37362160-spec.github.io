@@ -21,11 +21,9 @@
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
   body { font-family: 'Cairo', sans-serif; background: var(--bg); color: var(--text); overflow-x: hidden; direction: rtl; }
-
   .orb1 { position: fixed; top: -200px; right: -200px; width: 600px; height: 600px; background: radial-gradient(circle, rgba(255,59,59,0.12) 0%, transparent 70%); border-radius: 50%; pointer-events: none; z-index: 0; }
   .orb2 { position: fixed; bottom: -200px; left: -100px; width: 500px; height: 500px; background: radial-gradient(circle, rgba(255,107,53,0.08) 0%, transparent 70%); border-radius: 50%; pointer-events: none; z-index: 0; }
   body::after { content: ''; position: fixed; inset: 0; background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.03) 2px, rgba(0,0,0,0.03) 4px); pointer-events: none; z-index: 999; }
-
   nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 18px 60px; background: rgba(8,8,16,0.85); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); }
   .logo { font-family: 'Space Mono', monospace; font-size: 1.3rem; font-weight: 700; }
   .logo .rx { color: var(--red); }
@@ -38,7 +36,6 @@
   .btn-red:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(255,59,59,0.4); }
   .btn-ghost { background: transparent; color: var(--text); border: 1px solid rgba(255,255,255,0.15); padding: 11px 28px; border-radius: 6px; font-family: 'Cairo', sans-serif; font-size: 0.88rem; font-weight: 600; cursor: pointer; transition: all 0.3s; text-decoration: none; display: inline-block; }
   .btn-ghost:hover { border-color: var(--red); color: var(--red); }
-
   .hero { position: relative; z-index: 1; min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding: 120px 60px 60px; }
   .hero-eyebrow { font-family: 'Space Mono', monospace; font-size: 0.75rem; color: var(--red); letter-spacing: 4px; margin-bottom: 24px; animation: fadeUp 0.7s ease both; }
   .hero h1 { font-family: 'Rajdhani', sans-serif; font-size: clamp(4rem, 10vw, 8rem); font-weight: 700; line-height: 0.9; letter-spacing: -2px; margin-bottom: 32px; animation: fadeUp 0.7s 0.1s ease both; }
@@ -48,20 +45,17 @@
   .hero-btns { display: flex; gap: 14px; animation: fadeUp 0.7s 0.3s ease both; }
   .hero-tag { position: absolute; left: 60px; top: 50%; transform: translateY(-50%); writing-mode: vertical-rl; font-family: 'Space Mono', monospace; font-size: 0.7rem; color: var(--muted); letter-spacing: 4px; animation: fadeUp 0.7s 0.4s ease both; }
   @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
-
   .ticker { position: relative; z-index: 1; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); overflow: hidden; padding: 14px 0; background: var(--bg2); }
   .ticker-inner { display: flex; gap: 60px; animation: ticker 20s linear infinite; white-space: nowrap; direction: ltr; }
   .ticker-item { font-family: 'Space Mono', monospace; font-size: 0.8rem; color: var(--muted); display: flex; align-items: center; gap: 14px; }
   .ticker-item .dot { color: var(--red); }
   @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-
   .section { position: relative; z-index: 1; padding: 100px 60px; max-width: 1200px; margin: 0 auto; }
   .section-wide { position: relative; z-index: 1; padding: 100px 0; background: var(--bg2); }
   .section-wide .inner { max-width: 1200px; margin: 0 auto; padding: 0 60px; }
   .label { font-family: 'Space Mono', monospace; font-size: 0.7rem; letter-spacing: 4px; color: var(--red); margin-bottom: 12px; display: flex; align-items: center; gap: 12px; }
   .label::before { content: ''; flex: 1; max-width: 60px; height: 1px; background: var(--red); }
   .section-title { font-family: 'Cairo', sans-serif; font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 900; line-height: 1.1; margin-bottom: 50px; letter-spacing: -1px; }
-
   .scripts-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 20px; }
   .script-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; transition: all 0.3s; cursor: pointer; position: relative; z-index: 2; }
   .script-card:hover { border-color: var(--red); transform: translateY(-4px); box-shadow: 0 16px 40px rgba(255,59,59,0.12); }
@@ -80,11 +74,9 @@
   .script-desc { color: var(--muted); font-size: 0.82rem; }
   .btn-copy { background: rgba(255,59,59,0.1); border: 1px solid var(--border); color: var(--red); padding: 8px 16px; border-radius: 6px; font-family: 'Cairo', sans-serif; font-size: 0.78rem; font-weight: 700; cursor: pointer; transition: all 0.2s; white-space: nowrap; flex-shrink: 0; position: relative; z-index: 2; }
   .btn-copy:hover { background: var(--red); color: #fff; }
-
   .btn-info { width: 26px; height: 26px; border-radius: 50%; background: rgba(255,107,53,0.15); border: 1.5px solid rgba(255,107,53,0.5); color: var(--orange); font-family: 'Space Mono', monospace; font-size: 0.78rem; font-weight: 700; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.2s; flex-shrink: 0; line-height: 1; }
   .btn-info:hover { background: var(--orange); color: #fff; border-color: var(--orange); transform: scale(1.1); box-shadow: 0 0 14px rgba(255,107,53,0.5); }
   .script-header-right { display: flex; align-items: center; gap: 8px; }
-
   .guide-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.9); backdrop-filter: blur(14px); z-index: 600; display: none; align-items: center; justify-content: center; }
   .guide-overlay.active { display: flex; }
   .guide-modal { background: var(--bg2); border: 1px solid rgba(255,107,53,0.35); border-radius: 18px; width: 90%; max-width: 620px; max-height: 88vh; overflow-y: auto; }
@@ -98,11 +90,9 @@
   .guide-close { background: none; border: none; color: var(--muted); font-size: 1.4rem; cursor: pointer; transition: color 0.2s; padding: 4px; }
   .guide-close:hover { color: var(--orange); }
   .guide-body { padding: 26px; display: flex; flex-direction: column; gap: 22px; }
-
   .guide-section { background: rgba(255,255,255,0.025); border: 1px solid rgba(255,255,255,0.07); border-radius: 12px; overflow: hidden; }
   .guide-section-head { padding: 13px 18px; background: rgba(255,107,53,0.07); border-bottom: 1px solid rgba(255,107,53,0.12); display: flex; align-items: center; gap: 10px; font-size: 0.88rem; font-weight: 700; color: var(--orange); }
   .guide-section-body { padding: 16px 18px; }
-
   .guide-steps { display: flex; flex-direction: column; gap: 14px; }
   .guide-step { display: flex; gap: 14px; align-items: flex-start; }
   .step-num { width: 28px; height: 28px; border-radius: 50%; background: rgba(255,59,59,0.15); border: 1.5px solid rgba(255,59,59,0.4); color: var(--red); font-family: 'Space Mono', monospace; font-size: 0.72rem; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
@@ -111,20 +101,17 @@
   .step-desc { font-size: 0.82rem; color: var(--muted); line-height: 1.7; }
   .step-desc b { color: var(--text); font-weight: 700; }
   .step-code { font-family: 'Space Mono', monospace; font-size: 0.75rem; background: rgba(0,0,0,0.4); border: 1px solid rgba(255,59,59,0.15); border-radius: 6px; padding: 8px 12px; margin-top: 8px; color: #74b9ff; direction: ltr; text-align: left; display: block; }
-
   .guide-tags { display: flex; flex-wrap: wrap; gap: 8px; }
   .guide-tag { font-family: 'Space Mono', monospace; font-size: 0.7rem; padding: 5px 12px; border-radius: 100px; }
   .guide-tag.type-server { background: rgba(116,185,255,0.1); border: 1px solid rgba(116,185,255,0.25); color: #74b9ff; }
   .guide-tag.type-local { background: rgba(85,239,196,0.1); border: 1px solid rgba(85,239,196,0.25); color: #55efc4; }
   .guide-tag.type-module { background: rgba(253,203,110,0.1); border: 1px solid rgba(253,203,110,0.25); color: #fdcb6e; }
   .guide-tag.type-free { background: rgba(255,59,59,0.1); border: 1px solid rgba(255,59,59,0.25); color: var(--red); }
-
   .guide-tip { display: flex; gap: 10px; align-items: flex-start; padding: 12px 14px; border-radius: 8px; font-size: 0.82rem; line-height: 1.7; }
   .guide-tip.warn { background: rgba(253,203,110,0.07); border: 1px solid rgba(253,203,110,0.2); color: #e0c870; }
   .guide-tip.success { background: rgba(85,239,196,0.07); border: 1px solid rgba(85,239,196,0.2); color: #55efc4; }
   .guide-tip.info { background: rgba(116,185,255,0.07); border: 1px solid rgba(116,185,255,0.2); color: #74b9ff; }
   .guide-tip-icon { font-size: 1rem; flex-shrink: 0; margin-top: 1px; }
-
   .card-comments { border-top: 1px solid var(--border); padding: 14px 20px; background: rgba(0,0,0,0.15); }
   .card-comments-title { font-size: 0.75rem; color: var(--muted); margin-bottom: 8px; font-weight: 600; }
   .card-comments-list { max-height: 80px; overflow-y: auto; margin-bottom: 10px; display: flex; flex-direction: column; gap: 5px; }
@@ -141,7 +128,6 @@
   .card-comment-input::placeholder { color: var(--muted); }
   .btn-comment { background: rgba(255,59,59,0.15); border: 1px solid var(--border); color: var(--red); padding: 6px 12px; border-radius: 6px; font-family: 'Cairo', sans-serif; font-size: 0.75rem; font-weight: 700; cursor: pointer; transition: all 0.2s; white-space: nowrap; }
   .btn-comment:hover { background: var(--red); color: #fff; }
-
   .models-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 20px; }
   .model-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; transition: all 0.3s; }
   .model-card:hover { border-color: var(--orange); transform: translateY(-4px); box-shadow: 0 16px 40px rgba(255,107,53,0.12); }
@@ -154,7 +140,6 @@
   .model-tag { font-family: 'Space Mono', monospace; font-size: 0.68rem; color: var(--orange); background: rgba(255,107,53,0.1); border-radius: 4px; padding: 2px 8px; }
   .btn-dl { display: block; width: 100%; margin-top: 14px; background: transparent; border: 1px solid var(--border); color: var(--text); padding: 9px; border-radius: 6px; font-family: 'Cairo', sans-serif; font-size: 0.82rem; font-weight: 700; cursor: pointer; transition: all 0.2s; }
   .btn-dl:hover { border-color: var(--orange); color: var(--orange); }
-
   .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
   .about-avatar { width: 180px; height: 180px; background: linear-gradient(135deg, rgba(255,59,59,0.15), rgba(255,107,53,0.1)); border: 2px solid var(--border); border-radius: 20px; display: flex; align-items: center; justify-content: center; font-size: 5rem; margin-bottom: 40px; position: relative; }
   .about-avatar::after { content: 'RealX'; position: absolute; bottom: -14px; right: 50%; transform: translateX(50%); background: var(--red); color: #fff; font-family: 'Space Mono', monospace; font-size: 0.72rem; padding: 4px 14px; border-radius: 100px; white-space: nowrap; }
@@ -166,7 +151,6 @@
   .stat-row { display: flex; gap: 32px; margin-top: 32px; }
   .mini-stat .snum { font-family: 'Rajdhani', sans-serif; font-size: 2rem; font-weight: 700; color: var(--red); display: block; }
   .mini-stat .lbl { font-size: 0.72rem; color: var(--muted); font-family: 'Space Mono', monospace; }
-
   footer { position: relative; z-index: 1; border-top: 1px solid var(--border); padding: 36px 60px; display: flex; justify-content: space-between; align-items: center; }
   .footer-logo { font-family: 'Space Mono', monospace; font-weight: 700; font-size: 1rem; }
   .footer-logo span { color: var(--red); }
@@ -175,10 +159,8 @@
   .visitor-counter .vc-icon { font-size: 1.1rem; }
   .visitor-counter .vc-text { font-family: 'Cairo', sans-serif; font-size: 0.82rem; color: var(--muted); }
   .visitor-counter .vc-num { font-family: 'Space Mono', monospace; font-size: 1rem; color: var(--red); font-weight: 700; }
-
   .reveal { opacity: 0; transform: translateY(30px); transition: all 0.6s ease; }
   .reveal.visible { opacity: 1; transform: translateY(0); }
-
   .modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.85); backdrop-filter: blur(10px); z-index: 500; display: none; align-items: center; justify-content: center; }
   .modal-overlay.active { display: flex; }
   .modal { background: var(--bg2); border: 1px solid var(--border); border-radius: 16px; width: 90%; max-width: 760px; max-height: 90vh; overflow-y: auto; }
@@ -189,11 +171,9 @@
   .modal-body { padding: 24px; }
   .full-code { font-family: 'Space Mono', monospace; font-size: 0.78rem; color: #a8b5d4; background: rgba(0,0,0,0.4); border-radius: 10px; padding: 20px; line-height: 1.8; overflow-x: auto; white-space: pre; direction: ltr; text-align: left; }
   .modal-actions { display: flex; gap: 12px; margin-top: 20px; flex-wrap: wrap; }
-
   .script-tabs { display: flex; gap: 8px; margin-bottom: 14px; }
   .script-tab { background: rgba(255,255,255,0.04); border: 1px solid var(--border); color: var(--muted); padding: 6px 16px; border-radius: 6px; font-family: 'Cairo', sans-serif; font-size: 0.8rem; font-weight: 700; cursor: pointer; transition: all 0.2s; }
   .script-tab.active { background: rgba(255,59,59,0.15); border-color: var(--red); color: var(--red); }
-
   .modal-comments { margin-top: 28px; border-top: 1px solid var(--border); padding-top: 24px; }
   .modal-comments-title { font-size: 1rem; font-weight: 800; margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
   .modal-comments-title span { color: var(--red); font-size: 0.8rem; background: rgba(255,59,59,0.1); border-radius: 100px; padding: 2px 10px; }
@@ -216,10 +196,8 @@
   textarea.comment-input { resize: vertical; min-height: 80px; line-height: 1.7; }
   .btn-submit-comment { background: var(--red); color: #fff; border: none; padding: 10px 24px; border-radius: 8px; font-family: 'Cairo', sans-serif; font-size: 0.88rem; font-weight: 700; cursor: pointer; transition: all 0.2s; white-space: nowrap; align-self: flex-end; }
   .btn-submit-comment:hover { opacity: 0.85; transform: translateY(-1px); }
-
   .copy-toast { position: fixed; bottom: 30px; right: 50%; transform: translateX(50%) translateY(100px); background: var(--red); color: #fff; font-family: 'Cairo', sans-serif; font-size: 0.88rem; font-weight: 700; padding: 12px 28px; border-radius: 8px; z-index: 9999; transition: transform 0.3s; pointer-events: none; }
   .copy-toast.show { transform: translateX(50%) translateY(0); }
-
   @media (max-width: 768px) {
     nav { padding: 16px 20px; }
     .nav-links { display: none; }
@@ -232,12 +210,10 @@
     .comment-form-row { flex-direction: column; }
   }
 </style>
-
   <!-- Firebase SDK -->
   <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
     import { getDatabase, ref, get, set, push, onValue, runTransaction } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js";
-
     const firebaseConfig = {
       apiKey: "AIzaSyAI-UCBIkc0p55P51UJon9l5hxS4HorNGA",
       authDomain: "realx-site.firebaseapp.com",
@@ -247,12 +223,9 @@
       messagingSenderId: "586603599715",
       appId: "1:586603599715:web:27d84c268325a2eb0ce556"
     };
-
     const app = initializeApp(firebaseConfig);
     const db = getDatabase(app);
-
     window._fb = { db, ref, get, set, push, onValue, runTransaction };
-
     window.addEventListener('DOMContentLoaded', () => {
       initVisitorCounter();
       document.querySelectorAll('[id^="mini-comments-"]').forEach(el => {
@@ -260,7 +233,6 @@
         listenComments(key);
       });
     });
-
     async function initVisitorCounter() {
       const el = document.getElementById('visitor-count');
       if (!el) return;
@@ -275,7 +247,6 @@
         el.textContent = Number(n).toLocaleString('ar');
       });
     }
-
     function listenComments(key) {
       const listEl = document.getElementById('mini-comments-' + key);
       if (!listEl) return;
@@ -291,12 +262,10 @@
         }
       });
     }
-
     window._submitComment = async function(key, name, text) {
       const commentsRef = ref(db, 'comments/' + key);
       await push(commentsRef, { name: name || 'زائر', text, ts: Date.now() });
     };
-
     window._loadCommentsOnce = async function(key) {
       const commentsRef = ref(db, 'comments/' + key);
       const snap = await get(commentsRef);
@@ -310,7 +279,6 @@
 <body>
 <div class="orb1"></div>
 <div class="orb2"></div>
-
 <nav>
   <div class="logo"><span class="cursor"></span><span class="rx">Real</span>X</div>
   <ul class="nav-links">
@@ -320,7 +288,6 @@
   </ul>
   <a href="#scripts" class="btn-red">اشياء مجانية ↓</a>
 </nav>
-
 <div class="hero">
   <div class="hero-eyebrow">// ROBLOX DEVELOPER &amp; SCRIPTER</div>
   <h1>
@@ -338,7 +305,6 @@
   </div>
   <div class="hero-tag">ROBLOX · LUAU · FREE · OPEN</div>
 </div>
-
 <div class="ticker">
   <div class="ticker-inner">
     <div class="ticker-item"><span class="dot">■</span> سكربتات مجانية</div>
@@ -355,13 +321,11 @@
     <div class="ticker-item"><span class="dot">■</span> BY REALX</div>
   </div>
 </div>
-
 <!-- SCRIPTS -->
 <section class="section" id="scripts">
   <div class="label reveal">SCRIPTS</div>
   <h2 class="section-title reveal">سكربتات Luau المجانية</h2>
   <div class="scripts-grid reveal">
-
     <!-- Speed -->
     <div class="script-card" onclick="openModal('نظام السرعة الزائدة', 'speed')">
       <div class="script-header">
@@ -396,7 +360,6 @@ part.Touched:<span class="fn">Connect</span>(<span class="kw">function</span>(hi
         </div>
       </div>
     </div>
-
     <!-- Day/Night -->
     <div class="script-card" onclick="openModal('دورة الليل والنهار', 'daynight')">
       <div class="script-header">
@@ -430,7 +393,6 @@ part.Touched:<span class="fn">Connect</span>(<span class="kw">function</span>(hi
         </div>
       </div>
     </div>
-
     <!-- Kill Brick -->
     <div class="script-card" onclick="openModal('طابوق القتل', 'kill')">
       <div class="script-header">
@@ -464,7 +426,6 @@ part.Touched:<span class="fn">Connect</span>(<span class="kw">function</span>(hi
         </div>
       </div>
     </div>
-
     <!-- Leaderboard -->
     <div class="script-card" onclick="openModal('نظام النقاط', 'leaderboard')">
       <div class="script-header">
@@ -498,7 +459,6 @@ Players.PlayerAdded:<span class="fn">Connect</span>(<span class="kw">function</s
         </div>
       </div>
     </div>
-
     <!-- NPC -->
     <div class="script-card" onclick="openModal('NPC — ذكاء اصطناعي للمطاردة', 'npc')">
       <div class="script-header">
@@ -532,7 +492,6 @@ Players.PlayerAdded:<span class="fn">Connect</span>(<span class="kw">function</s
         </div>
       </div>
     </div>
-
     <!-- Size Changer -->
     <div class="script-card" onclick="openModal('مغير الحجم — Size Changer', 'sizechange')">
       <div class="script-header">
@@ -562,7 +521,6 @@ Players.PlayerAdded:<span class="fn">Connect</span>(<span class="kw">function</s
         </div>
       </div>
     </div>
-
     <!-- Gravity -->
     <div class="script-card" onclick="openModal('Gravity Controller', 'gravity')">
       <div class="script-header">
@@ -593,7 +551,6 @@ Players.PlayerAdded:<span class="fn">Connect</span>(<span class="kw">function</s
         </div>
       </div>
     </div>
-
     <!-- KillFeed -->
     <div class="script-card" onclick="openModal('KillFeed + أرقام الضرر', 'killfeed')">
       <div class="script-header">
@@ -625,7 +582,6 @@ killFeedRemote.OnClientEvent:<span class="fn">Connect</span>(<span class="kw">fu
         </div>
       </div>
     </div>
-
     <!-- Points System -->
     <div class="script-card" onclick="openModal('نظام النقاط الكامل', 'pointssystem')" style="border-color:rgba(255,200,0,0.25);">
       <div class="script-header" style="background:rgba(255,200,0,0.06);">
@@ -658,7 +614,6 @@ killFeedRemote.OnClientEvent:<span class="fn">Connect</span>(<span class="kw">fu
         </div>
       </div>
     </div>
-
     <!-- Daily Streak -->
     <div class="script-card" onclick="openModal('نظام السترييك اليومي', 'daystreak')" style="border-color:rgba(255,150,0,0.35);">
       <div class="script-header" style="background:rgba(255,150,0,0.07);">
@@ -695,7 +650,6 @@ killFeedRemote.OnClientEvent:<span class="fn">Connect</span>(<span class="kw">fu
         </div>
       </div>
     </div>
-
     <!-- Flag Script -->
     <div class="script-card" onclick="openModal('نظام علم الدولة فوق الرأس', 'flagscript')" style="border-color:rgba(100,200,255,0.35);">
       <div class="script-header" style="background:rgba(100,200,255,0.07);">
@@ -734,7 +688,6 @@ Players.PlayerAdded:<span class="fn">Connect</span>(<span class="kw">function</s
         </div>
       </div>
     </div>
-
     <!-- Device Type Billboard -->
     <div class="script-card" onclick="openModal('نظام كشف الجهاز', 'devicetype')" style="border-color:rgba(120,220,120,0.35);">
       <div class="script-header" style="background:rgba(120,220,120,0.07);">
@@ -771,17 +724,14 @@ Players.PlayerAdded:<span class="fn">Connect</span>(<span class="kw">function</s
         </div>
       </div>
     </div>
-
   </div>
 </section>
-
 <!-- MODELS -->
 <div class="section-wide" id="models">
   <div class="inner">
     <div class="label reveal">3D MODELS</div>
     <h2 class="section-title reveal">موديلات مجانية</h2>
     <div class="models-grid reveal">
-
       <div class="model-card">
         <div class="model-preview" style="background:linear-gradient(135deg,#0a0a1a,#1a0a2a)">
           <span class="model-icon">🏆</span>
@@ -796,7 +746,6 @@ Players.PlayerAdded:<span class="fn">Connect</span>(<span class="kw">function</s
           <a href="https://create.roblox.com/store/asset/107822779957708/%D8%B4%D9%83%D8%B1%D8%A7-" target="_blank" class="btn-dl" style="text-align:center;text-decoration:none;">↓ احصل عليه من Roblox</a>
         </div>
       </div>
-
       <div class="model-card">
         <div class="model-preview" style="background:linear-gradient(135deg,#0a0a1a,#1a1a0a)">
           <span class="model-icon">🎮</span>
@@ -811,7 +760,6 @@ Players.PlayerAdded:<span class="fn">Connect</span>(<span class="kw">function</s
           <a href="https://create.roblox.com/store/asset/134092705608434/CustomHotBarGui" target="_blank" class="btn-dl" style="text-align:center;text-decoration:none;">↓ احصل عليه من Roblox</a>
         </div>
       </div>
-
       <div class="model-card">
         <div class="model-preview" style="background:linear-gradient(135deg,#0a1a0a,#0d2a0d)"><span class="model-icon">🌲</span></div>
         <div class="model-body">
@@ -822,7 +770,6 @@ Players.PlayerAdded:<span class="fn">Connect</span>(<span class="kw">function</s
           <div class="model-meta"><span>بقلم RealX</span><span class="model-tag">NATURE</span></div>
         </div>
       </div>
-
       <div class="model-card">
         <div class="model-preview" style="background:linear-gradient(135deg,#0a0a1a,#1a0a2a)"><span class="model-icon">💨</span></div>
         <div class="model-body">
@@ -835,7 +782,6 @@ Players.PlayerAdded:<span class="fn">Connect</span>(<span class="kw">function</s
           <a href="https://create.roblox.com/store/asset/133996832856620/dash-v1" target="_blank" class="btn-dl" style="text-align:center;text-decoration:none;">↓ احصل عليه من Roblox</a>
         </div>
       </div>
-
       <div class="model-card">
         <div class="model-preview" style="background:linear-gradient(135deg,#1a0a0a,#2a0d0a)"><span class="model-icon">⚔️</span></div>
         <div class="model-body">
@@ -848,7 +794,6 @@ Players.PlayerAdded:<span class="fn">Connect</span>(<span class="kw">function</s
           <a href="https://create.roblox.com/store/asset/93002086803453/WeaponWheel" target="_blank" class="btn-dl" style="text-align:center;text-decoration:none;">↓ احصل عليه من Roblox</a>
         </div>
       </div>
-
       <div class="model-card">
         <div class="model-preview" style="background:linear-gradient(135deg,#0a1a0a,#0a2a1a)"><span class="model-icon">🔔</span></div>
         <div class="model-body">
@@ -861,7 +806,6 @@ Players.PlayerAdded:<span class="fn">Connect</span>(<span class="kw">function</s
           <a href="https://create.roblox.com/store/asset/100155981133930/SketchfabScene" target="_blank" class="btn-dl" style="text-align:center;text-decoration:none;">↓ احصل عليه من Roblox</a>
         </div>
       </div>
-
       <div class="model-card" style="border-color:rgba(255,80,80,0.25);">
         <div class="model-preview" style="background:linear-gradient(135deg,#1a0505,#2a0a0a);position:relative;overflow:hidden;">
           <span class="model-icon">🗺️</span>
@@ -876,7 +820,6 @@ Players.PlayerAdded:<span class="fn">Connect</span>(<span class="kw">function</s
           <a href="https://create.roblox.com/store/asset/102138379776454/%D9%86%D8%B8%D8%A7%D9%85-" target="_blank" class="btn-dl" style="text-align:center;text-decoration:none;background:linear-gradient(90deg,#ff3b3b,#c0392b);">↓ احصل عليه من Roblox</a>
         </div>
       </div>
-
       <div class="model-card" style="border-color:rgba(255,107,53,0.35);">
         <div class="model-preview" style="background:linear-gradient(135deg,#0d0510,#1a0800);position:relative;overflow:hidden;">
           <span class="model-icon" style="filter:drop-shadow(0 0 24px rgba(255,107,53,0.8));">⚡</span>
@@ -891,8 +834,7 @@ Players.PlayerAdded:<span class="fn">Connect</span>(<span class="kw">function</s
           <a href="https://create.roblox.com/store/asset/123325741527492/Escape-Tsunami-For-Brainrots" target="_blank" class="btn-dl" style="text-align:center;text-decoration:none;background:linear-gradient(90deg,#ff6b35,#d0300a);color:#fff;border:none;">↓ احصل عليه من Roblox</a>
         </div>
       </div>
-
-      <!-- ✅ NEW: نظام شات -->
+      <!-- نظام شات -->
       <div class="model-card" style="border-color:rgba(80,160,255,0.35);">
         <div class="model-preview" style="background:linear-gradient(135deg,#050a1a,#0a1530);position:relative;overflow:hidden;">
           <span class="model-icon" style="filter:drop-shadow(0 0 24px rgba(80,160,255,0.8));">💬</span>
@@ -910,11 +852,27 @@ Players.PlayerAdded:<span class="fn">Connect</span>(<span class="kw">function</s
           <a href="https://create.roblox.com/store/asset/100869720290138/%D9%86%D8%B8%D8%A7%D9%85-" target="_blank" class="btn-dl" style="text-align:center;text-decoration:none;background:linear-gradient(90deg,#3a7bd5,#1a4a9a);color:#fff;border:none;">↓ احصل عليه من Roblox</a>
         </div>
       </div>
-
+      <!-- ✅ NEW: سيف -->
+      <div class="model-card" style="border-color:rgba(255,59,59,0.35);">
+        <div class="model-preview" style="background:linear-gradient(135deg,#1a0505,#2a0a10);position:relative;overflow:hidden;">
+          <span class="model-icon" style="filter:drop-shadow(0 0 24px rgba(255,59,59,0.85));font-size:4.5rem;">🗡️</span>
+        </div>
+        <div class="model-body">
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;">
+            <div class="model-name" style="margin-bottom:0;display:flex;align-items:center;gap:6px;">
+              سيف
+              <span style="background:rgba(255,59,59,0.15);border:1px solid rgba(255,59,59,0.55);color:#ff3b3b;font-size:0.62rem;font-weight:800;padding:2px 7px;border-radius:100px;font-family:'Space Mono',monospace;letter-spacing:0.5px;">NEW</span>
+            </div>
+            <button class="btn-info" onclick="openGuide('model_sword')" title="شرح الموديل" style="background:rgba(255,59,59,0.15);border-color:rgba(255,59,59,0.6);color:#ff3b3b;">!</button>
+          </div>
+          <div class="model-meta"><span>بقلم RealX</span><span class="model-tag" style="background:rgba(255,59,59,0.15);color:#ff6060;border-color:rgba(255,59,59,0.3);">WEAPON</span></div>
+          <div style="font-size:0.78rem;color:var(--muted);margin-top:8px;line-height:1.6;">موديل سيف جاهز للاستخدام في لعبتك مباشرة من Roblox Creator Store.</div>
+          <a href="https://create.roblox.com/store/asset/91492001530125/Sword" target="_blank" class="btn-dl" style="text-align:center;text-decoration:none;background:linear-gradient(90deg,#ff3b3b,#c0392b);color:#fff;border:none;">↓ احصل عليه من Roblox</a>
+        </div>
+      </div>
     </div>
   </div>
 </div>
-
 <!-- ABOUT -->
 <section class="section" id="about">
   <div class="about-grid">
@@ -942,7 +900,6 @@ Players.PlayerAdded:<span class="fn">Connect</span>(<span class="kw">function</s
     </div>
   </div>
 </section>
-
 <footer>
   <div class="footer-logo"><span>Real</span>X</div>
   <div class="visitor-counter">
@@ -956,7 +913,6 @@ Players.PlayerAdded:<span class="fn">Connect</span>(<span class="kw">function</s
   </a>
   <p>© 2025 RealX — كل شي مجاني للاستخدام</p>
 </footer>
-
 <!-- GUIDE MODAL -->
 <div class="guide-overlay" id="guide-modal" onclick="closeGuide(event)">
   <div class="guide-modal">
@@ -973,7 +929,6 @@ Players.PlayerAdded:<span class="fn">Connect</span>(<span class="kw">function</s
     <div class="guide-body" id="guide-body"></div>
   </div>
 </div>
-
 <!-- MODAL -->
 <div class="modal-overlay" id="modal" onclick="closeModal(event)">
   <div class="modal">
@@ -1005,13 +960,10 @@ Players.PlayerAdded:<span class="fn">Connect</span>(<span class="kw">function</s
     </div>
   </div>
 </div>
-
 <div class="copy-toast" id="toast">✓ تم النسخ!</div>
-
 <script>
   const obs = new IntersectionObserver(els => els.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); }), {threshold: 0.1});
   document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
-
   const scripts = {
     speed: `-- Speed Boost System by RealX\nlocal part = script.Parent\nlocal boostAmount = 30\nlocal duration = 5\npart.Touched:Connect(function(hit)\n    local char = hit.Parent\n    local hum = char:FindFirstChild("Humanoid")\n    if hum then\n        local original = hum.WalkSpeed\n        hum.WalkSpeed = original + boostAmount\n        task.wait(duration)\n        hum.WalkSpeed = original\n    end\nend)`,
     daynight: `-- Day/Night Cycle by RealX\nlocal Lighting = game:GetService("Lighting")\nlocal cycleSpeed = 60\nwhile true do\n    for hour = 0, 24, 0.01 do\n        Lighting.TimeOfDay = string.format("%02d:%02d:00", math.floor(hour), math.floor((hour % 1) * 60))\n        task.wait(cycleSpeed / 2400)\n    end\nend`,
@@ -1031,19 +983,15 @@ Players.PlayerAdded:<span class="fn">Connect</span>(<span class="kw">function</s
 -- ضعه في: ServerScriptService
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local Players = game:GetService("Players")
-
 local event = Instance.new("RemoteEvent")
 event.Name = "DeviceTypeEvent"
 event.Parent = ReplicatedStorage
-
 event.OnServerEvent:Connect(function(player, icon)
 \tlocal character = player.Character or player.CharacterAdded:Wait()
 \tlocal head = character:WaitForChild("Head")
-
 \t-- امسح القديم لو موجود
 \tlocal old = head:FindFirstChild("DeviceDisplay")
 \tif old then old:Destroy() end
-
 \tlocal billboard = Instance.new("BillboardGui")
 \tbillboard.Name = "DeviceDisplay"
 \tbillboard.Size = UDim2.new(0, 80, 0, 80)
@@ -1052,7 +1000,6 @@ event.OnServerEvent:Connect(function(player, icon)
 \tbillboard.MaxDistance = 50
 \tbillboard.Adornee = head
 \tbillboard.Parent = head
-
 \tlocal label = Instance.new("TextLabel")
 \tlabel.Size = UDim2.new(1, 0, 1, 0)
 \tlabel.BackgroundTransparency = 1
@@ -1068,16 +1015,13 @@ local UserInputService = game:GetService("UserInputService")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local Players = game:GetService("Players")
 local RunService = game:GetService("RunService")
-
 local player = Players.LocalPlayer
 local event = ReplicatedStorage:WaitForChild("DeviceTypeEvent", 10)
 if not event then return end
-
 local function isTablet()
 \tlocal vp = workspace.CurrentCamera.ViewportSize
 \treturn UserInputService.TouchEnabled and (vp.X >= 1024 or vp.Y >= 1024)
 end
-
 local function getDevice()
 \tif UserInputService.TouchEnabled and not UserInputService.KeyboardEnabled then
 \t\tif isTablet() then return "📟" end
@@ -1090,21 +1034,15 @@ local function getDevice()
 \t\treturn "❓"
 \tend
 end
-
--- أرسل نوع الجهاز للسيرفر
 local character = player.Character or player.CharacterAdded:Wait()
 character:WaitForChild("HumanoidRootPart")
 event:FireServer(getDevice())
-
--- حجم ديناميكي حسب المسافة
 local MAX_DISTANCE = 50
 local MAX_SIZE = 120
 local MIN_SIZE = 20
-
 RunService.Heartbeat:Connect(function()
 \tlocal myRoot = player.Character and player.Character:FindFirstChild("HumanoidRootPart")
 \tif not myRoot then return end
-
 \tfor _, otherPlayer in pairs(Players:GetPlayers()) do
 \t\tlocal otherChar = otherPlayer.Character
 \t\tif not otherChar then continue end
@@ -1114,7 +1052,6 @@ RunService.Heartbeat:Connect(function()
 \t\tif not billboard then continue end
 \t\tlocal otherRoot = otherChar:FindFirstChild("HumanoidRootPart")
 \t\tif not otherRoot then continue end
-
 \t\tlocal distance = (myRoot.Position - otherRoot.Position).Magnitude
 \t\tlocal ratio = 1 - math.clamp(distance / MAX_DISTANCE, 0, 1)
 \t\tlocal size = MIN_SIZE + (MAX_SIZE - MIN_SIZE) * ratio
@@ -1122,29 +1059,20 @@ RunService.Heartbeat:Connect(function()
 \tend
 end)`
   };
-
   let currentTab = 'local';
-
   function switchTab(tab) {
     currentTab = tab;
     const key = document.getElementById('modal').dataset.key;
     let code;
-    if (key === 'sizechange') {
-      code = tab === 'local' ? scripts.sizechange_local : scripts.sizechange_server;
-    } else if (key === 'killfeed') {
-      code = tab === 'local' ? scripts.killfeed_feed : scripts.killfeed_damage;
-    } else if (key === 'pointssystem') {
-      code = tab === 'local' ? scripts.pointssystem_local : scripts.pointssystem_main;
-    } else if (key === 'devicetype') {
-      code = tab === 'local' ? scripts.devicetype_local : scripts.devicetype_server;
-    }
+    if (key === 'sizechange') { code = tab === 'local' ? scripts.sizechange_local : scripts.sizechange_server; }
+    else if (key === 'killfeed') { code = tab === 'local' ? scripts.killfeed_feed : scripts.killfeed_damage; }
+    else if (key === 'pointssystem') { code = tab === 'local' ? scripts.pointssystem_local : scripts.pointssystem_main; }
+    else if (key === 'devicetype') { code = tab === 'local' ? scripts.devicetype_local : scripts.devicetype_server; }
     document.getElementById('modal-code').textContent = code;
     document.getElementById('tab-local').classList.toggle('active', tab === 'local');
     document.getElementById('tab-server').classList.toggle('active', tab === 'server');
   }
-
   const guides = {};
-
   guides.speed = {
     icon: '⚡', title: 'نظام السرعة الزائدة', subtitle: 'Script داخل Part في Workspace',
     sections: [
@@ -1221,18 +1149,25 @@ end)`
       { head: '🏷️', content: `<div class="guide-tags"><span class="guide-tag type-server">Server Script</span><span class="guide-tag type-module">DataStore</span><span class="guide-tag type-free">مجاني</span></div>` }
     ]
   };
-
   guides.flagscript = {
     icon: '🌍',
     title: 'علم الدولة فوق الرأس',
     subtitle: 'Script في ServerScriptService — 195+ دولة تلقائياً',
     sections: [
-      { head: '📦 وش يسوي هذا السكربت؟', content: `<div class="guide-steps"><div class="guide-step"><div class="step-num">🚩</div><div class="step-content"><div class="step-title">علم الدولة فوق رأس اللاعب</div><div class="step-desc">يكشف بلد اللاعب تلقائياً ويحط علمه فوق رأسه</div></div></div><div class="guide-step"><div class="step-num">👤</div><div class="step-content"><div class="step-title">اسم اللاعب بجانب العلم</div></div></div><div class="guide-step"><div class="step-num">📏</div><div class="step-content"><div class="step-title">يختفي بعد 50 stud</div></div></div></div>` },
-      { head: '📍 أين تحط السكربت؟', content: `<div class="guide-steps"><div class="guide-step"><div class="step-num">1</div><div class="step-content"><span class="step-code">ServerScriptService → FlagScript ✅</span></div></div></div>` },
-      { head: '🏷️', content: `<div class="guide-tags"><span class="guide-tag type-server">Server Script</span><span class="guide-tag type-module">195+ دولة</span><span class="guide-tag type-free">مجاني 100%</span></div>` }
+      {
+        head: '📦 وش يسوي هذا السكربت؟',
+        content: `<div class="guide-steps"><div class="guide-step"><div class="step-num">🚩</div><div class="step-content"><div class="step-title">علم الدولة فوق رأس اللاعب</div><div class="step-desc">يكشف بلد اللاعب تلقائياً ويحط علمه فوق رأسه</div></div></div><div class="guide-step"><div class="step-num">👤</div><div class="step-content"><div class="step-title">اسم اللاعب بجانب العلم</div></div></div><div class="guide-step"><div class="step-num">📏</div><div class="step-content"><div class="step-title">يختفي بعد 50 stud</div></div></div></div>`
+      },
+      {
+        head: '📍 أين تحط السكربت؟',
+        content: `<div class="guide-steps"><div class="guide-step"><div class="step-num">1</div><div class="step-content"><span class="step-code">ServerScriptService → FlagScript ✅</span></div></div></div>`
+      },
+      {
+        head: '🏷️',
+        content: `<div class="guide-tags"><span class="guide-tag type-server">Server Script</span><span class="guide-tag type-module">195+ دولة</span><span class="guide-tag type-free">مجاني 100%</span></div>`
+      }
     ]
   };
-
   guides.devicetype = {
     icon: '📱',
     title: 'نظام الجهاز',
@@ -1270,7 +1205,25 @@ end)`
       }
     ]
   };
-
+  guides.model_sword = {
+    icon: '🗡️',
+    title: 'سيف',
+    subtitle: 'موديل سيف جاهز من Roblox Creator Store',
+    sections: [
+      {
+        head: '🚀 كيف أستخدمه؟',
+        content: `<div class="guide-steps">
+          <div class="guide-step"><div class="step-num">1</div><div class="step-content"><div class="step-title">احصل عليه من Roblox Creator Store</div><div class="step-desc">اضغط على زر <b>احصل عليه من Roblox</b> ثم افتح Toolbox في Studio</div></div></div>
+          <div class="guide-step"><div class="step-num">2</div><div class="step-content"><div class="step-title">اسحب الموديل في الـ Workspace</div><span class="step-code">Toolbox → My Models → Sword ✅</span></div></div>
+          <div class="guide-step"><div class="step-num">3</div><div class="step-content"><div class="step-title">خصّص الإعدادات حسب لعبتك</div><div class="step-desc">تقدر تغير الأبعاد والمواد من خصائص الموديل</div></div></div>
+        </div>`
+      },
+      {
+        head: '🏷️',
+        content: `<div class="guide-tags"><span class="guide-tag type-module">WEAPON</span><span class="guide-tag type-free">مجاني 100%</span></div>`
+      }
+    ]
+  };
   guides.model_chat = {
     icon: '💬',
     title: 'نظام شات',
@@ -1289,7 +1242,6 @@ end)`
       }
     ]
   };
-
   guides.model_timer = {
     icon: '⏱️', title: 'Simple Timer', subtitle: 'تايمر جاهز',
     sections: [
@@ -1348,48 +1300,34 @@ end)`
     ]
   };
 
-  function openGuide(key) {
+    function openGuide(key) {
     const g = guides[key];
     if (!g) return;
     document.getElementById('guide-icon').textContent = g.icon;
     document.getElementById('guide-title').textContent = g.title;
     document.getElementById('guide-subtitle').textContent = g.subtitle;
     const body = document.getElementById('guide-body');
-    body.innerHTML = g.sections.map(s => `
-      <div class="guide-section">
-        <div class="guide-section-head">${s.head}</div>
-        <div class="guide-section-body">${s.content}</div>
-      </div>
-    `).join('');
+    body.innerHTML = g.sections.map(s => `<div class="guide-section"><div class="guide-section-head">${s.head}</div><div class="guide-section-body">${s.content}</div></div>`).join('');
     document.getElementById('guide-modal').classList.add('active');
   }
-
   function closeGuide(e) {
-    if (e.target === document.getElementById('guide-modal')) {
-      document.getElementById('guide-modal').classList.remove('active');
-    }
+    if (e.target === document.getElementById('guide-modal')) document.getElementById('guide-modal').classList.remove('active');
   }
-
   window._renderCommentsList = function(key, comments, mode) {
     if (mode === 'mini') {
       const list = document.getElementById('mini-comments-' + key);
       if (!list) return;
       if (comments.length === 0) { list.innerHTML = '<div class="no-comments">لا يوجد تعليقات بعد</div>'; return; }
-      list.innerHTML = comments.map(c =>
-        `<div class="card-comment-item"><span class="cc-name">${escHtml(c.name||'زائر')}</span>${escHtml(c.text)}<span class="cc-time">${timeAgo(c.ts)}</span></div>`
-      ).join('');
+      list.innerHTML = comments.map(c => `<div class="card-comment-item"><span class="cc-name">${escHtml(c.name||'زائر')}</span>${escHtml(c.text)}<span class="cc-time">${timeAgo(c.ts)}</span></div>`).join('');
     } else {
       const list = document.getElementById('modal-comments-list');
       const countEl = document.getElementById('modal-comment-count');
       if (!list) return;
       if (countEl) countEl.textContent = comments.length;
       if (comments.length === 0) { list.innerHTML = `<div class="no-comments-msg"><span class="icon">💬</span>كن أول من يعلق!</div>`; return; }
-      list.innerHTML = comments.map(c =>
-        `<div class="comment-item"><div class="comment-header"><span class="comment-name">${escHtml(c.name||'زائر')}</span><span class="comment-time">${timeAgo(c.ts)}</span></div><div class="comment-text">${escHtml(c.text)}</div></div>`
-      ).join('');
+      list.innerHTML = comments.map(c => `<div class="comment-item"><div class="comment-header"><span class="comment-name">${escHtml(c.name||'زائر')}</span><span class="comment-time">${timeAgo(c.ts)}</span></div><div class="comment-text">${escHtml(c.text)}</div></div>`).join('');
     }
   };
-
   function timeAgo(ts) {
     const diff = Math.floor((Date.now() - ts) / 1000);
     if (diff < 60) return 'الآن';
@@ -1397,7 +1335,6 @@ end)`
     if (diff < 86400) return Math.floor(diff/3600) + ' ساعة';
     return Math.floor(diff/86400) + ' يوم';
   }
-
   async function submitMiniComment(key) {
     const input = document.getElementById('mini-input-' + key);
     const text = input.value.trim();
@@ -1406,11 +1343,9 @@ end)`
     if (window._submitComment) await window._submitComment(key, 'زائر', text);
     showToast('✓ تم إرسال تعليقك!');
   }
-
   function renderModalComments(key) {
     if (window._loadCommentsOnce) window._loadCommentsOnce(key);
   }
-
   async function submitModalComment() {
     const key = document.getElementById('modal').dataset.key;
     const name = document.getElementById('comment-name').value.trim();
@@ -1420,18 +1355,15 @@ end)`
     if (window._submitComment) await window._submitComment(key, name || 'زائر', text);
     showToast('✓ تم إرسال تعليقك!');
   }
-
   function escHtml(str) {
     return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
   }
-
   function showToast(msg) {
     const t = document.getElementById('toast');
     t.textContent = msg;
     t.classList.add('show');
     setTimeout(() => t.classList.remove('show'), 2500);
   }
-
   function fallbackCopy(text) {
     const ta = document.createElement('textarea');
     ta.value = text; ta.style.position = 'fixed'; ta.style.top = '-9999px';
@@ -1439,14 +1371,12 @@ end)`
     try { document.execCommand('copy'); showToast('✓ تم نسخ السكربت!'); } catch(e) { showToast('❌ النسخ فشل'); }
     document.body.removeChild(ta);
   }
-
   function copyScript(key) {
     const text = scripts[key] || '';
     if (navigator.clipboard && window.isSecureContext) {
       navigator.clipboard.writeText(text).then(() => showToast('✓ تم نسخ السكربت!')).catch(() => fallbackCopy(text));
     } else { fallbackCopy(text); }
   }
-
   function openModal(title, key) {
     document.getElementById('modal-title').textContent = title;
     document.getElementById('modal').dataset.key = key;
@@ -1488,7 +1418,6 @@ end)`
     renderModalComments(key);
     document.getElementById('modal').classList.add('active');
   }
-
   function copyFromModal() {
     const key = document.getElementById('modal').dataset.key;
     let code;
@@ -1501,11 +1430,9 @@ end)`
       navigator.clipboard.writeText(code).then(() => showToast('✓ تم نسخ السكربت!')).catch(() => fallbackCopy(code));
     } else { fallbackCopy(code); }
   }
-
   function closeModal(e) {
     if (e.target === document.getElementById('modal')) document.getElementById('modal').classList.remove('active');
   }
-
   document.querySelectorAll('.card-comment-input').forEach(input => {
     input.addEventListener('keydown', e => {
       if (e.key === 'Enter') { const key = input.id.replace('mini-input-', ''); submitMiniComment(key); }
